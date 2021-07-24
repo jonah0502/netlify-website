@@ -1,26 +1,36 @@
 import React from "react";
+import {Link } from "react-router-dom"; 
+import pdf from '../assets/myRes.pdf'
 
 export default function Header() {
   return (
     <header>
       <div className='header-inner'>
-        <div className='logo'>CHAIR.</div>
+        <div className='logo'>JONAH.</div>
         <nav>
-          <ul>
-            <li>
-              <a href='/'>discover</a>
+          <ul id="testNavbar">
+              <li>
+              <Link to={"/"} className="nav-link"> 
+                Home 
+              </Link> 
             </li>
             <li>
-              <a href='/'>products</a>
+            <Link to={"/projects"} className="nav-link"> 
+              Projects 
+            </Link> 
             </li>
             <li>
-              <a href='/'>solutions</a>
+            <Link to={"/experience"} className="nav-link"> 
+              Experience 
+            </Link>             
             </li>
             <li>
-              <a href='/'>reach</a>
+              <Link to={"/misc"} className="nav-link"> 
+                Misc 
+              </Link>
             </li>
             <li className='btn'>
-              <a href='/'>order</a>
+            <a target="_blank" href={pdf}>Resume</a>
             </li>
           </ul>
         </nav>
