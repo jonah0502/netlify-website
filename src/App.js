@@ -9,6 +9,7 @@ import { Switch, Route } from "react-router-dom";
 
 // Page State
 import state from "./components/state";
+import AboutMe from "./components/about-me.js"
 
 // R3F
 import { Canvas, useFrame } from "@react-three/fiber";
@@ -101,9 +102,13 @@ function HomeAnimationCanvas() {
       domContent={domContent}
       position = {265}
       >
-        <p>Portfolio Page</p>
-        <h4>By Jonah Biedermann</h4>
         </Homepage>
+        <AboutMe 
+      domContent={domContent}
+      position = {0}
+      bgColor='#000000'>
+      <h1 className = "abtMe"><span>About Me</span></h1>
+      </AboutMe>
       </Suspense>
     </Canvas>
     <Loader />
