@@ -3,6 +3,9 @@ import "./App.scss";
 //Components
 import Header from "./components/header";
 import { Section } from "./components/section";
+import Homepage from "./components/home.js"
+import Loader from "./components/loader.js"
+import { Switch, Route } from "react-router-dom"; 
 
 // Page State
 import state from "./components/state";
@@ -76,80 +79,65 @@ const HTMLContent = ({
   );
 };
 
-function Loader() {
-  const { active, progress } = useProgress();
-  const transition = useTransition(active, {
-    from: { opacity: 1, progress: 0 },
-    leave: { opacity: 0 },
-    update: { progress },
-  });
-  return transition(
-    ({ progress, opacity }, active) =>
-      active && (
-        <a.div className='loading' style={{ opacity }}>
-          <div className='loading-bar-container'>
-            <a.div className='loading-bar' style={{ width: progress }}></a.div>
-          </div>
-        </a.div>
-      )
-  );
-}
 
-export default function App() {
+function HomeAnimationCanvas() {
   const [events, setEvents] = useState();
   const domContent = useRef();
   const scrollArea = useRef();
   const onScroll = (e) => (state.top.current = e.target.scrollTop);
   useEffect(() => void onScroll({ target: scrollArea.current }), []);
-
   return (
     <>
+    <Canvas
+      concurrent
+      colorManagement
+      camera={{ position: [100, 10, 0], fov: 75 }}
+    >
+    <Lights />
+
+      <Suspense fallback={null}>
+
+      <Homepage 
+      domContent={domContent}
+      position = {265}
+      >
+        <p>Portfolio Page</p>
+        <h4>By Jonah Biedermann</h4>
+        </Homepage>
+      </Suspense>
+    </Canvas>
+    <Loader />
+    
+          <div
+          className='scrollArea'
+          ref={scrollArea}
+          onScroll={onScroll}
+          {...events}>
+          <div style={{ position: "sticky", top: 0 }} ref={domContent} />
+          <div style={{ height: `${state.sections * 100}vh` }} />
+        </div>
+      </>
+  );
+}
+
+function Home() {
+  return (
+
+    <div className="anim">
+      <Suspense fallback={<div>Loading...</div>}>
       <Header />
-      {/* R3F Canvas */}
-      <Canvas
-        concurrent
-        colorManagement
-        camera={{ position: [0, 0, 120], fov: 70 }}>
-        {/* Lights Component */}
-        <Lights />
-        <Suspense fallback={null}>
-          <HTMLContent
-            domContent={domContent}
-            bgColor='#f15946'
-            modelPath='/armchairYellow.gltf'
-            position={250}>
-            <span>Meet the new </span>
-            <span>shopping experience </span>
-            <span>for online chairs</span>
-          </HTMLContent>
-          <HTMLContent
-            domContent={domContent}
-            bgColor='#571ec1'
-            modelPath='/armchairGreen.gltf'
-            position={0}>
-            <span>Shit... we even</span>
-            <span>got different colors</span>
-          </HTMLContent>
-          <HTMLContent
-            domContent={domContent}
-            bgColor='#636567'
-            modelPath='/armchairGray.gltf'
-            position={-250}>
-            <span>And yes</span>
-            <span>we even got</span>
-            <span>monochrome!</span>
-          </HTMLContent>
-        </Suspense>
-      </Canvas>
-      <Loader />
-      <div
-        className='scrollArea'
-        ref={scrollArea}
-        onScroll={onScroll}
-        {...events}>
-        <div style={{ position: "sticky", top: 0 }} ref={domContent} />
-        <div style={{ height: `${state.pages * 100}vh` }} />
-      </div>
-    </>
+        <HomeAnimationCanvas  />
+      </Suspense>
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <div>
+      <Switch>
+        <Route path="/" exact component={Home} />
+      </Switch>
+    </div>
   );
 }
