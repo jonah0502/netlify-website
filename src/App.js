@@ -8,8 +8,8 @@ import { Section } from "./components/section";
 import state from "./components/state";
 
 // R3F
-import { Canvas, useFrame } from "react-three-fiber";
-import { Html, useProgress, useGLTFLoader } from "drei";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Html, useProgress, useGLTFLoader } from "@react-three/drei";
 
 // React Spring
 import { a, useTransition } from "@react-spring/web";
