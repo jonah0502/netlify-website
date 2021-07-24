@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import WinBox from "winbox/src/js/winbox.js";
 import "winbox/dist/css/winbox.min.css";
 import "winbox/dist/css/themes/modern.min.css";
-import pdf from '../assets/myRes.pdf'
+import pdf from '../../assets/myRes.pdf'
 import Button from 'react-bootstrap/Button';
 import { useHistory, BrowserRouter as Router, Link } from "react-router-dom";
 

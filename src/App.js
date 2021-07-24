@@ -4,25 +4,25 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 //Components
 import Header from "./components/header";
-import Homepage from "./components/home.js"
+import Homepage from "./components/homepage/home.js"
 import Loader from "./components/loader.js"
 import { Switch, Route } from "react-router-dom"; 
 
 // Page State
-import state from "./components/state";
-import AboutMe from "./components/about-me.js"
+import hState from "./components/homepage/homeState";
+import AboutMe from "./components/homepage/about-me.js"
 
 // R3F
 import { Canvas} from "@react-three/fiber";
 
 //Intersection Observer
 
-import Form from "./components/form.js"
-import AbtButtons from "./components/AbtButton.js"
+import Form from "./components/homepage/form.js"
+import AbtButtons from "./components/homepage/AbtButton.js"
 import ButtonText from "./components/buttonText.js"
 
-import TagFlix from "./components/tagFlix.js"
-import TagButtons from "./components/TagButton.js"
+import TagFlix from "./components/projects/tagFlix.js"
+import TagButtons from "./components/projects/TagButton.js"
 
 const Lights = () => {
   return (
@@ -56,7 +56,7 @@ function HomeAnimationCanvas() {
   const [events, setEvents] = useState();
   const domContent = useRef();
   const scrollArea = useRef();
-  const onScroll = (e) => (state.top.current = e.target.scrollTop);
+  const onScroll = (e) => (hState.top.current = e.target.scrollTop);
   useEffect(() => void onScroll({ target: scrollArea.current }), []);
   return (
     <>
@@ -95,7 +95,7 @@ function HomeAnimationCanvas() {
           onScroll={onScroll}
           {...events}>
           <div style={{ position: "sticky", top: 0 }} ref={domContent} />
-          <div style={{ height: `${state.sections * 100}vh` }} />
+          <div style={{ height: `${hState.sections * 100}vh` }} />
         </div>
       </>
   );
@@ -118,7 +118,7 @@ function ProjectAnimationCanvas() {
   const [events, setEvents] = useState();
   const domContent = useRef();
   const scrollArea = useRef();
-  const onScroll = (e) => (state.top.current = e.target.scrollTop);
+  const onScroll = (e) => (hState.top.current = e.target.scrollTop);
   useEffect(() => void onScroll({ target: scrollArea.current }), []);
   return (
     <>
@@ -148,7 +148,7 @@ function ProjectAnimationCanvas() {
           onScroll={onScroll}
           {...events}>
           <div style={{ position: "sticky", top: 0 }} ref={domContent} />
-          <div style={{ height: `${state.sections * 100}vh` }} />
+          <div style={{ height: `${hState.sections * 100}vh` }} />
         </div>
       </>
   );

@@ -7,7 +7,7 @@ import { Html} from "@react-three/drei";
 //Components
 import Points from "./points.js";
 import Ame from "./Astronome.js"
-import { Section } from "./section";
+import { Section } from "./hSection";
 import {
   CubeTextureLoader,
   CubeCamera,
@@ -45,11 +45,12 @@ function Sphere() {
     minFilter: LinearMipmapLinearFilter
   });
   const cubeCamera = new CubeCamera(1, 1000, cubeRenderTarget);
-  cubeCamera.position.set(0, 0, 0);
-  scene.add(cubeCamera);
+  //cubeCamera.position.set(0, 0, 0);
+  //scene.add(cubeCamera);
 
   // Update the cubeCamera with current renderer and scene.
-  useFrame(() => cubeCamera.update(gl, scene));
+  //this line is what is causing the feedback loop 
+  useFrame(() => {cubeCamera.update(gl, scene)});
 //TODO: speed up spaceman animation, fix hos positon/size, import other animations
   return (
     <mesh visible scale={[7,7,7]} position={[0, 0, 0]} rotation={[0, 0, 0]} castShadow>

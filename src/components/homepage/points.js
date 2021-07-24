@@ -1,7 +1,7 @@
 import React from "react";
 import * as THREE from 'three';
 import {useFrame, useLoader} from '@react-three/fiber';
-import circleImg from '../assets/circle.png';
+import circleImg from '../../assets/circle.png';
 import { useCallback, useMemo, useRef} from 'react';
 
 export default function Points( {aVar = 0, tVar = 15, baseAmp = 3, dotColor = 0x00AAFF, stars = false, zLimit =40} ) {

@@ -1,17 +1,17 @@
 import React from "react";
 import { useRef, useEffect, useState, Suspense} from 'react';
-import jonah from '../assets/jonah.jpg';
+import jonah from '../../assets/jonah.jpg';
 import * as THREE from 'three'
-import moon from '../assets/moon.jpg';
-import normal from '../assets/normal.jpg';
+import moon from '../../assets/moon.jpg';
+import normal from '../../assets/normal.jpg';
 import Alien from "./Alien.js"
 
-import url from '../assets/Strobe.mp4'
+import url from '../../assets/Strobe.mp4'
 // R3F
 import { useFrame, useLoader } from "@react-three/fiber";
 import { Html, Box, Stars, Sphere } from "@react-three/drei";
 //Components
-import { Section } from "./section";
+import { Section } from "./hSection";
 //Intersection Observer
 import { useInView } from "react-intersection-observer";
 
