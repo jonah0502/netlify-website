@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import WinBox from "winbox/src/js/winbox.js";
 import "winbox/dist/css/winbox.min.css";
 import "winbox/dist/css/themes/modern.min.css";
-import pdf from '../assets/myRes.pdf'
 import Button from 'react-bootstrap/Button';
 import { useHistory, BrowserRouter as Router, Link } from "react-router-dom";
+import { Github } from 'react-bootstrap-icons';
 
 //      <li><Button variant="outline-light" onClick={() => handleClick({pdf})}>Resume</Button>{' '}</li>
 
@@ -29,7 +29,7 @@ const NavBoxes = () => {
 
 const createAbt = () => {
   const aboutBox = new WinBox({
-    title: 'About Me',
+    title: 'About Tagflix',
     class: "modern",
     width: '600px',
     height: '300px',
@@ -37,11 +37,11 @@ const createAbt = () => {
     right: 50,
     bottom: 50,
     left: 250,
-    mount: document.querySelector('#about-content'),
+    mount: document.querySelector('#TagFlix-About'),
     onfocus: function () {
       this.setBackground(
-    `linear-gradient(90deg, rgba(49,36,239,1) 
-      0%, rgba(67,0,168,1) 100%)`)
+    `linear-gradient(90deg, #8b0000 
+      0%, #ffcccb 100%)`)
     },
     onblur: function () {
       this.setBackground('#777')
@@ -53,14 +53,14 @@ const createContact = () => {
 
   const contactBox = new WinBox({
     title: 'Contact Me',
-    width: '900px',
+    width: '600px',
     class: "modern",
-    height: '475px',
-    top: 90,
+    height: '200px',
+    top: 150,
     right: 50,
     bottom: 50,
     left: 265,
-    url: "/page1",
+    mount: document.querySelector('#contact-content'),
     onfocus: function () {
         this.setBackground(
             `linear-gradient(90deg, rgba(49,36,239,1) 
@@ -72,16 +72,17 @@ const createContact = () => {
   })
 }
 return(
+  <Router>
 
-<nav className = "header abtMe">
+<nav className = "header tFlix">
   <ul>
-  <li><Button variant="outline-light" onClick={createAbt}>About</Button>{' '}</li>
-  <li><Button variant="outline-light" onClick={createContact}>Contact</Button>{' '}</li>
-  <li> <a className="btn btn-outline-light"  target="_blank" href={pdf}>Resume</a></li>
-
-
+  <li><Button variant="outline-dark" onClick={createAbt}>About</Button>{' '}</li>
+  <li> <a className="btn btn-outline-dark"  target="_blank" href="https://github.com/osu-cs290-sp21/final-project-tagflix"> <Github size={25} /></a></li>
+  <li> <a className="btn btn-outline-dark"  target="_blank" href="https://tagflix1.herokuapp.com/">Visit</a>
+</li>  
 </ul>
 </nav>
+</Router>
 );
 
 }

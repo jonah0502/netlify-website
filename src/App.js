@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 //Components
 import Header from "./components/header";
-import { Section } from "./components/section";
 import Homepage from "./components/home.js"
 import Loader from "./components/loader.js"
 import { Switch, Route } from "react-router-dom"; 
@@ -14,15 +13,16 @@ import state from "./components/state";
 import AboutMe from "./components/about-me.js"
 
 // R3F
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Html } from "@react-three/drei";
+import { Canvas} from "@react-three/fiber";
 
 //Intersection Observer
-import { useInView } from "react-intersection-observer";
 
 import Form from "./components/form.js"
 import AbtButtons from "./components/AbtButton.js"
+import ButtonText from "./components/buttonText.js"
 
+import TagFlix from "./components/tagFlix.js"
+import TagButtons from "./components/TagButton.js"
 
 const Lights = () => {
   return (
@@ -73,6 +73,9 @@ function HomeAnimationCanvas() {
       domContent={domContent}
       position = {265}
       >
+        
+        <p>Portfolio Page</p>
+        <h4>By Jonah Biedermann</h4>
         </Homepage>
         <AboutMe 
       domContent={domContent}
@@ -84,7 +87,8 @@ function HomeAnimationCanvas() {
       </Suspense>
     </Canvas>
     <Loader />
-    
+    <ButtonText />
+
           <div
           className='scrollArea'
           ref={scrollArea}
@@ -109,11 +113,66 @@ function Home() {
   );
 }
 
+
+function ProjectAnimationCanvas() {
+  const [events, setEvents] = useState();
+  const domContent = useRef();
+  const scrollArea = useRef();
+  const onScroll = (e) => (state.top.current = e.target.scrollTop);
+  useEffect(() => void onScroll({ target: scrollArea.current }), []);
+  return (
+    <>
+    <Canvas
+      concurrent
+      colorManagement
+      camera={{ position: [100, 10, 0], fov: 75 }}
+    >
+    <Lights />
+
+      <Suspense fallback={null}>
+        <TagFlix 
+      domContent={domContent}
+      position = {240}
+      bgColor='#f8f8ff'>
+      <h1 className = "title" style = {{color:"black"}}><span>TagFlix</span></h1>
+      <TagButtons />
+        </TagFlix>
+      </Suspense>
+    </Canvas>
+    <Loader />
+    <ButtonText />
+    
+          <div
+          className='scrollArea'
+          ref={scrollArea}
+          onScroll={onScroll}
+          {...events}>
+          <div style={{ position: "sticky", top: 0 }} ref={domContent} />
+          <div style={{ height: `${state.sections * 100}vh` }} />
+        </div>
+      </>
+  );
+}
+
+function Projects() {
+  return (
+
+    <div className="anim">
+      <Suspense fallback={<div><h1>Loading...</h1></div>}>
+      <Header />
+        <ProjectAnimationCanvas  />
+      </Suspense>
+    </div>
+  );
+}
+
+
 export default function App() {
   return (
     <div>
       <Switch>
         <Route path="/" exact component={Home} />
+        <Route path="/projects" component={Projects} />
         <Route path="/page1" component={Form} />
       </Switch>
     </div>
