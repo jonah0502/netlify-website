@@ -24,6 +24,9 @@ import ButtonText from "./components/buttonText.js"
 import TagFlix from "./components/projects/tagFlix.js"
 import TagButtons from "./components/projects/TagButton.js"
 
+
+//import Experience from "./components/experience/experiencePage.js"
+
 const Lights = () => {
   return (
     <>
@@ -174,6 +177,7 @@ export default function App() {
         <Route path="/" exact component={Home} />
         <Route path="/projects" component={Projects} />
         <Route path="/page1" component={Form} />
+        {/*<Route path="/experience" component={Experience} />*/}
       </Switch>
     </div>
   );

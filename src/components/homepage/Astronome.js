@@ -6,14 +6,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 //import url from '../assets/Strobe.mp4'
 import {useThree,useFrame} from "@react-three/fiber";
+import * as THREE from 'three'
 
-import {
-  CubeTextureLoader,
-  CubeCamera,
-  WebGLCubeRenderTarget,
-  RGBFormat,
-  LinearMipmapLinearFilter
-} from "three";
+
 export default function Model(props) {
   const group = useRef()
   const { nodes, materials, animations } = useGLTF('/astronome.glb')
@@ -31,25 +26,18 @@ export default function Model(props) {
   //   vid.play();
   //   return vid;
   // });
-  
-  const { scene, gl } = useThree();
-  // The cubeRenderTarget is used to generate a texture for the reflective sphere.
-  // It must be updated on each frame in order to track camera movement and other changes.
-  const cubeRenderTarget = new WebGLCubeRenderTarget(256, {
-    format: RGBFormat,
-    generateMipmaps: true,
-    minFilter: LinearMipmapLinearFilter
-  });
-  const cubeCamera = new CubeCamera(1, 1000, cubeRenderTarget);
-  //cubeCamera.position.set(0, 0, 0);
-  //scene.add(cubeCamera);
 
-  // Update the cubeCamera with current renderer and scene.
-  //this line causes feedback loop !!!!!!!!!!!!!!
-  useFrame(() => cubeCamera.update(gl, scene));
+  const [renderTarget] = useState(new THREE.WebGLCubeRenderTarget(1024, { format: THREE.RGBAFormat, generateMipmaps: true }))
+  const cubeCamera = useRef()
+  
+  useFrame(({ gl, scene }) => {
+    cubeCamera.current.update(gl, scene)
+  })
 
   return (
     <group ref={group} {...props} dispose={null}>
+      <cubeCamera layers={[11]} name="cubeCamera" ref={cubeCamera} position={[0, 0, 0]} args={[0.1, 100, renderTarget]} />
+
       <group name="RL_ExtendedRoot" scale={0.01}>
         <group name="valvebiped_j_latiss_le" position={[12.18, 0.1, -1.16]} rotation={[-3.05, -1.24, -0.07]} />
         <group name="valvebiped_j_latiss_ri" position={[-12.18, 0.11, -1.17]} rotation={[0.09, -1.24, 3.07]} />
@@ -64,13 +52,8 @@ export default function Model(props) {
         geometry={nodes.Object001_2.geometry}
         skeleton={nodes.Object001_2.skeleton}
       >
-      <meshBasicMaterial
-        attach="material"
-        envMap={cubeCamera.renderTarget.texture}
-        color="white"
-        roughness={0.1}
-        metalness={1}
-      />
+        <meshBasicMaterial attach="material" color="white" envMap={renderTarget.texture} metalness={1} roughness={0.1} />
+
         </skinnedMesh>
         <skinnedMesh
           geometry={nodes.Object001_3.geometry}
