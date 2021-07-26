@@ -76,9 +76,6 @@ function HomeAnimationCanvas() {
       domContent={domContent}
       position = {265}
       >
-        
-        <p>Portfolio Page</p>
-        <h4>By Jonah Biedermann</h4>
         </Homepage>
         <AboutMe 
       domContent={domContent}
@@ -129,6 +126,7 @@ function ProjectAnimationCanvas() {
       concurrent
       colorManagement
       camera={{ position: [100, 10, 0], fov: 75 }}
+      gl={{ powerPreference: "high-performance", alpha: false, antialias: false, stencil: false, depth: false }}
     >
     <Lights />
 
