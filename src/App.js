@@ -40,16 +40,13 @@ import TagButtons from "./components/projects/TagButton.js"
 
 import Page from "./components/misc/Page.js";
 
-
-
-//import Experience from "./components/experience/experiencePage.js"
-
-const Lights = ({spotLight, dirLight, ambLight}) => {
+const Lights = () => {
   return (
     <>
       {/* Ambient Light illuminates lights for all objects */}
-      <ambientLight ref={ambLight} intensity={0.3} />
+      <ambientLight intensity={0.3} />
       {/* Diretion light */}
+      <directionalLight position={[10, 10, 5]} intensity={1} />
       <directionalLight
         castShadow
         position={[0, 10, 0]}
@@ -61,10 +58,9 @@ const Lights = ({spotLight, dirLight, ambLight}) => {
         shadow-camera-right={10}
         shadow-camera-top={10}
         shadow-camera-bottom={-10}
-        ref={dirLight}
       />
       {/* Spotlight Large overhead light */}
-      <spotLight ref={spotLight} intensity={1} position={[1000, 0, 0]} castShadow  />
+      <spotLight intensity={1} position={[1000, 0, 0]} castShadow />
     </>
   );
 };
@@ -76,12 +72,6 @@ function HomeAnimationCanvas() {
   const [events, setEvents] = useState();
   const domContent = useRef();
   const scrollArea = useRef();
-  const pointsRef = useRef()
-  const ambLight = useRef()
-  const dirLight = useRef()
-  const spotLight = useRef()
-  const starRef = useRef()
-
   const onScroll = (e) => (hState.top.current = e.target.scrollTop);
   useEffect(() => void onScroll({ target: scrollArea.current }), []);
   return (
@@ -90,27 +80,14 @@ function HomeAnimationCanvas() {
       concurrent
       colorManagement
       camera={{ position: [100, 10, 0], fov: 75 }}
-      gl={{
-        powerPreference: "high-performance",
-        alpha: false,
-        antialias: false,
-        stencil: false,
-        depth: false
-      }}
-      resize={{ polyfill: ResizeObserver }}
     >
-    <Lights 
-    ambLight = {ambLight}
-    dirLight = {dirLight}
-    spotLight = {spotLight}
-    />
+    <Lights />
 
       <Suspense fallback={null}>
 
       <Homepage 
       domContent={domContent}
       position = {265}
-     // pointsRef = {pointsRef}
       >
         
         <p>Portfolio Page</p>
@@ -119,26 +96,11 @@ function HomeAnimationCanvas() {
         <AboutMe 
       domContent={domContent}
       position = {0}
-      bgColor='#000000'
-      starRef = {starRef}>
+      bgColor='#000000'>
       <h1 className = "abtMe"><span>About Me</span></h1>
       <AbtButtons />
       </AboutMe>
-      {/*<EffectComposer>
-        
-        <SelectiveBloom
-          lights = {[ambLight, dirLight, spotLight ]}
-          selection={pointsRef}
-          selectionLayer={10} 
-          luminanceThreshold={0}
-          luminanceSmoothing={0.9}
-          height={300}
-          opacity={3}
-        />
-      </EffectComposer>*/}
       </Suspense>
-      
-      
     </Canvas>
     <Loader />
     <ButtonText />
@@ -166,7 +128,6 @@ function Home() {
     </div>
   );
 }
-
 
 function ProjectAnimationCanvas() {
   const [events, setEvents] = useState();
