@@ -1,30 +1,46 @@
 import React, { useRef, useEffect, useState, Suspense } from "react";
 import "./App.scss";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-//Components
-import Header from "./components/header";
-import Homepage from "./components/homepage/home.js"
-import Loader from "./components/loader.js"
 import { Switch, Route } from "react-router-dom"; 
-
-// Page State
-import hState from "./components/homepage/homeState";
-import AboutMe from "./components/homepage/about-me.js"
 
 // R3F
 import { Canvas} from "@react-three/fiber";
+//import { EffectComposer, Outline, SelectiveBloom } from '@react-three/postprocessing'
+import { ResizeObserver } from "@juggle/resize-observer"
 
-//Intersection Observer
-
+//Home Components
+import Header from "./components/header";
+import Homepage from "./components/homepage/home.js"
+import Loader from "./components/loader.js"
+import AboutMe from "./components/homepage/about-me.js"
 import Form from "./components/homepage/form.js"
 import AbtButtons from "./components/homepage/AbtButton.js"
 import ButtonText from "./components/buttonText.js"
 
+// Page State
+import hState from "./components/homepage/homeState.js";
+import pState from "./components/projects/pState.js";
+import eState from "./components/experience/eState.js";
+import mState from "./components/misc/mState.js";
+
+
+//Experience stuff
+
+import URSA from "./components/experience/ursa.js";
+
+
+//Projects Page Stuff
+
 import TagFlix from "./components/projects/tagFlix.js"
 import TagButtons from "./components/projects/TagButton.js"
 
-import { EffectComposer, Outline, SelectiveBloom } from '@react-three/postprocessing'
+
+
+//Misc page stuff
+
+import Page from "./components/misc/Page.js";
+
+
 
 //import Experience from "./components/experience/experiencePage.js"
 
@@ -66,7 +82,6 @@ function HomeAnimationCanvas() {
   const spotLight = useRef()
   const starRef = useRef()
 
-
   const onScroll = (e) => (hState.top.current = e.target.scrollTop);
   useEffect(() => void onScroll({ target: scrollArea.current }), []);
   return (
@@ -82,6 +97,7 @@ function HomeAnimationCanvas() {
         stencil: false,
         depth: false
       }}
+      resize={{ polyfill: ResizeObserver }}
     >
     <Lights 
     ambLight = {ambLight}
@@ -94,7 +110,7 @@ function HomeAnimationCanvas() {
       <Homepage 
       domContent={domContent}
       position = {265}
-      pointsRef = {pointsRef}
+     // pointsRef = {pointsRef}
       >
         
         <p>Portfolio Page</p>
@@ -108,18 +124,18 @@ function HomeAnimationCanvas() {
       <h1 className = "abtMe"><span>About Me</span></h1>
       <AbtButtons />
       </AboutMe>
-
-      <EffectComposer>
+      {/*<EffectComposer>
         
         <SelectiveBloom
           lights = {[ambLight, dirLight, spotLight ]}
-          selection={[pointsRef, starRef]}
-          luminanceThreshold={1}
-          luminanceSmoothing={1}
-          intensity={1.0}
+          selection={pointsRef}
+          selectionLayer={10} 
+          luminanceThreshold={0}
+          luminanceSmoothing={0.9}
+          height={300}
+          opacity={3}
         />
-      </EffectComposer>
-
+      </EffectComposer>*/}
       </Suspense>
       
       
@@ -156,7 +172,7 @@ function ProjectAnimationCanvas() {
   const [events, setEvents] = useState();
   const domContent = useRef();
   const scrollArea = useRef();
-  const onScroll = (e) => (hState.top.current = e.target.scrollTop);
+  const onScroll = (e) => (pState.top.current = e.target.scrollTop);
   useEffect(() => void onScroll({ target: scrollArea.current }), []);
   return (
     <>
@@ -186,7 +202,7 @@ function ProjectAnimationCanvas() {
           onScroll={onScroll}
           {...events}>
           <div style={{ position: "sticky", top: 0 }} ref={domContent} />
-          <div style={{ height: `${hState.sections * 100}vh` }} />
+          <div style={{ height: `${pState.sections * 100}vh` }} />
         </div>
       </>
   );
@@ -205,6 +221,112 @@ function Projects() {
 }
 
 
+
+function ExperienceAnimationCanvas() {
+  const [events, setEvents] = useState();
+  const domContent = useRef();
+  const scrollArea = useRef();
+  const onScroll = (e) => (eState.top.current = e.target.scrollTop);
+  useEffect(() => void onScroll({ target: scrollArea.current }), []);
+  return (
+    <>
+    <Canvas
+      concurrent
+      colorManagement
+      camera={{ position: [100, 10, 0], fov: 75 }}
+    >
+    <Lights />
+
+      <Suspense fallback={null}>
+        <URSA 
+      domContent={domContent}
+      position = {240}
+      bgColor='#f8f8ff'>
+      <h1 className = "title" style = {{color:"black"}}><span>Something</span></h1>
+        </URSA>
+      </Suspense>
+    </Canvas>
+    <Loader />
+    <ButtonText />
+    
+          <div
+          className='scrollArea'
+          ref={scrollArea}
+          onScroll={onScroll}
+          {...events}>
+          <div style={{ position: "sticky", top: 0 }} ref={domContent} />
+          <div style={{ height: `${eState.sections * 100}vh` }} />
+        </div>
+      </>
+  );
+}
+
+function Experience() {
+  return (
+
+    <div className="anim">
+      <Suspense fallback={<div><h1>Loading...</h1></div>}>
+      <Header />
+        <ExperienceAnimationCanvas  />
+      </Suspense>
+    </div>
+  );
+}
+
+
+function MiscAnimationCanvas() {
+  const [events, setEvents] = useState();
+  const domContent = useRef();
+  const scrollArea = useRef();
+  const onScroll = (e) => (mState.top.current = e.target.scrollTop);
+  useEffect(() => void onScroll({ target: scrollArea.current }), []);
+  return (
+    <>
+    <Canvas
+      concurrent
+      colorManagement
+      camera={{ position: [100, 10, 0], fov: 75 }}
+    >
+    <Lights />
+
+      <Suspense fallback={null}>
+        <Page 
+      domContent={domContent}
+      position = {240}
+      bgColor='#f8f8ff'>
+      <h1 className = "title" style = {{color:"black"}}><span>Something</span></h1>
+        </Page>
+      </Suspense>
+    </Canvas>
+    <Loader />
+    <ButtonText />
+    
+          <div
+          className='scrollArea'
+          ref={scrollArea}
+          onScroll={onScroll}
+          {...events}>
+          <div style={{ position: "sticky", top: 0 }} ref={domContent} />
+          <div style={{ height: `${mState.sections * 100}vh` }} />
+        </div>
+      </>
+  );
+}
+
+function Misc() {
+  return (
+
+    <div className="anim">
+      <Suspense fallback={<div><h1>Loading...</h1></div>}>
+      <Header />
+        <MiscAnimationCanvas  />
+      </Suspense>
+    </div>
+  );
+}
+
+
+
 export default function App() {
   return (
     <div>
@@ -212,7 +334,8 @@ export default function App() {
         <Route path="/" exact component={Home} />
         <Route path="/projects" component={Projects} />
         <Route path="/page1" component={Form} />
-        {/*<Route path="/experience" component={Experience} />*/}
+        <Route path="/experience" component={Experience} />
+        <Route path="/misc" component={Misc} />
       </Switch>
     </div>
   );

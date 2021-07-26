@@ -8,14 +8,14 @@ import * as THREE from 'three'
 import { useFrame, useLoader } from "@react-three/fiber";
 import { Html, Sphere, MeshWobbleMaterial } from "@react-three/drei";
 //Components
-import { Section } from "../projects/pSection";
+import { Section } from "./mSection";
 
 //Intersection Observer
 import { useInView } from "react-intersection-observer";
 
 
 
-export default function TagFlix ({domContent, position, children, bgColor, object}) {
+export default function Page ({domContent, position, children, bgColor, object}) {
     const ref = useRef();
     const sphereRef = useRef();
     useFrame(() => {
