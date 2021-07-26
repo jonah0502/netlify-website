@@ -9,26 +9,9 @@ import Points from "./points.js";
 import Ame from "./Astronome.js"
 import { Section } from "./hSection";
 import * as THREE from 'three'
+import Skybox from './Skybox.js'
 
 
-// Loads the skybox texture and applies it to the scene.
-function SkyBox() {
-  const { scene } = useThree();
-  const loader = new THREE.CubeTextureLoader();
-  // The CubeTextureLoader load method takes an array of urls representing all 6 sides of the cube.
-  const texture = loader.load([
-    "/1.jpg",
-    "/2.jpg",
-    "/3.jpg",
-    "/4.jpg",
-    "/5.jpg",
-    "/6.jpg"
-  ]);
-
-  // Set the scene background property to the resulting texture.
-  scene.background = texture;
-  return null;
-}
 
 export default function Homepage ({domContent, position, children}) {
     const ref = useRef();
@@ -49,7 +32,7 @@ export default function Homepage ({domContent, position, children}) {
 
     return (
       <Section factor={1.5} offset={1}>
-        <SkyBox/>
+        <Skybox/>
         <group position={[0, position, 0]}>
         <mesh ref={ref} position={[0, -35, 0]}>
         <cubeCamera layers={[11]} name="cubeCamera" ref={cubeCamera} position={[0, 0, 0]} args={[0.1, 100, renderTarget]} />
