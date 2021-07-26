@@ -24,16 +24,16 @@ import ButtonText from "./components/buttonText.js"
 import TagFlix from "./components/projects/tagFlix.js"
 import TagButtons from "./components/projects/TagButton.js"
 
+import { EffectComposer, Outline, SelectiveBloom } from '@react-three/postprocessing'
 
 //import Experience from "./components/experience/experiencePage.js"
 
-const Lights = () => {
+const Lights = ({spotLight, dirLight, ambLight}) => {
   return (
     <>
       {/* Ambient Light illuminates lights for all objects */}
       <ambientLight intensity={0.3} />
       {/* Diretion light */}
-      <directionalLight position={[10, 10, 5]} intensity={1} />
       <directionalLight
         castShadow
         position={[0, 10, 0]}
@@ -59,6 +59,13 @@ function HomeAnimationCanvas() {
   const [events, setEvents] = useState();
   const domContent = useRef();
   const scrollArea = useRef();
+  const pointsRef = useRef()
+  const ambLight = useRef()
+  const dirLight = useRef()
+  const spotLight = useRef()
+  const starRef = useRef()
+
+
   const onScroll = (e) => (hState.top.current = e.target.scrollTop);
   useEffect(() => void onScroll({ target: scrollArea.current }), []);
   return (
@@ -67,24 +74,49 @@ function HomeAnimationCanvas() {
       concurrent
       colorManagement
       camera={{ position: [100, 10, 0], fov: 75 }}
+
     >
-    <Lights />
+    <Lights 
+    ambLight = {ambLight}
+    dirLight = {dirLight}
+    spotLight = {spotLight}
+    />
 
       <Suspense fallback={null}>
 
       <Homepage 
       domContent={domContent}
       position = {265}
+      pointsRef = {pointsRef}
       >
+        
+        <p>Portfolio Page</p>
+        <h4>By Jonah Biedermann</h4>
         </Homepage>
         <AboutMe 
       domContent={domContent}
       position = {0}
-      bgColor='#000000'>
+      bgColor='#000000'
+      starRef = {starRef}>
       <h1 className = "abtMe"><span>About Me</span></h1>
       <AbtButtons />
       </AboutMe>
+
+      
+      <EffectComposer multisampling={0} disableNormalPass={true} autoClear={false}>
+        
+        <SelectiveBloom
+          lights = {[ambLight, dirLight, spotLight ]}
+          selection={[pointsRef, starRef]}
+          luminanceThreshold={1}
+          luminanceSmoothing={1}
+          intensity={1.0}
+        />
+      </EffectComposer>
+
       </Suspense>
+      
+      
     </Canvas>
     <Loader />
     <ButtonText />
@@ -126,7 +158,6 @@ function ProjectAnimationCanvas() {
       concurrent
       colorManagement
       camera={{ position: [100, 10, 0], fov: 75 }}
-      gl={{ powerPreference: "high-performance", alpha: false, antialias: false, stencil: false, depth: false }}
     >
     <Lights />
 

@@ -16,8 +16,8 @@ import { Section } from "./hSection";
 import { useInView } from "react-intersection-observer";
 
 
-export default function AbtMe ({domContent, position, children, bgColor, object}) {
-    const ref = useRef();
+export default function AbtMe ({domContent, position, children, bgColor, starRef}) {
+   // const ref = useRef();
     const boxRef = useRef();
     const sphereRef = useRef();
     const moonTexture = useLoader(THREE.TextureLoader, moon)
@@ -50,7 +50,7 @@ export default function AbtMe ({domContent, position, children, bgColor, object}
     return (
       <Section factor={1.5} offset={1} >
         <group position={[0, position, 0]}>
-        <mesh  ref={ref}  position={[0, 5, 0]}>        
+        <mesh  ref={starRef}  position={[0, 5, 0]}>        
         <Stars radius={105} depth={50} count={5000} factor={4} saturation={0} fade />
         </mesh>
         <mesh>

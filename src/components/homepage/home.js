@@ -11,16 +11,13 @@ import Ame from "./Astronome.js"
 import { Section } from "./hSection";
 import * as THREE from 'three'
 
-import { EffectComposer, DepthOfField, Bloom, Noise, Vignette } from '@react-three/postprocessing'
 
 
-
-export default function Homepage ({domContent, position, children}) {
+export default function Homepage ({domContent, position, children, pointsRef}) {
     const ref = useRef();
     const spaceMan = useRef();
-
     useFrame(() => (
-      ref.current.rotation.y += 0.002,
+     // ref.current.rotation.y += 0.002,
       spaceMan.current.rotation.y += 0.005
             ));
     let amp = 0
@@ -34,7 +31,7 @@ export default function Homepage ({domContent, position, children}) {
 
     return (
       <Section factor={1.5} offset={1}>
-        <Skybox/>
+        
         <group position={[0, position, 0]}>
         <mesh ref={ref} position={[0, -35, 0]}>
         <cubeCamera layers={[11]} name="cubeCamera" ref={cubeCamera} position={[0, 0, 0]} args={[0.1, 100, renderTarget]} />
@@ -45,11 +42,14 @@ export default function Homepage ({domContent, position, children}) {
 
           <mesh ref={spaceMan}>
         {<Ame position={[0, 14, -17]} scale={[25,25,25]} rotation={[-0.7,Math.PI,-0.3]}/>}
-          </mesh>               
+          </mesh>
+          <mesh >
             <Points 
               aVar = {amp}
               dotColor = {'#FFFFFF'}
+              pointsRef = {pointsRef}
               />
+              </mesh>               
           </mesh>
         <Html fullscreen portal={domContent}>
           <div id="Home" className = "container">
@@ -57,10 +57,6 @@ export default function Homepage ({domContent, position, children}) {
             </div>
           </Html>
         </group>
-        <EffectComposer>
-        <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} opacity={3} />
-        
-      </EffectComposer>
       </Section>
     );
   }
