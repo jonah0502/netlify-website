@@ -43,7 +43,7 @@ export default function Homepage ({domContent, position, children, pointsRef}) {
           <mesh ref={spaceMan}>
         {<Ame position={[0, 14, -17]} scale={[25,25,25]} rotation={[-0.7,Math.PI,-0.3]}/>}
           </mesh>
-          <mesh >
+          <mesh>
             <Points 
               aVar = {amp}
               dotColor = {'#FFFFFF'}

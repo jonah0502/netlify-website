@@ -32,7 +32,7 @@ const Lights = ({spotLight, dirLight, ambLight}) => {
   return (
     <>
       {/* Ambient Light illuminates lights for all objects */}
-      <ambientLight intensity={0.3} />
+      <ambientLight ref={ambLight} intensity={0.3} />
       {/* Diretion light */}
       <directionalLight
         castShadow
@@ -45,9 +45,10 @@ const Lights = ({spotLight, dirLight, ambLight}) => {
         shadow-camera-right={10}
         shadow-camera-top={10}
         shadow-camera-bottom={-10}
+        ref={dirLight}
       />
       {/* Spotlight Large overhead light */}
-      <spotLight intensity={1} position={[1000, 0, 0]} castShadow />
+      <spotLight ref={spotLight} intensity={1} position={[1000, 0, 0]} castShadow  />
     </>
   );
 };
@@ -74,7 +75,13 @@ function HomeAnimationCanvas() {
       concurrent
       colorManagement
       camera={{ position: [100, 10, 0], fov: 75 }}
-
+      gl={{
+        powerPreference: "high-performance",
+        alpha: false,
+        antialias: false,
+        stencil: false,
+        depth: false
+      }}
     >
     <Lights 
     ambLight = {ambLight}
@@ -102,8 +109,7 @@ function HomeAnimationCanvas() {
       <AbtButtons />
       </AboutMe>
 
-      
-      <EffectComposer multisampling={0} disableNormalPass={true} autoClear={false}>
+      <EffectComposer>
         
         <SelectiveBloom
           lights = {[ambLight, dirLight, spotLight ]}

@@ -59,8 +59,8 @@ export default function Points( {aVar = 0, tVar = 15, baseAmp = 3, dotColor = 0x
   })
 
   return (
-    <points ref={pointsRef}>
-      <bufferGeometry attach="geometry">
+    <points ref={pointsRef} >
+      <bufferGeometry attach="geometry" >
         <bufferAttribute
           ref={bufferRef}
           attachObject={['attributes', 'position']}
