@@ -47,7 +47,7 @@ export default function TagFlix ({domContent, position, children, bgColor, objec
         </Sphere>
           </mesh>
         <Html fullscreen portal={domContent}>
-          <div id="TagFlix" ref={refItem} className = "container">
+          <div id="TagFlix" ref={refItem} >
                {children}
             </div>
           </Html>

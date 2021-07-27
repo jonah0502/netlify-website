@@ -47,7 +47,7 @@ export default function Page ({domContent, position, children, bgColor, object})
         </Sphere>
           </mesh>
         <Html fullscreen portal={domContent}>
-          <div id="TagFlix" ref={refItem} className = "container">
+          <div ref={refItem} className = "container text misc">
                {children}
             </div>
           </Html>

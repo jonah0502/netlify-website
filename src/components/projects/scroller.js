@@ -5,7 +5,7 @@ import { ContactShadows, useContextBridge } from "@react-three/drei"
 import { A11y, useA11y, A11yAnnouncer, useUserPreferences, A11ySection, A11yUserPreferencesContext } from "@react-three/a11y"
 import { ResizeObserver } from "@juggle/resize-observer"
 import { proxy, useSnapshot } from "valtio"
-
+import Header from '../header.js'
 
 const state = proxy({ dark: false, motionDisabled: false, active: 0, rotation: 0 })
 const geometries = [
@@ -138,12 +138,17 @@ export default function App() {
   const ContextBridge = useContextBridge(A11yUserPreferencesContext)
 
   return (
-    <main className={snap.dark ? "dark" : "bright"} id = "scroller">
+      <>
+    <Header />
+
+    <div id = "scroller">
+    <main className={snap.dark ? "dark" : "bright"} >
       <Canvas resize={{ polyfill: ResizeObserver }} camera={{ position: [0, 0, 15], near: 4, far: 30 }} pixelRatio={[1, 1.5]}>
         <ContextBridge>
           <pointLight position={[100, 100, 100]} intensity={0.5} />
           <pointLight position={[-100, -100, -100]} intensity={1.5} color={snap.dark ? "#ccffcc" : "#00ffff"} />
           <ambientLight intensity={0.8} />
+          
           <group position-y={2}>
             <A11ySection
               label="Shape carousel"
@@ -167,5 +172,7 @@ export default function App() {
       </Canvas>
       <A11yAnnouncer />
     </main>
+    </div>
+    </>
   )
 }

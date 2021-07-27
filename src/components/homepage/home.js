@@ -50,8 +50,10 @@ export default function Homepage ({domContent, position, children}) {
              />
           </mesh>
         <Html fullscreen portal={domContent}>
-          <div id="Home" className = "container">
+        <div className= "text">
+          <div id="Home" classname = "container home">
                <h1 className="title">{children}</h1>
+            </div>
             </div>
           </Html>
         </group>

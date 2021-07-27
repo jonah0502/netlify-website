@@ -4,6 +4,7 @@ import pdf from '../assets/myRes.pdf'
 
 export default function Header() {
   return (
+    <div className = "mainNav">
     <header>
       <div className='header-inner'>
         <div className='logo'>JONAH.</div>
@@ -36,5 +37,6 @@ export default function Header() {
         </nav>
       </div>
     </header>
+    </div>
   );
 }

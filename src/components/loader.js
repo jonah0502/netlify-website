@@ -16,12 +16,14 @@ export default function Loader() {
     return transition(
       ({ progress, opacity }, active) =>
         active && (
+          <div className = 'loader'>
           <a.div className='loading' style={{ opacity }}>
             <h5 style={{ color: "white"}}>Loading...</h5>
             <div className='loading-bar-container'>
               <a.div className='loading-bar' style={{ width: progress }}></a.div>
             </div>
           </a.div>
+          </div>
         )
     );
   }
