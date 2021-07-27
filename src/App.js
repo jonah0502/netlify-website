@@ -80,6 +80,7 @@ function HomeAnimationCanvas() {
       concurrent
       colorManagement
       camera={{ position: [100, 10, 0], fov: 75 }}
+      resize={{ polyfill: ResizeObserver }} 
     >
     <Lights />
 
@@ -141,6 +142,7 @@ function ProjectAnimationCanvas() {
       concurrent
       colorManagement
       camera={{ position: [100, 10, 0], fov: 75 }}
+      resize={{ polyfill: ResizeObserver }} 
     >
     <Lights />
 
@@ -195,13 +197,14 @@ function ExperienceAnimationCanvas() {
       concurrent
       colorManagement
       camera={{ position: [100, 10, 0], fov: 75 }}
+      resize={{ polyfill: ResizeObserver }} 
     >
     <Lights />
 
       <Suspense fallback={null}>
         <URSA 
       domContent={domContent}
-      position = {-400}
+      position = {-550}
       bgColor='#0000'>
 <main>
 
@@ -302,6 +305,7 @@ function MiscAnimationCanvas() {
       concurrent
       colorManagement
       camera={{ position: [100, 10, 0], fov: 75 }}
+      resize={{ polyfill: ResizeObserver }} 
     >
     <Lights />
 

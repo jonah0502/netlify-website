@@ -211,8 +211,7 @@ header .experience {
   background: var(--dark-bg);
   grid-column: 2 / span 5;
   font-size: 2rem;
-  padding: 5rem;
-  padding-top: 3rem;
+  padding: 2.5rem;
   margin-bottom: var(--spacing);
 }
 
@@ -227,7 +226,6 @@ section {
 
 blockquote {
   margin: 0;
-  padding: 0;
   grid-column: 2 / span 9;
   margin-bottom: var(--spacing);
 }
@@ -237,7 +235,7 @@ blockquote p {
   background-color: white;
   font-size: 4rem;
   display: inline;
-  line-height: 1;
+  line-height: 1.33;
 }
 
 .left {
