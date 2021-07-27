@@ -136,13 +136,21 @@ export default function App() {
   }, [a11yPrefersState.prefersReducedMotion])
 
   const ContextBridge = useContextBridge(A11yUserPreferencesContext)
-
+  if(!state.dark){
+    for (const x of Array(4).keys()) { (document.getElementsByTagName('a')[x].style.color = "black");}
+    document.getElementsByClassName('logo')[0].style.color = "black"
+  }
+  else{
+    for (const x of Array(4).keys()) { (document.getElementsByTagName('a')[x].style.color = "white");}
+    document.getElementsByClassName('logo')[0].style.color = "white"
+  }
   return (
       <>
     <Header />
 
     <div id = "scroller">
     <main className={snap.dark ? "dark" : "bright"} >
+
       <Canvas resize={{ polyfill: ResizeObserver }} camera={{ position: [0, 0, 15], near: 4, far: 30 }} pixelRatio={[1, 1.5]}>
         <ContextBridge>
           <pointLight position={[100, 100, 100]} intensity={0.5} />
