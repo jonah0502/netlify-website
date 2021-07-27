@@ -138,7 +138,7 @@ export default function App() {
   const ContextBridge = useContextBridge(A11yUserPreferencesContext)
 
   return (
-    <main className={snap.dark ? "dark" : "bright"}>
+    <main className={snap.dark ? "dark" : "bright"} id = "scroller">
       <Canvas resize={{ polyfill: ResizeObserver }} camera={{ position: [0, 0, 15], near: 4, far: 30 }} pixelRatio={[1, 1.5]}>
         <ContextBridge>
           <pointLight position={[100, 100, 100]} intensity={0.5} />
