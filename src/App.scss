@@ -46,12 +46,23 @@ nav ul li {
   padding: 5px;
 }
 
-.text .title {
-  font-size: 10rem;
-  text-align: center;
-  width: 75%;
-  margin: 0 auto;
-  color: #fff;
+.text {
+  .title {
+    font-size: 10rem;
+    text-align: center;
+    width: 75%;
+    margin: 0 auto;
+    color: #fff;
+  }
+
+  .container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
 }
 .wb-body {
   background: rgb(43, 42, 42);
@@ -101,13 +112,6 @@ nav ul li {
 }
 
   
-.container {
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
 :root {
   --dark-bg: rgba(15, 15, 15, 0.95);

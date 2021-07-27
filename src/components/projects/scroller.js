@@ -149,7 +149,7 @@ export default function App() {
           <pointLight position={[-100, -100, -100]} intensity={1.5} color={snap.dark ? "#ccffcc" : "#00ffff"} />
           <ambientLight intensity={0.8} />
           
-          <group position-y={2}>
+          <group position-y={0.7}>
             <A11ySection
               label="Shape carousel"
               description="This carousel contains 5 shapes. Use the Previous and Next buttons to cycle through all the shapes.">
@@ -164,7 +164,7 @@ export default function App() {
                 activationMsg="Lower light disabled"
                 deactivationMsg="Lower light enabled"
                 a11yElStyle={{ marginLeft: "-40px" }}>
-                <ToggleButton position={[0, -3, 9]} />
+                <ToggleButton position={[0, -3.5, 9]} />
               </A11y>
             </A11ySection>
           </group>

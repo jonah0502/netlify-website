@@ -312,7 +312,7 @@ function MiscAnimationCanvas() {
       <Suspense fallback={null}>
         <Page 
       domContent={domContent}
-      position = {240}
+      position = {200}
       bgColor='#f8f8ff'>
       <h1 className = "title" style = {{color:"black"}}><span>Something</span></h1>
         </Page>

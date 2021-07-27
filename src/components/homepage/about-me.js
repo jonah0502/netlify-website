@@ -49,6 +49,12 @@ export default function AbtMe ({domContent, position, children, bgColor, starRef
     const texture = useLoader(THREE.TextureLoader, jonah)
     return (
       <Section factor={1.5} offset={1} >
+        
+        <Html fullscreen portal={domContent} position={[0, position -30, 0]}>
+          <div id="AbtMe" ref={refItem} className = "container">
+               {children}
+            </div>
+          </Html>
         <group position={[0, position, 0]}>
         <mesh  ref={starRef}  position={[0, 5, 0]}>        
         <Stars radius={105} depth={50} count={5000} factor={4} saturation={0} fade />
@@ -82,11 +88,6 @@ export default function AbtMe ({domContent, position, children, bgColor, starRef
         </Box>
         </mesh>
 
-        <Html fullscreen portal={domContent}>
-          <div id="AbtMe" ref={refItem} className = "container">
-               {children}
-            </div>
-          </Html>
         </group>
       </Section>
     );

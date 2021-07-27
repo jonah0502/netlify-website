@@ -33,6 +33,14 @@ export default function Homepage ({domContent, position, children}) {
     return (
       <Section factor={1.5} offset={1}>
         <Skybox/>
+        
+        <Html fullscreen portal={domContent} position={[0,position - 55,0]}>
+        <div className= "text">
+          <div id="Home" classname = "container home">
+               <h1 className="title">{children}</h1>
+            </div>
+            </div>
+          </Html>
         <group position={[0, position, 0]}>
         <mesh ref={ref} position={[0, -35, 0]}>
         <cubeCamera layers={[11]} name="cubeCamera" ref={cubeCamera} position={[0, 0, 0]} args={[0.1, 100, renderTarget]} />
@@ -49,13 +57,6 @@ export default function Homepage ({domContent, position, children}) {
              dotColor = {'#FFFFFF'}
              />
           </mesh>
-        <Html fullscreen portal={domContent}>
-        <div className= "text">
-          <div id="Home" classname = "container home">
-               <h1 className="title">{children}</h1>
-            </div>
-            </div>
-          </Html>
         </group>
       </Section>
     );
