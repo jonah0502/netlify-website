@@ -201,9 +201,64 @@ function ExperienceAnimationCanvas() {
       <Suspense fallback={null}>
         <URSA 
       domContent={domContent}
-      position = {240}
-      bgColor='#f8f8ff'>
-      <h1 className = "title" style = {{color:"black"}}><span>Something</span></h1>
+      position = {-400}
+      bgColor='#0000'>
+<main>
+
+<header className = "experience">
+        <h1>Jonah Biedermann</h1>
+        <p>🚀 Welcome to my website!</p>
+      </header>
+
+<blockquote>
+  <p>I like making stuff and putting it on the internet</p>
+</blockquote>
+
+<section>
+  <h2>📜 URSA Engage Research Internship</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+
+</section>
+
+<section class="light">
+  <h2>👩🏽‍🚀 Teaching Assistant</h2>
+
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+
+</section>
+
+<blockquote>
+  <p>The best way out is always through</p>
+</blockquote>
+
+<section class="left">
+  <h2>🌮 Alpha Epsilon Pi Executive Board</h2>
+
+  <h3>McDonalds</h3>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+</section>
+
+<section class="light">
+  <h2>👩🏽‍🚀 Lifegaurd</h2>
+
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+
+</section>
+
+<blockquote>
+  <p>Thanks for watching!</p>
+</blockquote>
+
+
+</main>
         </URSA>
       </Suspense>
     </Canvas>
