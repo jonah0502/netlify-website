@@ -31,8 +31,10 @@ export default function URSA ({domContent, position, children, bgColor, object})
         </Suspense>
           </mesh>
         <Html fullscreen portal={domContent}>
-          <div id="TagFlix" ref={refItem} className = "container">
+            <div className = "text">
+          <div ref={refItem} className = "container experience">
                {children}
+            </div>
             </div>
           </Html>
         </group>
