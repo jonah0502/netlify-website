@@ -34,7 +34,7 @@ import URSA from "./components/experience/ursa.js";
 import TagFlix from "./components/projects/tagFlix.js"
 import TagButtons from "./components/projects/TagButton.js"
 
-
+import Scroller from "./components/projects/scroller.js"
 
 //Misc page stuff
 
@@ -352,7 +352,7 @@ export default function App() {
     <div>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/projects" component={Projects} />
+        <Route path="/projects" component={Scroller} />
         <Route path="/page1" component={Form} />
         <Route path="/experience" component={Experience} />
         <Route path="/misc" component={Misc} />
