@@ -107,14 +107,27 @@ function Shape({ index, active, ...props }) {
   })
   const { a11yPrefersState } = useUserPreferences()
   //note to self: page crashes on refresh and IDK why???
+
+  const renderHTML = () => {
+    if (active) {
+      return (
+      <Html position={[ref.current.position.x -1,6.75,0]}>
+      <div className = "container" >
+           <h1>TagFlix</h1>
+        </div>
+      </Html>);
+    }
+  }
   return (
+    <>
     <mesh rotation-y={index * 2000} ref={ref} {...props}>
         <MysBox
          scale = {[0.06, 0.06, 0.06]}
          emissive={a11yPrefersState.prefersDarkScheme ? "#001166" : "#009999"}
          />
-
     </mesh>
+    {/*renderHTML()*/}
+    </>
   )
 }
 
@@ -131,8 +144,18 @@ function Carroussel() {
         snap.motionDisabled ? 1 : 0.1,
       )),
   )
+  const renderHTML = (i) => {
+    if (i) {
+      return (
+      <Html position={[ -1,6.75,0]}>
+      <div className = "container" >
+           <h1>TagFlix</h1>
+        </div>
+      </Html>);
+    }
+  }
   return (
-    <group ref={group}>
+    <group ref={group} position = {[-0, 0, 0]}>
       {["sphere", "pyramid", "donut", "octahedron", "icosahedron"].map((name, i) => (
         <A11y key={name} role="content" description={`a ${name}`} tabIndex={-1} hidden={snap.active !== i}>
           <Shape
@@ -142,6 +165,7 @@ function Carroussel() {
             color={name}
           />
         </A11y>
+        
       ))}
     </group>
   )

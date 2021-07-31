@@ -34,7 +34,7 @@ export default function Homepage ({domContent, position, children}) {
       <Section factor={1.5} offset={1}>
         <Skybox/>
         
-        <Html fullscreen portal={domContent} position={[0,position - 55,0]}>
+        <Html fullscreen portal={domContent} position={[0,position - 75,0]}>
         <div className= "text">
           <div id="Home" classname = "container home">
                <h1 className="title">{children}</h1>
