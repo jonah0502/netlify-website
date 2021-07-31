@@ -41,7 +41,7 @@ export default function Homepage ({domContent, position, children}) {
             </div>
             </div>
           </Html>
-        <group position={[0, position, 0]}>
+        <group position={[0, position -10, 0]}>
         <mesh ref={ref} position={[0, -35, 0]}>
         <cubeCamera layers={[11]} name="cubeCamera" ref={cubeCamera} position={[0, 0, 0]} args={[0.1, 100, renderTarget]} />
         <mesh visible position={[0, 0, 0]} rotation={[0, 0, 0]} scale={[10,10,10]}castShadow>

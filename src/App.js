@@ -352,10 +352,10 @@ export default function App() {
     <div>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/projects" component={Scroller} />
+        <Route path="/projects" component={Projects} />
         <Route path="/page1" component={Form} />
         <Route path="/experience" component={Experience} />
-        <Route path="/misc" component={Misc} />
+        <Route path="/misc" component={Scroller} />
       </Switch>
     </div>
   );

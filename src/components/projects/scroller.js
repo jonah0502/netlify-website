@@ -7,7 +7,7 @@ import { ResizeObserver } from "@juggle/resize-observer"
 import { proxy, useSnapshot } from "valtio"
 import Header from '../header.js'
 import tag from '../../assets/tagSphere.png';
-
+import MysBox from './Mystery.js'
 const Components = props => {
   const texture = useLoader(THREE.TextureLoader, tag)
 
@@ -94,6 +94,8 @@ function Shape({ index, active, ...props }) {
   const vec = new THREE.Vector3()
   const ref = useRef()
   const snap =  useSnapshot(state)
+  const texture = useLoader(THREE.TextureLoader, tag)
+
   useFrame((state, delta) => {
     const s = active ? 2 : 1
     ref.current.scale.lerp(vec.set(s, s, s), snap.motionDisabled ? 1 : 0.1)
@@ -106,14 +108,21 @@ function Shape({ index, active, ...props }) {
     }
   })
   const { a11yPrefersState } = useUserPreferences()
+  //note to self: page crashes on refresh and IDK why???
   return (
-    <mesh rotation-y={index * 2000} ref={ref} {...props} geometry={geometries[index]}>
-      <meshStandardMaterial
-        metalness={1}
-        roughness={0.8}
-        emissive={a11yPrefersState.prefersDarkScheme ? "#001166" : "#009999"}
-        color="white"
-      />
+    <mesh rotation-y={index * 2000} ref={ref} {...props}>
+         <Sphere visible >
+            <MeshWobbleMaterial
+            attach="material"
+            color="#FFFFFF"
+            factor={0.05} // Strength, 0 disables the effect (default=1)
+            speed={2} // Speed (default=1)
+            roughness={0}
+            map={texture}
+            emissive={a11yPrefersState.prefersDarkScheme ? "#001166" : "#009999"}
+            />
+        </Sphere>
+
     </mesh>
   )
 }

@@ -61,7 +61,7 @@ export default function AbtMe ({domContent, position, children, bgColor, starRef
         </mesh>
         <mesh>
         <Suspense fallback={null}>
-        <Alien scale={30,30,30} position={[0, 100, -70]}/>
+        {/*<Alien scale={30,30,30} position={[0, 100, -70]}/>*/}
         </Suspense>
       <Sphere ref={sphereRef} visible position={[25, 125, 75]} args={[4, 16, 16]} scale={4,4,4}>
           <meshStandardMaterial
