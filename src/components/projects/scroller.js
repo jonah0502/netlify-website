@@ -8,6 +8,7 @@ import { proxy, useSnapshot } from "valtio"
 import Header from '../header.js'
 import tag from '../../assets/tagSphere.png';
 import MysBox from './Mystery.js'
+import Bulb from './Bulb.js'
 const Components = props => {
   const texture = useLoader(THREE.TextureLoader, tag)
 
@@ -45,12 +46,9 @@ function ToggleButton(props) {
   const a11y = useA11y()
   return (
     <mesh {...props}>
-      <torusGeometry args={[0.5, a11y.pressed ? 0.28 : 0.25, 16, 32]} />
-      <meshStandardMaterial
-        metalness={1}
-        roughness={0.8}
-        color={"#ffffff"}
+      <Bulb
         emissive={a11y.focus ? "#cc4444" : a11y.hover ? "#44bb44" : "#0088ee"}
+        position = {[13,5,-4]}
       />
     </mesh>
   )
@@ -101,27 +99,20 @@ function Shape({ index, active, ...props }) {
     ref.current.scale.lerp(vec.set(s, s, s), snap.motionDisabled ? 1 : 0.1)
     if (snap.motionDisabled) {
       ref.current.rotation.y = ref.current.rotation.x = active ? 1.5 : 4
-      ref.current.position.y = 0
+     // ref.current.position.y = 0
     } else {
-      ref.current.rotation.y = ref.current.rotation.x += delta / (active ? 1.5 : 4)
-      ref.current.position.y = active ? Math.sin(state.clock.elapsedTime) / 2 : 0
+      ref.current.rotation.y += 0.01
+      ref.current.position.y = active ? Math.sin(state.clock.elapsedTime) / 2 - 1.5 : -1.5
     }
   })
   const { a11yPrefersState } = useUserPreferences()
   //note to self: page crashes on refresh and IDK why???
   return (
     <mesh rotation-y={index * 2000} ref={ref} {...props}>
-         <Sphere visible >
-            <MeshWobbleMaterial
-            attach="material"
-            color="#FFFFFF"
-            factor={0.05} // Strength, 0 disables the effect (default=1)
-            speed={2} // Speed (default=1)
-            roughness={0}
-            map={texture}
-            emissive={a11yPrefersState.prefersDarkScheme ? "#001166" : "#009999"}
-            />
-        </Sphere>
+        <MysBox
+         scale = {[0.06, 0.06, 0.06]}
+         emissive={a11yPrefersState.prefersDarkScheme ? "#001166" : "#009999"}
+         />
 
     </mesh>
   )
@@ -146,7 +137,7 @@ function Carroussel() {
         <A11y key={name} role="content" description={`a ${name}`} tabIndex={-1} hidden={snap.active !== i}>
           <Shape
             index={i}
-            position={[radius * Math.cos(i * ((Math.PI * 2) / 5)), 0, radius * Math.sin(i * ((Math.PI * 2) / 5))]}
+            position={[radius * Math.cos(i * ((Math.PI * 2) / 5)), -2, radius * Math.sin(i * ((Math.PI * 2) / 5))]}
             active={snap.active === i}
             color={name}
           />
