@@ -9,6 +9,7 @@ import Header from '../header.js'
 import tag from '../../assets/tagSphere.png';
 import MysBox from './Mystery.js'
 import Bulb from './Bulb.js'
+import Loader from "../loader.js"
 
   //React.Children.toArray(arrayOfComponents)
 
@@ -177,12 +178,11 @@ export default function App() {
     document.getElementsByClassName('logo')[0].style.color = "white"
   }
   return (
-    <Suspense fallback={<div><h1>Loading...</h1></div>}>
+    <Suspense fallback={null}>
     <Header />
 
     <div id = "scroller">
     <main className={snap.dark ? "dark" : "bright"} >
-
       <Canvas resize={{ polyfill: ResizeObserver }} camera={{ position: [0, 0, 15], near: 4, far: 30 }} pixelRatio={[1, 1.5]}>
         <ContextBridge>
           <pointLight position={[100, 100, 100]} intensity={0.5} ref={lightRef} />
@@ -210,6 +210,7 @@ export default function App() {
           </group>
         </ContextBridge>
       </Canvas>
+      <Loader/>
       <A11yAnnouncer />
     </main>
     </div>

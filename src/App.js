@@ -125,10 +125,8 @@ function Home() {
   return (
 
     <div className="anim">
-      <Suspense fallback={<div>Loading...</div>}>
       <Header />
         <HomeAnimationCanvas  />
-      </Suspense>
     </div>
   );
 }
@@ -178,10 +176,8 @@ function Projects() {
   return (
 
     <div className="anim">
-      <Suspense fallback={<div><h1>Loading...</h1></div>}>
       <Header />
         <ProjectAnimationCanvas  />
-      </Suspense>
     </div>
   );
 }
@@ -227,7 +223,7 @@ function ExperienceAnimationCanvas() {
 
         <ExPage      
       domContent={domContent}
-      position = {-250}
+      position = {-275}
       bgColor=" #F67280">
 <main >
 <section className = "left">
@@ -242,7 +238,7 @@ function ExperienceAnimationCanvas() {
         </ExPage>
         <ExPage      
       domContent={domContent}
-      position = {-500}
+      position = {-550}
       bgColor=" #C06C84">
 <main >
 <section>
@@ -257,7 +253,7 @@ function ExperienceAnimationCanvas() {
         </ExPage>
         <ExPage      
       domContent={domContent}
-      position = {-750}
+      position = {-800}
       bgColor=" #6C5B7B">
 <main >
 <section className = "left">
@@ -307,10 +303,8 @@ function Experience() {
   return (
 
     <div className="anim">
-      <Suspense fallback={<div><h1>Loading...</h1></div>}>
       <Header />
         <ExperienceAnimationCanvas  />
-      </Suspense>
     </div>
   );
 }
