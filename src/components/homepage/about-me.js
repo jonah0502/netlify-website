@@ -39,19 +39,12 @@ export default function AbtMe ({domContent, position, children, bgColor, starRef
     useFrame(() => (
       sphereRef.current.rotation.y += 0.002
     ));
-    const [refItem, inView] = useInView({ threshold: 0});
-    useEffect(() => {
-      inView && (document.getElementsByClassName('anim')[0].style.background = bgColor)
-      for (const x of Array(4).keys()) {inView && (document.getElementsByTagName('a')[x].style.color = "white");}
-      document.getElementsByClassName('logo')[0].style.color = "white"
-
-    }, [inView]);
     const texture = useLoader(THREE.TextureLoader, jonah)
     return (
       <Section factor={1.5} offset={1} >
         
         <Html fullscreen portal={domContent} position={[0, position -30, 0]}>
-          <div id="AbtMe" ref={refItem} className = "container">
+          <div id="AbtMe" className = "container">
                {children}
             </div>
           </Html>
