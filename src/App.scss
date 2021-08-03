@@ -137,10 +137,11 @@ nav ul li {
 
   header {
     background: var(--dark-bg);
-    grid-column: 2 / span 5;
+    grid-column: 5 / span 5;
     font-size: 2rem;
     padding: 2.5rem;
-    margin-bottom: var(--spacing);
+    margin-top: 0;
+    margin-bottom: 10rem;
   }
   
   section {

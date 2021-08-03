@@ -20,7 +20,7 @@ export default function URSA ({domContent, position, children, bgColor, object})
     const sphereRef = useRef();
     const [refItem, inView] = useInView({ threshold: 0.5});
     useEffect(() => {
-      inView && (document.getElementsByClassName('anim')[0].style.background = "grey")});
+      inView && (document.getElementsByClassName('anim')[0].style.background = bgColor )});
     const texture = useLoader(THREE.TextureLoader, tag)
     return (
       <Section factor={1.5} offset={1} >

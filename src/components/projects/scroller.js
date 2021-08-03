@@ -1,6 +1,6 @@
 import * as THREE from "three"
 import { Canvas, useFrame, useThree, useLoader } from "@react-three/fiber"
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef, Suspense } from "react"
 import { ContactShadows, useContextBridge, Sphere, MeshWobbleMaterial, Html } from "@react-three/drei"
 import { A11y, useA11y, A11yAnnouncer, useUserPreferences, A11ySection, A11yUserPreferencesContext } from "@react-three/a11y"
 import { ResizeObserver } from "@juggle/resize-observer"
@@ -9,28 +9,7 @@ import Header from '../header.js'
 import tag from '../../assets/tagSphere.png';
 import MysBox from './Mystery.js'
 import Bulb from './Bulb.js'
-const Components = props => {
-  const texture = useLoader(THREE.TextureLoader, tag)
 
-    return (
-      <React.Fragment>
-        
-        <Sphere visible position={[80, 0, 20]} args={[4, 16, 16]}>
-            <MeshWobbleMaterial
-            attach="material"
-            color="#FFFFFF"
-            factor={0.05} // Strength, 0 disables the effect (default=1)
-            speed={2} // Speed (default=1)
-            roughness={0}
-            map={texture}
-            />
-        </Sphere>
-
-        {/*<ComponentTwo/>*/}
-  
-      </React.Fragment>
-    )
-  }
   //React.Children.toArray(arrayOfComponents)
 
 const state = proxy({ dark: false, motionDisabled: false, active: 0, rotation: 0 })
@@ -194,7 +173,7 @@ export default function App() {
     document.getElementsByClassName('logo')[0].style.color = "white"
   }
   return (
-      <>
+    <Suspense fallback={<div><h1>Loading...</h1></div>}>
     <Header />
 
     <div id = "scroller">
@@ -230,6 +209,6 @@ export default function App() {
       <A11yAnnouncer />
     </main>
     </div>
-    </>
+    </Suspense>
   )
 }

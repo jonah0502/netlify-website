@@ -26,7 +26,10 @@ import mState from "./components/misc/mState.js";
 
 //Experience stuff
 
-import URSA from "./components/experience/ursa.js";
+import ExPage from "./components/experience/page.js";
+
+import ExTop from "./components/experience/TA.js";
+
 
 
 //Projects Page Stuff
@@ -202,21 +205,17 @@ function ExperienceAnimationCanvas() {
     <Lights />
 
       <Suspense fallback={null}>
-        <URSA 
+        <ExPage 
       domContent={domContent}
-      position = {-550}
-      bgColor='#0000'>
-<main>
+      position = {95}
+      bgColor="#F8B195">
+<main >
+<section>      help    </section>
 
-<header className = "experience">
+<header>
         <h1>Jonah Biedermann</h1>
-        <p>🚀 Welcome to my website!</p>
+        <p>🚀 My Work Experience!</p>
       </header>
-
-<blockquote>
-  <p>I like making stuff and putting it on the internet</p>
-</blockquote>
-
 <section>
   <h2>📜 URSA Engage Research Internship</h2>
   <p>
@@ -224,45 +223,70 @@ function ExperienceAnimationCanvas() {
   </p>
 
 </section>
-
-<section class="light">
-  <h2>👩🏽‍🚀 Teaching Assistant</h2>
-
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-
-</section>
-
-<blockquote>
-  <p>The best way out is always through</p>
-</blockquote>
-
-<section class="left">
-  <h2>🌮 Alpha Epsilon Pi Executive Board</h2>
-
-  <h3>McDonalds</h3>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-</section>
-
-<section class="light">
-  <h2>👩🏽‍🚀 Lifegaurd</h2>
-
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
-
-</section>
-
-<blockquote>
-  <p>Thanks for watching!</p>
-</blockquote>
-
-
 </main>
-        </URSA>
+        </ExPage>
+
+        <ExPage      
+      domContent={domContent}
+      position = {-250}
+      bgColor=" #F67280">
+<main >
+<section className = "left">
+  <h2>📜 TA Stuff</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+
+</section>
+</main>
+
+        </ExPage>
+        <ExPage      
+      domContent={domContent}
+      position = {-500}
+      bgColor=" #C06C84">
+<main >
+<section>
+  <h2>📜 Frat Stuff</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+
+</section>
+</main>
+
+        </ExPage>
+        <ExPage      
+      domContent={domContent}
+      position = {-750}
+      bgColor=" #6C5B7B">
+<main >
+<section className = "left">
+  <h2>📜 More Stuff 1</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+
+</section>
+</main>
+
+        </ExPage>
+        <ExPage      
+      domContent={domContent}
+      position = {-1080}
+      bgColor=" #355C7D">
+<main >
+<section>
+  <h2>📜 More Stuff 2</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  </p>
+
+</section>
+</main>
+
+        </ExPage>
+
       </Suspense>
     </Canvas>
     <Loader />
@@ -352,10 +376,10 @@ export default function App() {
     <div>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/projects" component={Projects} />
+        <Route path="/projects" component={Scroller} />
         <Route path="/page1" component={Form} />
         <Route path="/experience" component={Experience} />
-        <Route path="/misc" component={Scroller} />
+        <Route path="/misc" component={Projects} />
       </Switch>
     </div>
   );
