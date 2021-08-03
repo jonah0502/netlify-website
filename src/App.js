@@ -207,10 +207,9 @@ function ExperienceAnimationCanvas() {
       <Suspense fallback={null}>
         <ExPage 
       domContent={domContent}
-      position = {95}
+      position = {65}
       bgColor="#F8B195">
 <main >
-<section>      help    </section>
 
 <header>
         <h1>Jonah Biedermann</h1>

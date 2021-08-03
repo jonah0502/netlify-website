@@ -31,12 +31,12 @@ const createAbt = () => {
   const aboutBox = new WinBox({
     title: 'About Me',
     class: "modern",
-    width: '600px',
-    height: '300px',
-    top: 150,
-    right: 50,
-    bottom: 50,
-    left: 250,
+    width: '600vw',
+    height: '300vh',
+    top: "150vh",
+    right: "50vw",
+    bottom: "50vh",
+    left: "250vw",
     mount: document.querySelector('#about-content'),
     onfocus: function () {
       this.setBackground(

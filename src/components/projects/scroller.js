@@ -1,6 +1,6 @@
 import * as THREE from "three"
 import { Canvas, useFrame, useThree, useLoader } from "@react-three/fiber"
-import React, { useEffect, useRef, Suspense } from "react"
+import React, { useEffect, useRef, Suspense, useState } from "react"
 import { ContactShadows, useContextBridge, Sphere, MeshWobbleMaterial, Html } from "@react-three/drei"
 import { A11y, useA11y, A11yAnnouncer, useUserPreferences, A11ySection, A11yUserPreferencesContext } from "@react-three/a11y"
 import { ResizeObserver } from "@juggle/resize-observer"
@@ -9,7 +9,6 @@ import Header from '../header.js'
 import tag from '../../assets/tagSphere.png';
 import MysBox from './Mystery.js'
 import Bulb from './Bulb.js'
-import { EffectComposer, Outline, SelectiveBloom } from '@react-three/postprocessing'
 
   //React.Children.toArray(arrayOfComponents)
 
@@ -24,12 +23,13 @@ const geometries = [
 
 function ToggleButton(props) {
   const a11y = useA11y()
+
+
   return (
     <mesh {...props}>
       <Bulb
-        position = {[13,5,-4]}
+        position = {[10,5,-3]}
         a11y={a11y}
-        meshRef  = {props.meshRef}
       />
     </mesh>
   )
@@ -158,8 +158,6 @@ export default function App() {
   const lightRef = useRef()
   const lightRef2 = useRef()
   const lightRef3 = useRef()
-  const meshRef = useRef()
-
   useEffect(() => {
     state.dark = a11yPrefersState.prefersDarkScheme
     return () => {}
@@ -206,7 +204,7 @@ export default function App() {
                 activationMsg="Lower light disabled"
                 deactivationMsg="Lower light enabled"
                 a11yElStyle={{ marginLeft: "-40px" }}>
-                <ToggleButton position={[0, -3.5, 9]} meshRef = {meshRef} />
+                <ToggleButton position={[0, -3.5, 9]} lightRef = {lightRef} lightRef2 ={lightRef2} lightRef3 ={lightRef3}/>
               </A11y>
             </A11ySection>
           </group>
