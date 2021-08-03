@@ -4,7 +4,7 @@ import pdf from '../assets/myRes.pdf'
 
 export default function Header() {
   return (
-    <div className = "mainNav">
+    <div className = "mainNav" style={{position:"relative"}}>
     <header>
       <div className='header-inner'>
         <div className='logo'>JONAH.</div>

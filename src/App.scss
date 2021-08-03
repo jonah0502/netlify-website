@@ -239,8 +239,15 @@ nav ul li {
 
 }
 
-.mainNav header {
-  position: relative;
+
+.winbox.modern{
+  animation: none !important;
+}
+
+.mainNav 
+
+header {
+  position: absolute;
   z-index: 99;
   width: 75%;
   padding: 2vw;
