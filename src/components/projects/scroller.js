@@ -9,6 +9,7 @@ import Header from '../header.js'
 import tag from '../../assets/tagSphere.png';
 import MysBox from './Mystery.js'
 import Bulb from './Bulb.js'
+import { EffectComposer, Outline, SelectiveBloom } from '@react-three/postprocessing'
 
   //React.Children.toArray(arrayOfComponents)
 
@@ -26,8 +27,9 @@ function ToggleButton(props) {
   return (
     <mesh {...props}>
       <Bulb
-        emissive={a11y.focus ? "#cc4444" : a11y.hover ? "#44bb44" : "#0088ee"}
         position = {[13,5,-4]}
+        a11y={a11y}
+        meshRef  = {props.meshRef}
       />
     </mesh>
   )
@@ -153,6 +155,10 @@ function Carroussel() {
 export default function App() {
   const snap =  useSnapshot(state)
   const { a11yPrefersState } = useUserPreferences()
+  const lightRef = useRef()
+  const lightRef2 = useRef()
+  const lightRef3 = useRef()
+  const meshRef = useRef()
 
   useEffect(() => {
     state.dark = a11yPrefersState.prefersDarkScheme
@@ -181,9 +187,9 @@ export default function App() {
 
       <Canvas resize={{ polyfill: ResizeObserver }} camera={{ position: [0, 0, 15], near: 4, far: 30 }} pixelRatio={[1, 1.5]}>
         <ContextBridge>
-          <pointLight position={[100, 100, 100]} intensity={0.5} />
-          <pointLight position={[-100, -100, -100]} intensity={1.5} color={snap.dark ? "#ccffcc" : "#00ffff"} />
-          <ambientLight intensity={0.8} />
+          <pointLight position={[100, 100, 100]} intensity={0.5} ref={lightRef} />
+          <pointLight position={[-100, -100, -100]} intensity={1.5} ref={lightRef2} color={snap.dark ? "#ccffcc" : "#00ffff"} />
+          <ambientLight intensity={0.8} ref={lightRef3} />
           
           <group position-y={0.7}>
             <A11ySection
@@ -200,7 +206,7 @@ export default function App() {
                 activationMsg="Lower light disabled"
                 deactivationMsg="Lower light enabled"
                 a11yElStyle={{ marginLeft: "-40px" }}>
-                <ToggleButton position={[0, -3.5, 9]} />
+                <ToggleButton position={[0, -3.5, 9]} meshRef = {meshRef} />
               </A11y>
             </A11ySection>
           </group>
