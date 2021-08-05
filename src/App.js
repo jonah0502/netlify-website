@@ -92,7 +92,9 @@ function HomeAnimationCanvas() {
       domContent={domContent}
       position = {0}
       bgColor='#000000'>
-      <h1 className = "abtMe"><span>About Me</span></h1>
+      <p style={{color: "black"}}>About Me</p>
+      <br/>
+      <br/>
       <AbtButtons />
       </AboutMe>
       </Suspense>

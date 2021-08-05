@@ -8,7 +8,7 @@ import Alien from "./Alien.js"
 
 import url from '../../assets/Strobe.mp4'
 // R3F
-import { useFrame, useLoader } from "@react-three/fiber";
+import { useFrame, useLoader, useThree } from "@react-three/fiber";
 import { Html, Box, Stars, Sphere } from "@react-three/drei";
 //Components
 import { Section } from "./hSection";
@@ -22,7 +22,8 @@ export default function AbtMe ({domContent, position, children, bgColor, starRef
     const sphereRef = useRef();
     const moonTexture = useLoader(THREE.TextureLoader, moon)
     const normals = useLoader(THREE.TextureLoader, normal);
-
+    const { viewport } = useThree()
+    const scaleVal = viewport.width / 205
     const [video] = useState(() => {
       const vid = document.createElement("video");
       vid.src = url;
@@ -44,8 +45,11 @@ export default function AbtMe ({domContent, position, children, bgColor, starRef
       <Section factor={1.5} offset={1} >
         
         <Html fullscreen portal={domContent} position={[0, position -30, 0]}>
-          <div id="AbtMe" className = "container">
-               {children}
+        <div className= "text">
+
+          <div id="Home" className = "container home">
+              <div className="title">{children}</div>
+            </div>
             </div>
           </Html>
         <group position={[0, position, 0]}>
@@ -73,7 +77,7 @@ export default function AbtMe ({domContent, position, children, bgColor, starRef
 
         <mesh  position={[0, 5, 0]}>
 
-        <Box ref={boxRef} args={[17, 17, 17]} radius={0} position={[55, 10, 32]} rotation={[0,0,0]}>
+        <Box ref={boxRef} args={[32, 32, 32]} radius={0} position={[30, 8, 0]} rotation={[0,0,0]}>
           <meshStandardMaterial emissive={"white"} side={THREE.DoubleSide}>
           <videoTexture attach="map" args={[video]} />
           <videoTexture attach="emissiveMap" args={[video]} />

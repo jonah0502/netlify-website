@@ -16,7 +16,8 @@ import Skybox from './Skybox.js'
 export default function Homepage ({domContent, position, children}) {
     const ref = useRef();
     const spaceMan = useRef();
-
+    // const { viewport } = useThree()
+  //const scaleVal = viewport.width / 15
     useFrame(() => (
       ref.current.rotation.y += 0.002,
       spaceMan.current.rotation.y += 0.005

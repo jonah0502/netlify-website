@@ -49,6 +49,16 @@ nav ul li {
     margin: 0 auto;
     color: #fff;
   }
+  @media only screen and (max-width: 600px) {
+    .title {
+      font-size: 5rem;
+      text-align: center;
+      width: 75%;
+      margin: 0 auto;
+      color: #fff;
+    }
+  
+  }
 
   .container {
     margin: auto;
@@ -72,7 +82,7 @@ nav ul li {
   font-size: 10rem;
   text-align: center;
   width: 75%;
-  margin-left:25% ;
+  margin-left:10% ;
   color: #fff;
   span {
     display: block;
@@ -297,7 +307,7 @@ header {
     display: block;
   }
   @media (max-width: 1440px) {
-    font-size: 6rem;
+    font-size: 3rem;
   }
 }
 .loader{
