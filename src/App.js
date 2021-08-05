@@ -10,21 +10,21 @@ import { ResizeObserver } from "@juggle/resize-observer"
 
 //Home Components
 import Header from "./components/header";
-import Homepage from "./components/homepage/home.js"
+import Homepage from "./components/about/home.js"
 import Loader from "./components/loader.js"
-import AboutMe from "./components/homepage/about-me.js"
-import Form from "./components/homepage/form.js"
-import AbtButtons from "./components/homepage/AbtButton.js"
+import AboutMe from "./components/about/about-me.js"
+import Form from "./components/about/form.js"
+import AbtButtons from "./components/about/AbtButton.js"
 import ButtonText from "./components/buttonText.js"
 
 
 //newHome components
-import newHome from "./components/newHome/App.js"
+import newHome from "./components/projects/App.js"
 
 
 
 // Page State
-import hState from "./components/homepage/homeState.js";
+import hState from "./components/about/homeState.js";
 import eState from "./components/experience/eState.js";
 
 
@@ -32,7 +32,7 @@ import eState from "./components/experience/eState.js";
 
 import ExPage from "./components/experience/page.js";
 
-import Scroller from "./components/projects/scroller.js"
+import Scroller from "./components/home/scroller.js"
 
 const Lights = () => {
   return (
