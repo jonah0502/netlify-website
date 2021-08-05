@@ -10,6 +10,7 @@ import tag from '../../assets/tagSphere.png';
 import MysBox from './Mystery.js'
 import Bulb from './Bulb.js'
 import Loader from "../loader.js"
+import "../../App.scss";
 
   //React.Children.toArray(arrayOfComponents)
 
@@ -169,11 +170,11 @@ export default function App() {
   }, [a11yPrefersState.prefersReducedMotion])
 
   const ContextBridge = useContextBridge(A11yUserPreferencesContext)
-  if(!state.dark){
+  if(!state.dark && document.getElementsByTagName('a')[0]){
     for (const x of Array(4).keys()) { (document.getElementsByTagName('a')[x].style.color = "black");}
     document.getElementsByClassName('logo')[0].style.color = "black"
   }
-  else{
+  else if(state.dark && document.getElementsByTagName('a')[0]){
     for (const x of Array(4).keys()) { (document.getElementsByTagName('a')[x].style.color = "white");}
     document.getElementsByClassName('logo')[0].style.color = "white"
   }
@@ -183,6 +184,7 @@ export default function App() {
 
     <div id = "scroller">
     <main className={snap.dark ? "dark" : "bright"} >
+
       <Canvas resize={{ polyfill: ResizeObserver }} camera={{ position: [0, 0, 15], near: 4, far: 30 }} pixelRatio={[1, 1.5]}>
         <ContextBridge>
           <pointLight position={[100, 100, 100]} intensity={0.5} ref={lightRef} />

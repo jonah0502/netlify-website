@@ -36,8 +36,8 @@ export default function Homepage ({domContent, position, children}) {
         
         <Html fullscreen portal={domContent} position={[0,position - 75,0]}>
         <div className= "text">
-          <div id="Home" classname = "container home">
-               <h1 className="title">{children}</h1>
+          <div id="Home" className = "container home">
+               <div className="title">{children}</div>
             </div>
             </div>
           </Html>

@@ -26,8 +26,8 @@ export default function Header() {
             </Link>             
             </li>
             <li>
-              <Link to={"/misc"} className="nav-link"> 
-                Misc 
+              <Link to={"/about"} className="nav-link"> 
+                about 
               </Link>
             </li>
             <li className='btn'>

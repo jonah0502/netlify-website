@@ -17,31 +17,22 @@ import Form from "./components/homepage/form.js"
 import AbtButtons from "./components/homepage/AbtButton.js"
 import ButtonText from "./components/buttonText.js"
 
+
+//newHome components
+import newHome from "./components/newHome/App.js"
+
+
+
 // Page State
 import hState from "./components/homepage/homeState.js";
-import pState from "./components/projects/pState.js";
 import eState from "./components/experience/eState.js";
-import mState from "./components/misc/mState.js";
 
 
 //Experience stuff
 
 import ExPage from "./components/experience/page.js";
 
-import ExTop from "./components/experience/TA.js";
-
-
-
-//Projects Page Stuff
-
-import TagFlix from "./components/projects/tagFlix.js"
-import TagButtons from "./components/projects/TagButton.js"
-
 import Scroller from "./components/projects/scroller.js"
-
-//Misc page stuff
-
-import Page from "./components/misc/Page.js";
 
 const Lights = () => {
   return (
@@ -127,57 +118,6 @@ function Home() {
     <div className="anim">
       <Header />
         <HomeAnimationCanvas  />
-    </div>
-  );
-}
-
-function ProjectAnimationCanvas() {
-  const [events, setEvents] = useState();
-  const domContent = useRef();
-  const scrollArea = useRef();
-  const onScroll = (e) => (pState.top.current = e.target.scrollTop);
-  useEffect(() => void onScroll({ target: scrollArea.current }), []);
-  return (
-    <>
-    <Canvas
-      concurrent
-      colorManagement
-      camera={{ position: [100, 10, 0], fov: 75 }}
-      resize={{ polyfill: ResizeObserver }} 
-    >
-    <Lights />
-
-      <Suspense fallback={null}>
-        <TagFlix 
-      domContent={domContent}
-      position = {240}
-      bgColor='#f8f8ff'>
-      <h1 className = "title" style = {{color:"black"}}><span>TagFlix</span></h1>
-      <TagButtons />
-        </TagFlix>
-      </Suspense>
-    </Canvas>
-    <Loader />
-    <ButtonText />
-    
-          <div
-          className='scrollArea'
-          ref={scrollArea}
-          onScroll={onScroll}
-          {...events}>
-          <div style={{ position: "sticky", top: 0 }} ref={domContent} />
-          <div style={{ height: `${pState.sections * 100}vh` }} />
-        </div>
-      </>
-  );
-}
-
-function Projects() {
-  return (
-
-    <div className="anim">
-      <Header />
-        <ProjectAnimationCanvas  />
     </div>
   );
 }
@@ -310,70 +250,17 @@ function Experience() {
 }
 
 
-function MiscAnimationCanvas() {
-  const [events, setEvents] = useState();
-  const domContent = useRef();
-  const scrollArea = useRef();
-  const onScroll = (e) => (mState.top.current = e.target.scrollTop);
-  useEffect(() => void onScroll({ target: scrollArea.current }), []);
-  return (
-    <>
-    <Canvas
-      concurrent
-      colorManagement
-      camera={{ position: [100, 10, 0], fov: 75 }}
-      resize={{ polyfill: ResizeObserver }} 
-    >
-    <Lights />
-
-      <Suspense fallback={null}>
-        <Page 
-      domContent={domContent}
-      position = {200}
-      bgColor='#f8f8ff'>
-      <h1 className = "title" style = {{color:"black"}}><span>Something</span></h1>
-        </Page>
-      </Suspense>
-    </Canvas>
-    <Loader />
-    <ButtonText />
-    
-          <div
-          className='scrollArea'
-          ref={scrollArea}
-          onScroll={onScroll}
-          {...events}>
-          <div style={{ position: "sticky", top: 0 }} ref={domContent} />
-          <div style={{ height: `${mState.sections * 100}vh` }} />
-        </div>
-      </>
-  );
-}
-
-function Misc() {
-  return (
-
-    <div className="anim">
-      <Suspense fallback={<div><h1>Loading...</h1></div>}>
-      <Header />
-        <MiscAnimationCanvas  />
-      </Suspense>
-    </div>
-  );
-}
 
 
 
 export default function App() {
   return (
-    <div>
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/projects" component={Scroller} />
+        <Route path="/" exact component={Scroller} />
+        <Route path="/projects" component={newHome} />
         <Route path="/page1" component={Form} />
         <Route path="/experience" component={Experience} />
-        <Route path="/misc" component={Projects} />
+        <Route path="/about" component={Home} />
       </Switch>
-    </div>
   );
 }
