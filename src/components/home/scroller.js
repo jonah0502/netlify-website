@@ -25,12 +25,14 @@ const geometries = [
 
 function ToggleButton(props) {
   const a11y = useA11y()
+  const viewport = useThree((state) => state.viewport)
 
 
   return (
     <mesh {...props}>
       <Bulb
-        position = {[10,5,-3]}
+        scale = {[0.75, 0.75, 0.75]}
+        position = {[viewport.width/5,viewport.height/4,-3]}
         a11y={a11y}
       />
     </mesh>

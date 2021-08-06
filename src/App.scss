@@ -496,7 +496,7 @@ header {
 
   $red: #e20001;
   $black: #191919;
-  
+  .hamburger{
   .container {
     width: 1280px;
     min-width: 1280px;
@@ -524,6 +524,7 @@ header {
       }
     }
   }
+}
   .hamburger{
     header {
       height: 100px;
@@ -608,6 +609,9 @@ header {
               align-items: center;
               position: relative;
               top: 50px;
+              @media only screen and (max-width: 600px) {
+                top: 100px;
+              }
               nav {
                 display: block;
                 ul {
@@ -615,6 +619,10 @@ header {
                   margin-bottom: 0;
                   flex-direction: column;
                   margin-left: 88%;
+                  @media only screen and (max-width: 600px) {
+                    left:30px;
+                    font-size: 3rem;
+                  }
                   li {
                     list-style: none;
                     font-size: 6rem;
@@ -624,6 +632,12 @@ header {
                     position: relative;
                     width: 700px;
                     overflow: hidden;
+                    @media only screen and (max-width: 600px) {
+                      font-size: 3rem;
+                      margin: 0;
+                      padding:0
+                    }
+
                     a {
                       position: absolute;
                       color: #fff;
