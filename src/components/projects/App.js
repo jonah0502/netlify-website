@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber"
 import { Environment } from "@react-three/drei"
 import Model from "./Model"
 import Overlay from "./Overlay"
-import Header from "../header.js"
+import Header from "../header/Header.js";
 
 export default function App() {
   const overlay = useRef()

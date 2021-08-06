@@ -9,7 +9,7 @@ import { Canvas} from "@react-three/fiber";
 import { ResizeObserver } from "@juggle/resize-observer"
 
 //Home Components
-import Header from "./components/header";
+import Header from "./components/header/Header.js";
 import Homepage from "./components/about/home.js"
 import Loader from "./components/loader.js"
 import AboutMe from "./components/about/about-me.js"

@@ -5,7 +5,7 @@ import { ContactShadows, useContextBridge, Sphere, MeshWobbleMaterial, Html } fr
 import { A11y, useA11y, A11yAnnouncer, useUserPreferences, A11ySection, A11yUserPreferencesContext } from "@react-three/a11y"
 import { ResizeObserver } from "@juggle/resize-observer"
 import { proxy, useSnapshot } from "valtio"
-import Header from '../header.js'
+import Header from "../header/Header.js";
 import tag from '../../assets/tagSphere.png';
 import MysBox from './Mystery.js'
 import Bulb from './Bulb.js'
@@ -170,13 +170,11 @@ export default function App() {
   }, [a11yPrefersState.prefersReducedMotion])
 
   const ContextBridge = useContextBridge(A11yUserPreferencesContext)
-  if(!state.dark && document.getElementsByTagName('a')[0]){
-    for (const x of Array(4).keys()) { (document.getElementsByTagName('a')[x].style.color = "black");}
-    document.getElementsByClassName('logo')[0].style.color = "black"
+  if(!state.dark && document.getElementsByClassName('inner-header')[0]){
+    document.getElementsByClassName('inner-header')[0].style.color = "black";
   }
-  else if(state.dark && document.getElementsByTagName('a')[0]){
-    for (const x of Array(4).keys()) { (document.getElementsByTagName('a')[x].style.color = "white");}
-    document.getElementsByClassName('logo')[0].style.color = "white"
+  else if(state.dark && document.getElementsByClassName('inner-header')[0]){
+    document.getElementsByClassName('inner-header')[0].style.color = "white";
   }
   return (
     <Suspense fallback={null}>

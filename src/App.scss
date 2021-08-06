@@ -494,4 +494,204 @@ header {
   }
   
 
+  $red: #e20001;
+  $black: #191919;
+  
+  .container {
+    width: 1280px;
+    min-width: 1280px;
+    margin: 0 auto;
+    .wrapper {
+      padding: 0 48px;
+      .home {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        p {
+          font-size: 0.75rem;
+          letter-spacing: 0.3rem;
+          text-transform: uppercase;
+          font-weight: 500;
+        }
+        h5 {
+          margin-top: 260px;
+          font-size: 24px;
+          font-weight: 600;
+          padding-right: 360px;
+        }
+      }
+    }
+  }
+  .hamburger{
+    header {
+      height: 100px;
+      position: fixed;
+      overflow: hidden;
+      z-index: 99;
+      margin-left: 0;
+      .inner-header {
+        position: fixed;
+        z-index: 10;
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        left: 30px;
+        color: white;
+        .logo a {
+          font-weight: 700;
+          font-size: 1rem;
+          text-decoration: none;
+          color: inherit;
+        }
+        .menu {
+          position: fixed;
+          right: 30px;
+          button {
+            border: none;
+            background: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 0.8rem;
+            mix-blend-mode: difference;
+            width: 70%;
+          }
+        }
+      }
+      .hamburger-menu {
+        display: none;
+        z-index: 9;
+        top: 0;
+        left: 0;
+        right: 0;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        .menu-secondary-background-color {
+          background: $black;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          position: fixed;
+          height: 100%;
+          width: 100%;
+          z-index: -1;
+        }
+        .menu-layer {
+          position: relative;
+          background: $red;
+          height: 100%;
+          overflow: hidden;
+          .menu-city-background {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            background-size: cover;
+            background-repeat: no-repeat;
+            animation-name: backgroundEffect;
+            animation-duration: 30s;
+            animation-iteration-count: infinite;
+          }
+          .wrapper {
+            position: relative;
+            .menu-links {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              position: relative;
+              top: 50px;
+              nav {
+                display: block;
+                ul {
+                  padding: 0;
+                  margin-bottom: 0;
+                  flex-direction: column;
+                  margin-left: 88%;
+                  li {
+                    list-style: none;
+                    font-size: 6rem;
+                    font-weight: 700;
+                    cursor: pointer;
+                    height: 135px;
+                    position: relative;
+                    width: 700px;
+                    overflow: hidden;
+                    a {
+                      position: absolute;
+                      color: #fff;
+                      text-decoration: none;
+                      &:hover {
+                        color: $black;
+                      }
+                    }
+                  }
+                }
+              }
+              .info {
+                color: #fff;
+                width: 300px;
+                h3 {
+                  font-size: 1.2rem;
+                  margin: 8px auto;
+                }
+                p {
+                  margin: 0 auto;
+                  font-size: 0.8rem;
+                }
+              }
+            }
+            .locations {
+              position: absolute;
+              bottom: -80px;
+              color: #fff;
+              margin-top: 16px;
+              font-size: 0.8rem;
+              font-weight: 600;
+              span {
+                cursor: pointer;
+                &:first-child {
+                  margin-left: 64px;
+                }
+                font-weight: 400;
+                margin: 0 32px;
+                transition: 0.3s ease-in-out;
+                &:hover {
+                  color: #fff;
+                  background: $black;
+                  padding: 8px 24px;
+                  border-radius: 4px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }  
+  }
+    
+  @keyframes backgroundEffect {
+    0% {
+      background-position: 0% 0%;
+    }
+    25% {
+      background-position: 40% 10%;
+    }
+    50% {
+      background-position: 0 10%;
+    }
+    75% {
+      background-position: 10% 40%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
 
