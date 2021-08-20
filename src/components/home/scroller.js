@@ -11,6 +11,8 @@ import MysBox from './Mystery.js'
 import Bulb from './Bulb.js'
 import Briefcase from './Briefcase.js'
 import Computer from './Computer.js'
+import Resume from './Resume.js'
+import pdf from '../../assets/myRes.pdf'
 
 import Loader from "../loader.js"
 import Text from './Text'
@@ -159,11 +161,8 @@ function Shape({ index, active, ...props }) {
         </>}
         {index === 4 &&
         <>
-     <A11y role="link" href="/about"  actionCall={() =>  window.appHistory.push("/about") } >
-        <MysBox
-         scale = {[0.06, 0.06, 0.06]}
-         emissive={a11yPrefersState.prefersDarkScheme ? "#001166" : "#009999"}
-         />
+     <A11y role="link" href={pdf} actionCall={() =>  {const win = window.open(pdf, "_blank"); win.focus();}}>
+        <Resume scale={[10,10,10]}/>
         </A11y>
         </>}
     </mesh>
@@ -236,7 +235,9 @@ export default function App() {
   }
   return (
     <Suspense fallback={null}>
+      
     <Header />
+    <Loader/>
 
     <div id = "scroller">
     <main className={snap.dark ? "dark" : "bright"} >
@@ -268,7 +269,6 @@ export default function App() {
           </group>
         </ContextBridge>
       </Canvas>
-      <Loader/>
       <A11yAnnouncer />
     </main>
     </div>
