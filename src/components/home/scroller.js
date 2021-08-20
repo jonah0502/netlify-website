@@ -9,10 +9,28 @@ import Header from "../header/Header.js";
 import tag from '../../assets/tagSphere.png';
 import MysBox from './Mystery.js'
 import Bulb from './Bulb.js'
+import Briefcase from './Briefcase.js'
+import Computer from './Computer.js'
+
 import Loader from "../loader.js"
+import Text from './Text'
 import "../../App.scss";
+import { useHistory, BrowserRouter as Router, Link } from "react-router-dom";
 
   //React.Children.toArray(arrayOfComponents)
+  
+  function Jumbo() {
+    const ref = useRef()
+    useFrame(({ clock }) => (ref.current.rotation.x = ref.current.rotation.y = ref.current.rotation.z = Math.sin(clock.getElapsedTime()) * 0.3))
+    return (
+      <group ref={ref}>
+        <Text hAlign="right" position={[-12, 6.5, 0]} children="JONAHS" />
+        <Text hAlign="right" position={[-12, 0, 0]} children="PORFOLIO" />
+        <Text hAlign="right" position={[-12, -6.5, 0]} children="PAGE" />
+      </group>
+    )
+  }
+
 
 const state = proxy({ dark: false, motionDisabled: false, active: 0, rotation: 0 })
 const geometries = [
@@ -76,16 +94,19 @@ function Diamond({ position, rotation }) {
 function Shape({ index, active, ...props }) {
   const vec = new THREE.Vector3()
   const ref = useRef()
+
+
+
   const snap =  useSnapshot(state)
   const texture = useLoader(THREE.TextureLoader, tag)
 
   useFrame((state, delta) => {
     const s = active ? 2 : 1
     ref.current.scale.lerp(vec.set(s, s, s), snap.motionDisabled ? 1 : 0.1)
-    if (snap.motionDisabled) {
+    if (snap.motionDisabled && index !== 0) {
       ref.current.rotation.y = ref.current.rotation.x = active ? 1.5 : 4
      // ref.current.position.y = 0
-    } else {
+    } else if(index !== 0) {
       ref.current.rotation.y += 0.01
       ref.current.position.y = active ? Math.sin(state.clock.elapsedTime) / 2 - 1.5 : -1.5
     }
@@ -93,25 +114,60 @@ function Shape({ index, active, ...props }) {
   const { a11yPrefersState } = useUserPreferences()
   //note to self: page crashes on refresh and IDK why???
 
-  const renderHTML = () => {
-    if (active) {
+  const RenderHTML = () => {
+    const titles = ["", "Projects", "Experience", "About", "Resume"]
       return (
-      <Html position={[ref.current.position.x -1,6.75,0]}>
+      <Html center position={[0,8,0]}>
       <div className = "container" >
-           <h1>TagFlix</h1>
+           {active && <h1 style = {state.dark? {color:"white"}:{color:"black"}}>{titles[index]}</h1>}
         </div>
       </Html>);
-    }
   }
   return (
     <>
     <mesh rotation-y={index * 2000} ref={ref} {...props}>
+      {index === 0 &&
+      <>
+     <A11y role="link" href="/"  actionCall={() =>  window.appHistory.push("/") } >
+        <Jumbo />
+        </A11y>
+        </>}
+        {index === 1 &&
+        <>
+     <A11y role="link" href="/projects"  actionCall={() =>  window.appHistory.push("/projects") } >
+        <Computer scale = {[8,8,8]} position = {[0,-0.5,0]}/>
+        </A11y>
+        </>
+        }
+        
+        {index === 2 &&
+        <>
+     <A11y role="link" href="/experience"   actionCall={() =>  window.appHistory.push("/experience") } >
+        <Briefcase scale ={[0.045, 0.045, 0.045]} position = {[0,1,0]}/>
+        </A11y>
+        </>
+        }
+        
+        {index === 3 &&
+        <>
+     <A11y role="link" href="/about"  actionCall={() =>  window.appHistory.push("/about") } >
         <MysBox
          scale = {[0.06, 0.06, 0.06]}
          emissive={a11yPrefersState.prefersDarkScheme ? "#001166" : "#009999"}
          />
+        </A11y>
+        </>}
+        {index === 4 &&
+        <>
+     <A11y role="link" href="/about"  actionCall={() =>  window.appHistory.push("/about") } >
+        <MysBox
+         scale = {[0.06, 0.06, 0.06]}
+         emissive={a11yPrefersState.prefersDarkScheme ? "#001166" : "#009999"}
+         />
+        </A11y>
+        </>}
     </mesh>
-    {/*renderHTML()*/}
+    <RenderHTML/>
     </>
   )
 }
@@ -140,8 +196,8 @@ function Carroussel() {
     }
   }
   return (
-    <group ref={group} position = {[-0, 0, 0]}>
-      {["sphere", "pyramid", "donut", "octahedron", "icosahedron"].map((name, i) => (
+    <group ref={group} position = {[0, 0, 0]}>
+      {["Home", "Projects", "Experience", "About", "Resume"].map((name, i) => (
         <A11y key={name} role="content" description={`a ${name}`} tabIndex={-1} hidden={snap.active !== i}>
           <Shape
             index={i}

@@ -107,17 +107,13 @@ const Hamburger = ({ state }) => {
                 </ul>
               </nav>
               <div ref={el => (info = el)} className='info'>
-                <h3>Our Promise</h3>
+                <h3>Porfolio Page</h3>
                 <p>
-                  The passage experienced a surge in popularity during the 1960s
-                  when Letraset used it on their dry-transfer sheets, and again
-                  during the 90s as desktop publishers bundled the text with
-                  their software.
+                  By Jonah Biedermann
                 </p>
               </div>
-              <div className='locations'>
+              {/*<div className='locations'>
                 Locations:
-                {/* Returning the list of cities */}
                 {cities.map(el => (
                   <span
                     key={el.name}
@@ -126,7 +122,7 @@ const Hamburger = ({ state }) => {
                     {el.name}
                   </span>
                 ))}
-              </div>
+                </div>*/}
             </div>
           </div>
         </div>

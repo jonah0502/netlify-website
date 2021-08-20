@@ -84,9 +84,6 @@ function HomeAnimationCanvas() {
       domContent={domContent}
       position = {265}
       >
-        
-        <p>Portfolio Page</p>
-        <h4>By Jonah Biedermann</h4>
         </Homepage>
         <AboutMe 
       domContent={domContent}
