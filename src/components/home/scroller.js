@@ -115,6 +115,7 @@ function Shape({ index, active, ...props }) {
   })
   const { a11yPrefersState } = useUserPreferences()
   //note to self: page crashes on refresh and IDK why???
+  const viewport = useThree((state) => state.viewport)
 
   const RenderHTML = () => {
     const titles = ["", "Projects", "Experience", "About", "Resume"]

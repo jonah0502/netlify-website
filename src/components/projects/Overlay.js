@@ -22,26 +22,26 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
     </div>
     <div style={{ height: "200vh", zIndex:99 }}>
       <div className="dot">
-        <h1>TagFlix</h1>
+        <h1>Fretboard Alarm App</h1>
           <TagButton/>
       </div>
     </div>
     <div style={{ height: "200vh" }}>
       <div className="dot">
         
-        <h1>Neural Network</h1>
+        <h1>TagFlix</h1>
         <TagButton/>
       </div>
     </div>
     <div style={{ height: "200vh" }}>
       <div className="dot">
-        <h1>Modular Synth</h1>
+        <h1>CNN Classifier</h1>
         <TagButton/>
       </div>
     </div>
     <div style={{ height: "200vh" }}>
       <div className="dot">
-        <h1>Other Thing</h1>
+        <h1>Loom</h1>
         <TagButton/>
       </div>
     </div>

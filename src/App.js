@@ -151,9 +151,10 @@ function ExperienceAnimationCanvas() {
         <p>🚀 My Work Experience!</p>
       </header>
 <section>
-  <h2>📜 URSA Engage Research Internship</h2>
+  <h2>🔬 URSA Engage Research Internship</h2>
+  <h4>February 2021 - June 2021</h4>
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+     During this internship, I studied under Dr. Chet Udell. I set up a web server using React, NodeJS, and Docker. Maintained a MongoDB Database to collect data from Arduino sensors using C/C+. We later migrated the database from MongoDB to AdafuitIO in order to create an Internet of Things (IoT) system for recording and storing data from Dr. Udell’s environmental sensors. I managed a team of volunteer engineers and used MaxMSP and NodeJS to make an Audio-visualization of MongoDB data.
   </p>
 
 </section>
@@ -166,10 +167,17 @@ function ExperienceAnimationCanvas() {
       bgColor=" #F67280">
 <main >
 <section className = "left">
-  <h2>📜 TA Stuff</h2>
+  <h2>👨‍🏫 Data Structures Teaching Assistant</h2>
+  <h4>June 2021 - August 2021</h4>
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    During my time as a teaching assistant I...
   </p>
+  <ul>
+    <li>Held weekly office hours assisting students in debugging programs and answering course-related questions</li>
+    <li>Mastered the CS261 (Data Structures) material set in order to help students to the fullest</li>
+    <li>Graded 200+ students on programming assignments and gave feedback to esure their success with future programming</li>
+    <li>Directed after school weekly study sessions to help student understand and learn difficult data structures and algorithms. </li>
+  </ul>
 
 </section>
 </main>
@@ -181,7 +189,7 @@ function ExperienceAnimationCanvas() {
       bgColor=" #C06C84">
 <main >
 <section>
-  <h2>📜 Frat Stuff</h2>
+  <h2>✡️ Alpha Epsilon Pi Fraternity</h2>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
@@ -196,7 +204,7 @@ function ExperienceAnimationCanvas() {
       bgColor=" #6C5B7B">
 <main >
 <section className = "left">
-  <h2>📜 More Stuff 1</h2>
+  <h2>🤓 STEMbassadors</h2>
   <p>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </p>
@@ -211,10 +219,10 @@ function ExperienceAnimationCanvas() {
       bgColor=" #355C7D">
 <main >
 <section>
-  <h2>📜 More Stuff 2</h2>
+  <h2>🏊‍♂️ Lifeguard</h2>
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  </p>
+    During my time as a lifeguard, I enforced pool rules, taught lessons, rescued drowning swimmers, and cleaned the pool decks and bathrooms. 
+</p>
 
 </section>
 </main>

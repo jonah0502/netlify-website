@@ -170,10 +170,13 @@ nav ul li {
   
   }
   
-  
+  li {
+    list-style-type: circle;
+ }
+ 
   .left {
     grid-column: 6 / 12;
-  }
+    }
   
 }
 @media only screen and (max-width: 600px) {
