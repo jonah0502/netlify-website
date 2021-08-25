@@ -46,10 +46,12 @@ const geometries = [
 function ToggleButton(props) {
   const a11y = useA11y()
   const viewport = useThree((state) => state.viewport)
-
-
+  const bulbRef = useRef()
+  useFrame((state, delta) => {
+    bulbRef.current.position.y = Math.sin(state.clock.elapsedTime) / 3 - 3.5
+  })
   return (
-    <mesh {...props}>
+    <mesh {...props} ref = {bulbRef}>
       <Bulb
         scale = {[0.75, 0.75, 0.75]}
         position = {[viewport.width/5,viewport.height/4,-3]}
@@ -80,8 +82,13 @@ function Nav({ left }) {
 
 function Diamond({ position, rotation }) {
   const a11y = useA11y()
+  const viewport = useThree((state) => state.viewport)
+  //The larger the k, the larger the useful domain.
+  const k = 15
+  const sigmoidNum = 1 / (1 + Math.exp(-viewport.width/k))
+
   return (
-    <mesh position={position} rotation={rotation}>
+    <mesh position={position} rotation={rotation} scale={[sigmoidNum, sigmoidNum, sigmoidNum]}>
       <tetrahedronBufferGeometry />
       <meshStandardMaterial
         metalness={1}
@@ -100,7 +107,6 @@ function Shape({ index, active, ...props }) {
 
 
   const snap =  useSnapshot(state)
-  const texture = useLoader(THREE.TextureLoader, tag)
 
   useFrame((state, delta) => {
     const s = active ? 2 : 1
@@ -116,7 +122,12 @@ function Shape({ index, active, ...props }) {
   const { a11yPrefersState } = useUserPreferences()
   //note to self: page crashes on refresh and IDK why???
   const viewport = useThree((state) => state.viewport)
+  //The larger the k, the larger the useful domain.
+  const k = 15
 
+  const sigmoidNum = 1 / (1 + Math.exp(-viewport.width/k))
+
+  //wrap models in mesh and use sigmoid function to acurately scale
   const RenderHTML = () => {
     const titles = ["", "Projects", "Experience", "About", "Resume"]
       return (
@@ -132,13 +143,17 @@ function Shape({ index, active, ...props }) {
       {index === 0 &&
       <>
      <A11y role="link" href="/"  actionCall={() =>  window.appHistory.push("/") } >
+       <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]}>
         <Jumbo />
+        </mesh>
         </A11y>
         </>}
         {index === 1 &&
         <>
      <A11y role="link" href="/projects"  actionCall={() =>  window.appHistory.push("/projects") } >
-        <Computer scale = {[8,8,8]} position = {[0,-0.5,0]}/>
+     <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]}>
+        <Computer scale = {[7,7,7]} position = {[0,-0.5,0]}/>
+        </mesh>
         </A11y>
         </>
         }
@@ -146,7 +161,9 @@ function Shape({ index, active, ...props }) {
         {index === 2 &&
         <>
      <A11y role="link" href="/experience"   actionCall={() =>  window.appHistory.push("/experience") } >
+     <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]}>
         <Briefcase scale ={[0.045, 0.045, 0.045]} position = {[0,1,0]}/>
+        </mesh>
         </A11y>
         </>
         }
@@ -154,16 +171,21 @@ function Shape({ index, active, ...props }) {
         {index === 3 &&
         <>
      <A11y role="link" href="/about"  actionCall={() =>  window.appHistory.push("/about") } >
+     <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]}>
         <MysBox
          scale = {[0.06, 0.06, 0.06]}
          emissive={a11yPrefersState.prefersDarkScheme ? "#001166" : "#009999"}
          />
+           </mesh>
+
         </A11y>
         </>}
         {index === 4 &&
         <>
      <A11y role="link" href={pdf} actionCall={() =>  {const win = window.open(pdf, "_blank"); win.focus();}}>
-        <Resume scale={[10,10,10]}/>
+     <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]}>
+        <Resume scale={[8,8,8]} position={[0,0.5,0]}/>
+        </mesh>
         </A11y>
         </>}
     </mesh>
