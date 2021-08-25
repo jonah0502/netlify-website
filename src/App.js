@@ -154,8 +154,13 @@ function ExperienceAnimationCanvas() {
   <h2>🔬 URSA Engage Research Internship</h2>
   <h4>February 2021 - June 2021</h4>
   <p>
-     During this internship, I studied under Dr. Chet Udell. I set up a web server using React, NodeJS, and Docker. Maintained a MongoDB Database to collect data from Arduino sensors using C/C+. We later migrated the database from MongoDB to AdafuitIO in order to create an Internet of Things (IoT) system for recording and storing data from Dr. Udell’s environmental sensors. I managed a team of volunteer engineers and used MaxMSP and NodeJS to make an Audio-visualization of MongoDB data.
+     Under the mentorship of Dr. Chet Udell I...
   </p>
+  <ul>
+    <li>set up a web server using React, NodeJS, and Docker in order to add MQTT and MongoDB functionality to Loom.</li>
+    <li>Maintained a MongoDB Database to collect and store data from Arduino sensors using C/C+.</li>
+    <li>I managed a team of volunteer engineers and used MaxMSP and NodeJS to make an Audio-visualization of MongoDB data.</li>
+  </ul>
 
 </section>
 </main>
@@ -190,9 +195,26 @@ function ExperienceAnimationCanvas() {
 <main >
 <section>
   <h2>✡️ Alpha Epsilon Pi Fraternity</h2>
+  <h4>September 2019 - Current</h4>
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    During my time with Alpha Epsilon Pi, I was able to...
   </p>
+  <ul>
+    <li>Seize opportunity to Successfully grew membership by 30%</li>
+    <li> Regualrly volunteer at our local Hillel</li>
+    <li>regularly serve in food kitchens</li>
+    <li>raise $3,000 for charity a year in our annual AE Puppies philantrophy which also resulted in many shelter dogs getting adopted.</li>
+  </ul>
+  <p>
+    Positions Held (in order of most recent): 
+  </p>
+  <ul>
+    <li>Vice President (current) </li>
+    <li>Sentiniel</li>
+    <li>Scribe</li>
+    <li>Philantrophy Chair</li>
+    <li>Social Media Chair</li>
+  </ul>
 
 </section>
 </main>
@@ -205,8 +227,9 @@ function ExperienceAnimationCanvas() {
 <main >
 <section className = "left">
   <h2>🤓 STEMbassadors</h2>
+  <h4>December 2021 - June 2021</h4>
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Built, distributed, and taught once restricted technologies to non-engineering students at OSU such as CNC Routers, Laser Cutters, and 3D Printers. Specifically with the focus of facilitating their use within the arts. 
   </p>
 
 </section>
@@ -220,6 +243,7 @@ function ExperienceAnimationCanvas() {
 <main >
 <section>
   <h2>🏊‍♂️ Lifeguard</h2>
+  <h4>June 2016 - August 2019</h4>
   <p>
     During my time as a lifeguard, I enforced pool rules, taught lessons, rescued drowning swimmers, and cleaned the pool decks and bathrooms. 
 </p>

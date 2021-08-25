@@ -4,6 +4,8 @@ import { Environment, } from "@react-three/drei"
 import Model from "./Model"
 import Overlay from "./Overlay"
 import Header from "../header/Header.js";
+import Loader from "../loader.js"
+
 
 export default function App() {
   const overlay = useRef()
@@ -11,6 +13,7 @@ export default function App() {
   const scroll = useRef(0)
   return (
     <>
+    <Loader/>
     <Header/>
       <Canvas
         shadows

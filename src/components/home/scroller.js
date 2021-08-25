@@ -47,14 +47,18 @@ function ToggleButton(props) {
   const a11y = useA11y()
   const viewport = useThree((state) => state.viewport)
   const bulbRef = useRef()
+  const k = 20
+  const sigmoidNum = 1 / (1 + Math.exp(-viewport.width/k))
+
   useFrame((state, delta) => {
-    bulbRef.current.position.y = Math.sin(state.clock.elapsedTime) / 3 - 3.5
+    bulbRef.current.rotation.y += 0.01
+    bulbRef.current.position.y = Math.sin(state.clock.elapsedTime) / 15   - 4
   })
   return (
-    <mesh {...props} ref = {bulbRef}>
+    <mesh {...props} ref = {bulbRef} scale = {[sigmoidNum, sigmoidNum, sigmoidNum]}>
       <Bulb
-        scale = {[0.75, 0.75, 0.75]}
-        position = {[viewport.width/5,viewport.height/4,-3]}
+        scale = {[0.6, 0.6, 0.6]}
+        position = {[0 ,0,0]}
         a11y={a11y}
       />
     </mesh>
@@ -257,10 +261,12 @@ export default function App() {
     document.getElementsByClassName('inner-header')[0].style.color = "white";
   }
   return (
+    <>
+    <Loader/>
+
     <Suspense fallback={null}>
       
     <Header />
-    <Loader/>
 
     <div id = "scroller">
     <main className={snap.dark ? "dark" : "bright"} >
@@ -296,5 +302,6 @@ export default function App() {
     </main>
     </div>
     </Suspense>
+    </>
   )
 }
