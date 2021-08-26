@@ -33,8 +33,8 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         <NewButtons
         tag = "#Fretboard-About"
         title = "Fretboard Alarm"
-        github = "github.com"
-        visit = "design-den.org"
+        github = "https://lh3.googleusercontent.com/proxy/3t6e67NH-20iYARYuxcBSFYgxVNrCa7Ct_y3dBWLLhVFJa-FyiwkJFZRZk6L3RhGDsr03trN7OdrCKHqp1mUJ6ZMSmnchptm_Ycrp0WNc1Rc289hH7IrGQ4"
+        visit = "https://lh3.googleusercontent.com/proxy/3t6e67NH-20iYARYuxcBSFYgxVNrCa7Ct_y3dBWLLhVFJa-FyiwkJFZRZk6L3RhGDsr03trN7OdrCKHqp1mUJ6ZMSmnchptm_Ycrp0WNc1Rc289hH7IrGQ4"
         hexcolor_1 = "#c29161"
         hexcolor_2 = "#e9e630"
         />
@@ -46,9 +46,9 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         <h1>TagFlix</h1>
         <NewButtons
         tag = "#TagFlix-About"
-        title = "Design-Den"
-        github = "github.com"
-        visit = "design-den.org"
+        title = "TagFlix"
+        github = "https://github.com/jonah0502/tagFlix"
+        visit = "https://tagflix1.herokuapp.com/"
         hexcolor_1 = "#275c12"
         hexcolor_2 = "#758548"
         />
@@ -59,9 +59,9 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         <h1>Loom</h1>
         <NewButtons
         tag = "#Loom-About"
-        title = "Design-Den"
-        github = "github.com"
-        visit = "design-den.org"
+        title = "Loom"
+        github = "https://github.com/OPEnSLab-OSU/Loom/"
+        visitBool = {false}
         hexcolor_1 = "#8ba168"
         hexcolor_2 = "#b90708"
         />
@@ -69,12 +69,12 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
     </div>
     <div style={{ height: "200vh" }}>
       <div className="dot">
-        <h1>This Website</h1>
+        <h1>Porfolio Website</h1>
         <NewButtons
-        tag = "#TagFlix-About"
-        title = "Design-Den"
-        github = "github.com"
-        visit = "design-den.org"
+        tag = "#Portfolio-About"
+        title = "This Website"
+        github = "https://github.com/jonah0502/netlify-website"
+        visit = "https://jonahportfolio.com/"
         hexcolor_1 = "#35cd43"
         hexcolor_2 = "#09ef56"
         />
@@ -84,10 +84,10 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
       <div className="dot">
         <h1>Review Sentiment Analysis</h1>
         <NewButtons
-        tag = "#TagFlix-About"
-        title = "Design-Den"
-        github = "github.com"
-        visit = "design-den.org"
+        tag = "#RSA-About"
+        title = "Review Sentiment Analysis"
+        github = "https://lh3.googleusercontent.com/proxy/3t6e67NH-20iYARYuxcBSFYgxVNrCa7Ct_y3dBWLLhVFJa-FyiwkJFZRZk6L3RhGDsr03trN7OdrCKHqp1mUJ6ZMSmnchptm_Ycrp0WNc1Rc289hH7IrGQ4"
+        visitBool = {false}
         hexcolor_1 = "#9a455a"
         hexcolor_2 = "#ee325d"
         />
@@ -95,12 +95,12 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
     </div>
     <div style={{ height: "200vh" }}>
       <div className="dot">
-        <h1>Rasberry Pi IoT Project</h1>
+        <h1>Rasberry Pi Guitar Pedal</h1>
         <NewButtons
-        tag = "#TagFlix-About"
-        title = "Design-Den"
-        github = "github.com"
-        visit = "design-den.org"
+        tag = "#RPi-About"
+        title = "Rasberry Pi Guitar Pedal"
+        github = "https://lh3.googleusercontent.com/proxy/3t6e67NH-20iYARYuxcBSFYgxVNrCa7Ct_y3dBWLLhVFJa-FyiwkJFZRZk6L3RhGDsr03trN7OdrCKHqp1mUJ6ZMSmnchptm_Ycrp0WNc1Rc289hH7IrGQ4"
+        visitBool = {false}
         hexcolor_1 = "#a8f2cc"
         hexcolor_2 = "#1eebd9"
         />

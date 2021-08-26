@@ -156,7 +156,7 @@ function Shape({ index, active, ...props }) {
         <>
      <A11y role="link" href="/projects"  actionCall={() =>  window.appHistory.push("/projects") } >
      <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]}>
-        <Computer scale = {[7,7,7]} position = {[0,-0.5,0]}/>
+        <Computer scale = {[6,6,6]} position = {[0,-0.5,0]}/>
         </mesh>
         </A11y>
         </>

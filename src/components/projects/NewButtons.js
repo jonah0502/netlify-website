@@ -9,7 +9,7 @@ import { Github } from 'react-bootstrap-icons';
 //      <li><Button variant="outline-light" onClick={() => handleClick({pdf})}>Resume</Button>{' '}</li>
 
 
-const NavBoxes = ({tag, title, github, visit, hexcolor_1, hexcolor_2}) => {
+const NavBoxes = ({tag, title, github, visit, hexcolor_1, hexcolor_2, visitBool}) => {
 
   const history = useHistory();
   function handleClick(path) {
@@ -51,12 +51,11 @@ const createBtn = () => {
 return(
   <Router>
 
-<nav className = "header tFlix">
-  <ul>
+<nav>
+  <ul className = {visitBool === false ? "onlytwo": "thing"}>
   <li><Button variant="outline-light" onClick={createBtn}>About</Button>{' '}</li>
   <li> <a className="btn btn-outline-light"  target="_blank" href={github}> <Github size={25} /></a></li>
-  <li> <a className="btn btn-outline-light"  target="_blank" href={visit}>Visit</a>
-</li>  
+  {visitBool != false && <li> <a className="btn btn-outline-light"  target="_blank" href={visit}>Visit</a></li>}  
 </ul>
 </nav>
 </Router>

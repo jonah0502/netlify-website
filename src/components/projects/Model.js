@@ -49,32 +49,32 @@ export default function Model({ scroll, ...props }) {
         onPointerOut={(e) => (e.stopPropagation(), set(null))}
         position={[0.06, 4.04, 0.35]}
         scale={[0.25, 0.25, 0.25]}>
-          <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {1}>
-            <MysBox name="Box"  scale={scaleArr} position={[5,-13,30]}/>
+          <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {1} position={[5,-13,30]}>
+            <MysBox name="Box"  scale={scaleArr} />
           </mesh>
 
-          <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {3}>
-            <MysBox name="Box2"  scale={scaleArr} position={[32,-2,13]}/>
+          <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {3} position={[32,-2,13]}>
+            <MysBox name="Box2"  scale={scaleArr} />
           </mesh>
 
-          <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {7}>
-            <MysBox name="Box3" scale={scaleArr} position={[28,7,-10]}/>
+          <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {7} position={[28,7,-10]}>
+            <MysBox name="Box3" scale={scaleArr}/>
           </mesh>
 
-          <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {2}>
-           <MysBox name="Box4" scale={scaleArr} position={[15,16,-25]}/>
+          <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {2}  position={[15,16,-25]}>
+           <MysBox name="Box4" scale={scaleArr}/>
           </mesh>
 
-          <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {5}>
-            <MysBox name="Box5" scale={scaleArr} position={[-10,20,-45]}/>
+          <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {5}  position={[-10,20,-45]}>
+            <MysBox name="Box5" scale={scaleArr}/>
           </mesh>
 
-          <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {4}>
-           <MysBox name="Box6" scale={scaleArr} position={[-30,30,-17]}/>
+          <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {4}  position={[-30,30,-17]}>
+           <MysBox name="Box6" scale={scaleArr}/>
           </mesh>
 
-          <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {6}>
-           <MysBox name="Box7" scale={scaleArr} position={[-25,48, 20]}/>
+          <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {6} position={[-25,48, 20]}>
+           <MysBox name="Box7" scale={scaleArr}/>
           </mesh>
 
       </group>
