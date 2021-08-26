@@ -9,7 +9,7 @@ import { Github } from 'react-bootstrap-icons';
 //      <li><Button variant="outline-light" onClick={() => handleClick({pdf})}>Resume</Button>{' '}</li>
 
 
-const NavBoxes = () => {
+const NavBoxes = ({tag, title, github, visit, hexcolor_1, hexcolor_2}) => {
 
   const history = useHistory();
   function handleClick(path) {
@@ -27,9 +27,9 @@ const NavBoxes = () => {
 
 //}
 
-const createAbt = () => {
-  const aboutBox = new WinBox({
-    title: 'About Tagflix',
+const createBtn = () => {
+  const newBox = new WinBox({
+    title: `About ${title}`,
     class: "modern",
     width: '600px',
     height: '300px',
@@ -37,34 +37,11 @@ const createAbt = () => {
     right: 50,
     bottom: 50,
     left: 250,
-    mount: document.querySelector('#TagFlix-About'),
+    mount: document.querySelector(tag),
     onfocus: function () {
       this.setBackground(
-    `linear-gradient(90deg, #8b0000 
-      0%, #ffcccb 100%)`)
-    },
-    onblur: function () {
-      this.setBackground('#777')
-    },
-  })
-}
-
-const createContact = () => {
-
-  const contactBox = new WinBox({
-    title: 'Contact Me',
-    width: '600px',
-    class: "modern",
-    height: '200px',
-    top: 150,
-    right: 50,
-    bottom: 50,
-    left: 265,
-    mount: document.querySelector('#contact-content'),
-    onfocus: function () {
-        this.setBackground(
-            `linear-gradient(90deg, rgba(49,36,239,1) 
-              0%, rgba(67,0,168,1) 100%)`)
+    `linear-gradient(90deg, ${hexcolor_1} 
+      0%, ${hexcolor_2} 100%)`)
     },
     onblur: function () {
       this.setBackground('#777')
@@ -76,9 +53,9 @@ return(
 
 <nav className = "header tFlix">
   <ul>
-  <li><Button variant="outline-dark" onClick={createAbt}>About</Button>{' '}</li>
-  <li> <a className="btn btn-outline-dark"  target="_blank" href="https://github.com/osu-cs290-sp21/final-project-tagflix"> <Github size={25} /></a></li>
-  <li> <a className="btn btn-outline-dark"  target="_blank" href="https://tagflix1.herokuapp.com/">Visit</a>
+  <li><Button variant="outline-light" onClick={createBtn}>About</Button>{' '}</li>
+  <li> <a className="btn btn-outline-light"  target="_blank" href={github}> <Github size={25} /></a></li>
+  <li> <a className="btn btn-outline-light"  target="_blank" href={visit}>Visit</a>
 </li>  
 </ul>
 </nav>

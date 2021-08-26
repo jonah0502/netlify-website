@@ -5,7 +5,7 @@ import Model from "./Model"
 import Overlay from "./Overlay"
 import Header from "../header/Header.js";
 import Loader from "../loader.js"
-
+import Text from "../buttonText.js"
 
 export default function App() {
   const overlay = useRef()
@@ -14,6 +14,7 @@ export default function App() {
   return (
     <>
     <Loader/>
+    <Text/>
     <Header/>
       <Canvas
         shadows
