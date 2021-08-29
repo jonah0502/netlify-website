@@ -22,8 +22,8 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         title = "Design-Den"
         github = "https://github.com/jonah0502/DesignDen"
         visit = "https://www.design-den.org/"
-        hexcolor_1 = "#e1f081"
-        hexcolor_2 = "#4895b7"
+        hexcolor_1 = "#3C50B1"
+        hexcolor_2 = "#0095EF"
         />
       </div>
     </div>
@@ -35,8 +35,8 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         title = "Fretboard Alarm"
         github = "https://lh3.googleusercontent.com/proxy/3t6e67NH-20iYARYuxcBSFYgxVNrCa7Ct_y3dBWLLhVFJa-FyiwkJFZRZk6L3RhGDsr03trN7OdrCKHqp1mUJ6ZMSmnchptm_Ycrp0WNc1Rc289hH7IrGQ4"
         visit = "https://lh3.googleusercontent.com/proxy/3t6e67NH-20iYARYuxcBSFYgxVNrCa7Ct_y3dBWLLhVFJa-FyiwkJFZRZk6L3RhGDsr03trN7OdrCKHqp1mUJ6ZMSmnchptm_Ycrp0WNc1Rc289hH7IrGQ4"
-        hexcolor_1 = "#c29161"
-        hexcolor_2 = "#e9e630"
+        hexcolor_1 = "#6713d2"
+        hexcolor_2 = "#cc208e"
         />
       </div>
     </div>
@@ -49,8 +49,8 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         title = "TagFlix"
         github = "https://github.com/jonah0502/tagFlix"
         visit = "https://tagflix1.herokuapp.com/"
-        hexcolor_1 = "#275c12"
-        hexcolor_2 = "#758548"
+        hexcolor_1 = "#C85250"
+        hexcolor_2 = "#F7BEC0"
         />
       </div>
     </div>
@@ -62,8 +62,8 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         title = "Loom"
         github = "https://github.com/OPEnSLab-OSU/Loom/"
         visitBool = {false}
-        hexcolor_1 = "#8ba168"
-        hexcolor_2 = "#b90708"
+        hexcolor_1 = "#5b9aa0"
+        hexcolor_2 = "#C7C7C7"
         />
       </div>
     </div>
@@ -75,8 +75,8 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         title = "This Website"
         github = "https://github.com/jonah0502/netlify-website"
         visit = "https://jonahportfolio.com/"
-        hexcolor_1 = "#35cd43"
-        hexcolor_2 = "#09ef56"
+        hexcolor_1 = "#000075"
+        hexcolor_2 = "#5C5CFF"
         />
       </div>
     </div>
@@ -88,8 +88,8 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         title = "Review Sentiment Analysis"
         github = "https://lh3.googleusercontent.com/proxy/3t6e67NH-20iYARYuxcBSFYgxVNrCa7Ct_y3dBWLLhVFJa-FyiwkJFZRZk6L3RhGDsr03trN7OdrCKHqp1mUJ6ZMSmnchptm_Ycrp0WNc1Rc289hH7IrGQ4"
         visitBool = {false}
-        hexcolor_1 = "#9a455a"
-        hexcolor_2 = "#ee325d"
+        hexcolor_1 = "#ff2079"
+        hexcolor_2 = "#e92efb"
         />
       </div>
     </div>
@@ -101,8 +101,8 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         title = "Rasberry Pi Guitar Pedal"
         github = "https://lh3.googleusercontent.com/proxy/3t6e67NH-20iYARYuxcBSFYgxVNrCa7Ct_y3dBWLLhVFJa-FyiwkJFZRZk6L3RhGDsr03trN7OdrCKHqp1mUJ6ZMSmnchptm_Ycrp0WNc1Rc289hH7IrGQ4"
         visitBool = {false}
-        hexcolor_1 = "#a8f2cc"
-        hexcolor_2 = "#1eebd9"
+        hexcolor_1 = "#b537f2"
+        hexcolor_2 = "#3cb9fc"
         />
       </div>
     </div>
