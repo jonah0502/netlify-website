@@ -143,7 +143,7 @@ function ExperienceAnimationCanvas() {
         <ExPage 
       domContent={domContent}
       position = {65}
-      bgColor="#F8B195">
+      bgColor="#6C5B7B">
 <main >
 
 <header>
@@ -223,7 +223,7 @@ function ExperienceAnimationCanvas() {
         <ExPage      
       domContent={domContent}
       position = {-800}
-      bgColor=" #6C5B7B">
+      bgColor="#F8B195">
 <main >
 <section className = "left">
   <h2>🤓 STEMbassadors</h2>

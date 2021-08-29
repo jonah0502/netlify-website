@@ -7,6 +7,9 @@ import React, { useEffect, useRef, useState } from "react"
 import { useGLTF, useAnimations, PerspectiveCamera } from "@react-three/drei"
 import { useFrame, useThree } from "@react-three/fiber"
 import MysBox from './Mystery.js'
+import Clapper from './Clapper.js'
+import Guitar from './Guitar.js'
+import Computer from './Computer.js'
 
 const color = new THREE.Color()
 
@@ -49,16 +52,16 @@ export default function Model({ scroll, ...props }) {
         onPointerOut={(e) => (e.stopPropagation(), set(null))}
         position={[0.06, 4.04, 0.35]}
         scale={[0.25, 0.25, 0.25]}>
-          <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {1} position={[5,-13,30]}>
-            <MysBox name="Box"  scale={scaleArr} />
+          <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {1} position={[5,-10,30]}>
+            <Computer name="Design-den"  scale={30,30,30} />
           </mesh>
 
-          <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {3} position={[32,-2,13]}>
-            <MysBox name="Box2"  scale={scaleArr} />
+          <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {3} position={[32,-4,13]}>
+            <Guitar name="Fretboard"  scale={[18,18,18]} rotation={[0,Math.PI/2,0]} />
           </mesh>
 
           <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {7} position={[28,7,-10]}>
-            <MysBox name="Box3" scale={scaleArr}/>
+            <Clapper name="TagFlix" scale={scaleArr}/>
           </mesh>
 
           <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {2}  position={[15,16,-25]}>
@@ -66,7 +69,7 @@ export default function Model({ scroll, ...props }) {
           </mesh>
 
           <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {5}  position={[-10,20,-45]}>
-            <MysBox name="Box5" scale={scaleArr}/>
+          <Computer name="Portfolio"  scale={30,30,30} />
           </mesh>
 
           <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {4}  position={[-30,30,-17]}>

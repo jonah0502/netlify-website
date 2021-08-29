@@ -262,7 +262,9 @@ export default function App() {
   }
   return (
     <>
-    <Loader/>
+    <Loader
+    Homepage = {true}
+    />
 
     <Suspense fallback={null}>
       
