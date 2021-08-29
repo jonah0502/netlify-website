@@ -13,16 +13,10 @@ export default function Model(props) {
       <group position={[0, 0.3, -0.63]} scale={0.01}>
         <mesh
           geometry={nodes.body2_low.geometry}
+          material={nodes.body2_low.material}
           position={[0, 25.43, -8.82]}
           rotation={[-1.69, 0, Math.PI]}
-        >
-
-            <meshStandardMaterial 
-              attach = "material"
-              metalness={0.2}
-              color = "#2b1d0e"
-              />
-        </mesh>
+        />
         <mesh
           geometry={nodes.inside1_low.geometry}
           material={nodes.inside1_low.material}
@@ -107,17 +101,10 @@ export default function Model(props) {
         />
         <mesh
           geometry={nodes.fretboard_low.geometry}
+          material={nodes.fretboard_low.material}
           position={[0, 17.95, -1.42]}
           rotation={[1.46, 1.57, 0]}
-        >
-
-          <meshStandardMaterial 
-              attach = "material"
-              metalness={0.2}
-              color = "#52361b"
-              />
-              </mesh>
-
+        />
         <mesh
           geometry={nodes.frets_low.geometry}
           material={nodes.frets_low.material}

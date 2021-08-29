@@ -11,6 +11,9 @@ import Clapper from './Clapper.js'
 import Guitar from './Guitar.js'
 import Computer from './Computer.js'
 
+import Brain from './Brain.js'
+
+
 const color = new THREE.Color()
 
 export default function Model({ scroll, ...props }) {
@@ -65,7 +68,7 @@ export default function Model({ scroll, ...props }) {
           </mesh>
 
           <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {2}  position={[15,16,-25]}>
-           <MysBox name="Box4" scale={scaleArr}/>
+           <MysBox name="Loom" scale={scaleArr}/>
           </mesh>
 
           <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {5}  position={[-10,20,-45]}>
@@ -73,11 +76,11 @@ export default function Model({ scroll, ...props }) {
           </mesh>
 
           <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {4}  position={[-30,30,-17]}>
-           <MysBox name="Box6" scale={scaleArr}/>
+           <Brain name="RSA" scale={[200,200,200]}/>
           </mesh>
 
           <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {6} position={[-25,48, 20]}>
-           <MysBox name="Box7" scale={scaleArr}/>
+           <MysBox name="RPi" scale={scaleArr}/>
           </mesh>
 
       </group>
