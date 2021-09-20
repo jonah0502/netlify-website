@@ -40,7 +40,7 @@ export default function AbtMe ({domContent, position, children, bgColor, starRef
           </Html>
         <group position={[0, position, 0]}>
         <mesh  ref={starRef}  position={[0, 5, 0]}>        
-        <Stars radius={105} depth={50} count={5000} factor={4} saturation={0} fade />
+        <Stars radius={55} depth={50} count={5000} factor={4} saturation={0} fade />
         </mesh>
         <mesh>
   </mesh>
