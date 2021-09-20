@@ -8,7 +8,7 @@ import { Html, Box, Stars } from "@react-three/drei";
 //Components
 import { Section } from "./hSection";
 //Intersection Observer
-
+import Skybox from "./Skybox.js"
 
 export default function AbtMe ({domContent, position, children, bgColor, starRef}) {
    // const ref = useRef();
@@ -29,7 +29,7 @@ export default function AbtMe ({domContent, position, children, bgColor, starRef
 
     return (
       <Section factor={1.5} offset={1} >
-        
+        <Skybox/>
         <Html fullscreen portal={domContent} position={[0, position -30, 0]}>
         <div className= "text">
 
