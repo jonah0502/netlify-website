@@ -1,25 +1,19 @@
 import React from "react";
-import { useRef, useEffect, useState, Suspense} from 'react';
+import { useRef, useState} from 'react';
 import * as THREE from 'three'
-import moon from '../../assets/moon.jpg';
-import normal from '../../assets/normal.jpg';
 
 import url from '../../assets/Strobe.mp4'
 // R3F
-import { useLoader, useThree } from "@react-three/fiber";
-import { Html, Box, Stars} from "@react-three/drei";
+import { Html, Box, Stars } from "@react-three/drei";
 //Components
+import { Section } from "./hSection";
 //Intersection Observer
-import Skybox from './Skybox.js'
 
 
-export default function AbtMe ({position, children}) {
+export default function AbtMe ({domContent, position, children, bgColor, starRef}) {
    // const ref = useRef();
     const boxRef = useRef();
-    const moonTexture = useLoader(THREE.TextureLoader, moon)
-    const normals = useLoader(THREE.TextureLoader, normal);
-    const { viewport } = useThree()
-    const scaleVal = viewport.width / 205
+    const sphereRef = useRef();
     const [video] = useState(() => {
       const vid = document.createElement("video");
       vid.src = url;
@@ -30,20 +24,23 @@ export default function AbtMe ({position, children}) {
       return vid;
     });
 
+
+
+
     return (
-      <group>
-        <Skybox/>
-        <Html fullscreen position={[0, position, 0]}>
+      <Section factor={1.5} offset={1} >
+        
+        <Html fullscreen portal={domContent} position={[0, position -30, 0]}>
         <div className= "text">
 
-          <div style={{zIndex: "0"}} id="Home" className = "container home">
+          <div id="Home" className = "container home">
               <div className="title">{children}</div>
             </div>
             </div>
           </Html>
         <group position={[0, position, 0]}>
-        <mesh  position={[0, 5, 0]}>        
-        <Stars radius={55} depth={50} count={5000} factor={4} saturation={0} fade />
+        <mesh  ref={starRef}  position={[0, 5, 0]}>        
+        <Stars radius={105} depth={50} count={5000} factor={4} saturation={0} fade />
         </mesh>
         <mesh>
   </mesh>
@@ -52,7 +49,7 @@ export default function AbtMe ({position, children}) {
 
         <mesh  position={[0, 5, 0]}>
 
-        <Box ref={boxRef} args={[28, 28, 28]} radius={0} position={[30,27, 0]} rotation={[0,0,0]}>
+        <Box ref={boxRef} args={[28, 28, 28]} radius={0} position={[30, -8, 0]} rotation={[0,0,0]}>
           <meshStandardMaterial emissive={"white"} side={THREE.DoubleSide}>
           <videoTexture attach="map" args={[video]} />
           <videoTexture attach="emissiveMap" args={[video]} />
@@ -61,7 +58,6 @@ export default function AbtMe ({position, children}) {
         </mesh>
 
         </group>
-        </group>
-        
+      </Section>
     );
   }

@@ -12,20 +12,8 @@ import {
   staggerRevealClose
 } from "./Animations";
 
-import dallas from '../../assets/space.jpg';
-import austin from '../../assets/space.jpg';
-import newyork from '../../assets/space.jpg';
-import sanfrancisco from '../../assets/space.jpg';
-import beijing from '../../assets/space.jpg';
 
-const cities = [
-  { name: "Dallas", image: dallas },
-  { name: "Austin", image: austin },
-  { name: "New York", image: newyork },
-  { name: "San Francisco", image: sanfrancisco },
-  { name: "Beijing", image: beijing }
-];
-
+ 
 const Hamburger = ({ state }) => {
   // Create varibles of our dom nodes
   let menuLayer = useRef(null);

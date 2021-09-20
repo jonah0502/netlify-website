@@ -23,6 +23,7 @@ import newHome from "./components/projects/App.js"
 
 
 // Page State
+import hState from "./components/about/homeState.js";
 import eState from "./components/experience/eState.js";
 
 
@@ -62,7 +63,10 @@ const Lights = () => {
 
 function HomeAnimationCanvas() {
   const [events, setEvents] = useState();
-
+  const domContent = useRef();
+  const scrollArea = useRef();
+  const onScroll = (e) => (hState.top.current = e.target.scrollTop);
+  useEffect(() => void onScroll({ target: scrollArea.current }), []);
   return (
     <>
     <Canvas
@@ -76,8 +80,9 @@ function HomeAnimationCanvas() {
       <Suspense fallback={null}>
 
         <AboutMe 
-      position = {-25}
-      >
+      domContent={domContent}
+      position = {245}
+      bgColor='#000000'>
       <p style={{color: "white"}}>About Me</p>
       <br/>
       <br/>
@@ -87,6 +92,15 @@ function HomeAnimationCanvas() {
     </Canvas>
     <Loader />
     <ButtonText />
+
+          <div
+          className='scrollArea'
+          ref={scrollArea}
+          onScroll={onScroll}
+          {...events}>
+          <div style={{ position: "sticky", top: 0 }} ref={domContent} />
+          <div style={{ height: `${hState.sections * 100}vh` }} />
+        </div>
       </>
   );
 }
