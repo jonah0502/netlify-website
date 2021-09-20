@@ -300,6 +300,7 @@ export default function App() {
             </A11ySection>
           </group>
         </ContextBridge>
+        
       </Canvas>
       <A11yAnnouncer />
     </main>

@@ -6,7 +6,7 @@ import Overlay from "./Overlay"
 import Header from "../header/Header.js";
 import Loader from "../loader.js"
 import Text from "../buttonText.js"
-import { AdaptiveDpr, AdaptiveEvents } from "@react-three/drei";
+import { AdaptiveDpr, AdaptiveEvents, Preload } from "@react-three/drei";
 
 export default function App() {
   const overlay = useRef()
@@ -27,6 +27,7 @@ export default function App() {
 
         <Suspense fallback={null}>
           <Model scroll={scroll} />
+          <Preload all />
           <Environment preset="city" />
         </Suspense>
       </Canvas>

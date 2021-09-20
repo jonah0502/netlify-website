@@ -26,8 +26,6 @@ export default function Model({ scroll, ...props }) {
    const { viewport } = useThree()
    const k = 3
    const sigmoidNum = 1 / (1 + Math.exp(-viewport.width/k))
-    console.log(sigmoidNum)
-   const extras = { receiveShadow: true, castShadow: true, "material-envMapIntensity": 0.2 }
   useEffect(() => void actions["CameraAction.005"].play(), [])
   useEffect(() => {
     if (hovered) group.current.getObjectByName(hovered).material.color.set("white")
