@@ -1,12 +1,11 @@
 import * as THREE from "three"
-import { Canvas, useFrame, useThree, useLoader } from "@react-three/fiber"
-import React, { useEffect, useRef, Suspense, useState } from "react"
-import { ContactShadows, useContextBridge, Sphere, MeshWobbleMaterial, Html } from "@react-three/drei"
+import { Canvas, useFrame, useThree} from "@react-three/fiber"
+import React, { useEffect, useRef, Suspense} from "react"
+import { ContactShadows, useContextBridge,  Html } from "@react-three/drei"
 import { A11y, useA11y, A11yAnnouncer, useUserPreferences, A11ySection, A11yUserPreferencesContext } from "@react-three/a11y"
 import { ResizeObserver } from "@juggle/resize-observer"
 import { proxy, useSnapshot } from "valtio"
 import Header from "../header/Header.js";
-import tag from '../../assets/tagSphere.png';
 import MysBox from './Mystery.js'
 import Bulb from './Bulb.js'
 import Briefcase from './Briefcase.js'
@@ -17,7 +16,6 @@ import pdf from '../../assets/myRes.pdf'
 import Loader from "../loader.js"
 import Text from './Text'
 import "../../App.scss";
-import { useHistory, BrowserRouter as Router, Link } from "react-router-dom";
 
   //React.Children.toArray(arrayOfComponents)
   

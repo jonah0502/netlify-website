@@ -1,14 +1,13 @@
 import React from "react";
 import { useRef, useEffect, useState, Suspense} from 'react';
-import jonah from '../../assets/jonah.jpg';
 import * as THREE from 'three'
 import moon from '../../assets/moon.jpg';
 import normal from '../../assets/normal.jpg';
 
 import url from '../../assets/Strobe.mp4'
 // R3F
-import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
-import { Html, Box, Stars, Sphere } from "@react-three/drei";
+import { useLoader, useThree } from "@react-three/fiber";
+import { Html, Box, Stars} from "@react-three/drei";
 //Components
 //Intersection Observer
 import Skybox from './Skybox.js'

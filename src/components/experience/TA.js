@@ -1,12 +1,8 @@
 import React from "react";
-import { Suspense } from 'react';
 import { useRef, useEffect} from 'react';
-import tag from '../../assets/tagSphere.png';
-import * as THREE from 'three'
 
 // R3F
-import { useFrame, useLoader } from "@react-three/fiber";
-import { Html, Sphere, MeshWobbleMaterial } from "@react-three/drei";
+import { Html} from "@react-three/drei";
 //Components
 import { Section } from "./eSection";
 

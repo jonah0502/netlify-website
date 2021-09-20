@@ -1,8 +1,5 @@
 import React, { forwardRef } from "react"
 import NewButtons from './NewButtons.js'
-import { Html } from "@react-three/drei"
-import { Canvas } from "@react-three/fiber"
-import { Suspense } from "react"
 
 
 

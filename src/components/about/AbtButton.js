@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import WinBox from "winbox/src/js/winbox.js";
 import "winbox/dist/css/winbox.min.css";
 import "winbox/dist/css/themes/modern.min.css";
 import pdf from '../../assets/myRes.pdf'
 import Button from 'react-bootstrap/Button';
-import { useHistory, BrowserRouter as Router, Link } from "react-router-dom";
+import { useHistory} from "react-router-dom";
 
 //      <li><Button variant="outline-light" onClick={() => handleClick({pdf})}>Resume</Button>{' '}</li>
 

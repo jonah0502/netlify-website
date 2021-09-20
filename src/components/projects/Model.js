@@ -19,7 +19,7 @@ const color = new THREE.Color()
 export default function Model({ scroll, ...props }) {
   const t = useRef(0)
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF("/model.glb")
+  const {animations } = useGLTF("/model.glb")
   const { actions, mixer } = useAnimations(animations, group)
   const [hovered, set] = useState()
 
