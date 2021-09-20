@@ -265,7 +265,7 @@ export default function App() {
     Homepage = {true}
     />
 
-    <Suspense fallback={null}>
+    <Suspense fallback={Loader}>
       
     <Header />
 

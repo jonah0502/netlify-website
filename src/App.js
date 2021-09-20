@@ -6,7 +6,6 @@ import { Switch, Route } from "react-router-dom";
 // R3F
 import { Canvas} from "@react-three/fiber";
 //import { EffectComposer, Outline, SelectiveBloom } from '@react-three/postprocessing'
-import { ResizeObserver } from "@juggle/resize-observer"
 
 //Home Components
 import Header from "./components/header/Header.js";
@@ -33,7 +32,7 @@ import ExPage from "./components/experience/page.js";
 
 import Scroller from "./components/home/scroller.js"
 
-import { AdaptiveDpr, AdaptiveEvents } from "@react-three/drei";
+import { AdaptiveDpr, AdaptiveEvents, Preload } from "@react-three/drei";
 
 
 const Lights = () => {
@@ -75,14 +74,15 @@ function HomeAnimationCanvas() {
     <Canvas
       mode="concurrent"
       camera={{ position: [100, 10, 0], fov: 75 }}
-      resize={{ polyfill: ResizeObserver }} 
     >
-      <AdaptiveDpr pixelated />
-        <AdaptiveEvents />
+
     <Lights />
       
-      <Suspense fallback={null}>
+      <Suspense fallback={Loader}>
 
+        <AdaptiveDpr pixelated />
+        <AdaptiveEvents />
+        <Preload all/>
         <AboutMe 
       domContent={domContent}
       position = {245}
@@ -135,7 +135,10 @@ function ExperienceAnimationCanvas() {
     >
     <Lights />
 
-      <Suspense fallback={null}>
+      <Suspense fallback={Loader}>
+      <AdaptiveDpr pixelated />
+        <AdaptiveEvents />
+        <Preload all/>
         <ExPage 
       domContent={domContent}
       position = {65}

@@ -179,7 +179,15 @@ nav ul li {
   .left {
     grid-column: 6 / 12;
     }
-  
+  .center{
+    grid-column: 5 / span 5;
+  }
+
+  @media only screen and (max-width: 600px) {
+    section{
+    grid-column: 3 / span 8 !important; 
+    }
+  }
 }
 
 
