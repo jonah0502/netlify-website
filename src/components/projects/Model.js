@@ -33,10 +33,7 @@ export default function Model({ scroll, ...props }) {
   }, [hovered])
   useFrame((state) => {
     mixer.setTime((t.current = THREE.MathUtils.lerp(t.current, actions["CameraAction.005"]._clip.duration * scroll.current, 0.05)))
-    group.current.children[0].children.forEach((child, index) => {
-      if(child.material){
-        child.material.color.lerp(color.set(hovered === child.name ? "tomato" : "#202020").convertSRGBToLinear(), hovered ? 0.1 : 0.05)
-      }
+    group.current.children[0].children.forEach((child) => {
       const et = state.clock.elapsedTime
       child.position.y = child.position.y + (Math.sin(et+child.index)/80)
       child.rotation.x = Math.sin((et + child.index * 2000) / 3) / 10

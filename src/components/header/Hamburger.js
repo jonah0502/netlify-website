@@ -7,8 +7,6 @@ import {
   fadeInUp,
   handleHover,
   handleHoverExit,
-  handleCityReturn,
-  handleCity,
   staggerRevealClose
 } from "./Animations";
 

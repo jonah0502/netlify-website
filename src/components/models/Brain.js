@@ -14,7 +14,8 @@ export default function Model(props) {
         geometry={nodes.Neuro_Cell_1.geometry}
         material={materials.cell}
         rotation={[Math.PI / 2, 0, 0]}
-        scale={0.01}
+        scale={0.011}
+        position = {[0,0,0.004]}
       />
       <mesh //brain
         geometry={nodes.Cube.geometry}

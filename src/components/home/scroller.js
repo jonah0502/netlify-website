@@ -277,7 +277,7 @@ export default function App() {
         <AdaptiveEvents />
         <ContextBridge>
           <pointLight position={[100, 100, 100]} intensity={0.5} ref={lightRef} />
-          <pointLight position={[-100, -100, -100]} intensity={1.5} ref={lightRef2} color={snap.dark ? "#ccffcc" : "#00ffff"} />
+          <pointLight position={[-100, -100, -100]} intensity={1.5} ref={lightRef2} color={ "#FFB6C1" } />
           <ambientLight intensity={0.8} ref={lightRef3} />
           
           <group position-y={0.7}>
