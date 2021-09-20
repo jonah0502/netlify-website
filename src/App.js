@@ -33,6 +33,9 @@ import ExPage from "./components/experience/page.js";
 
 import Scroller from "./components/home/scroller.js"
 
+import { AdaptiveDpr, AdaptiveEvents } from "@react-three/drei";
+
+
 const Lights = () => {
   return (
     <>
@@ -70,13 +73,14 @@ function HomeAnimationCanvas() {
   return (
     <>
     <Canvas
-      concurrent
-      colorManagement
+      mode="concurrent"
       camera={{ position: [100, 10, 0], fov: 75 }}
       resize={{ polyfill: ResizeObserver }} 
     >
+      <AdaptiveDpr pixelated />
+        <AdaptiveEvents />
     <Lights />
-
+      
       <Suspense fallback={null}>
 
         <AboutMe 
@@ -126,10 +130,8 @@ function ExperienceAnimationCanvas() {
   return (
     <>
     <Canvas
-      concurrent
-      colorManagement
+      mode="concurrent"
       camera={{ position: [100, 10, 0], fov: 75 }}
-      resize={{ polyfill: ResizeObserver }} 
     >
     <Lights />
 

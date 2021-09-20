@@ -12,6 +12,7 @@ import Briefcase from './Briefcase.js'
 import Computer from './Computer.js'
 import Resume from './Resume.js'
 import pdf from '../../assets/myRes.pdf'
+import { AdaptiveDpr, AdaptiveEvents } from "@react-three/drei";
 
 import Loader from "../loader.js"
 import Text from './Text'
@@ -272,6 +273,8 @@ export default function App() {
     <main className={snap.dark ? "dark" : "bright"} >
 
       <Canvas resize={{ polyfill: ResizeObserver }} camera={{ position: [0, 0, 15], near: 4, far: 30 }} pixelRatio={[1, 1.5]}>
+      <AdaptiveDpr pixelated />
+        <AdaptiveEvents />
         <ContextBridge>
           <pointLight position={[100, 100, 100]} intensity={0.5} ref={lightRef} />
           <pointLight position={[-100, -100, -100]} intensity={1.5} ref={lightRef2} color={snap.dark ? "#ccffcc" : "#00ffff"} />

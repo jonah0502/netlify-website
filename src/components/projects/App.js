@@ -6,6 +6,7 @@ import Overlay from "./Overlay"
 import Header from "../header/Header.js";
 import Loader from "../loader.js"
 import Text from "../buttonText.js"
+import { AdaptiveDpr, AdaptiveEvents } from "@react-three/drei";
 
 export default function App() {
   const overlay = useRef()
@@ -21,7 +22,9 @@ export default function App() {
         onCreated={(state) => state.events.connect(overlay.current)}
         raycaster={{ computeOffsets: ({ clientX, clientY }) => ({ offsetX: clientX, offsetY: clientY }) }}>
         <ambientLight intensity={1} />
-        
+        <AdaptiveDpr pixelated />
+        <AdaptiveEvents />
+
         <Suspense fallback={null}>
           <Model scroll={scroll} />
           <Environment preset="city" />
