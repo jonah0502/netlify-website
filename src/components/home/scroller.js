@@ -6,16 +6,16 @@ import { A11y, useA11y, A11yAnnouncer, useUserPreferences, A11ySection, A11yUser
 import { ResizeObserver } from "@juggle/resize-observer"
 import { proxy, useSnapshot } from "valtio"
 import Header from "../header/Header.js";
-import MysBox from './Mystery.js'
-import Bulb from './Bulb.js'
-import Briefcase from './Briefcase.js'
-import Computer from './Computer.js'
-import Resume from './Resume.js'
+import MysBox from '../models/Mystery.js'
+import Bulb from '../models/Bulb.js'
+import Briefcase from '../models/Briefcase.js'
+import Computer from '../models/Computer.js'
+import Resume from '../models/Resume.js'
 import pdf from '../../assets/myRes.pdf'
 import { AdaptiveDpr, AdaptiveEvents } from "@react-three/drei";
 
 import Loader from "../loader.js"
-import Text from './Text'
+import Text from '../models/Text.js'
 import "../../App.scss";
 
   //React.Children.toArray(arrayOfComponents)

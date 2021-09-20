@@ -28,7 +28,6 @@ export default function AbtMe ({domContent, position, children, starRef}) {
 
     const k = 80
     const sigmoidNum = 1 / (1 + Math.exp(-viewport.width/k))
-    console.log(sigmoidNum)
     return (
       <Section factor={1.5} offset={1} >
         <Skybox/>

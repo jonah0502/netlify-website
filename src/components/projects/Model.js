@@ -6,12 +6,12 @@ import * as THREE from "three"
 import React, { useEffect, useRef, useState } from "react"
 import { useGLTF, useAnimations, PerspectiveCamera } from "@react-three/drei"
 import { useFrame, useThree } from "@react-three/fiber"
-import MysBox from './Mystery.js'
-import Clapper from './Clapper.js'
-import Guitar from './Guitar.js'
-import Computer from './Computer.js'
+import MysBox from '../models/Mystery.js'
+import Clapper from '../models/Clapper.js'
+import Guitar from '../models/Guitar.js'
+import Computer from '../models/Computer.js'
 
-import Brain from './Brain.js'
+import Brain from '../models/Brain.js'
 
 
 const color = new THREE.Color()
