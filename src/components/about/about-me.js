@@ -4,22 +4,19 @@ import jonah from '../../assets/jonah.jpg';
 import * as THREE from 'three'
 import moon from '../../assets/moon.jpg';
 import normal from '../../assets/normal.jpg';
-import Alien from "./Alien.js"
 
 import url from '../../assets/Strobe.mp4'
 // R3F
-import { useFrame, useLoader, useThree } from "@react-three/fiber";
+import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
 import { Html, Box, Stars, Sphere } from "@react-three/drei";
 //Components
-import { Section } from "./hSection";
 //Intersection Observer
-import { useInView } from "react-intersection-observer";
+import Skybox from './Skybox.js'
 
 
-export default function AbtMe ({domContent, position, children, bgColor, starRef}) {
+export default function AbtMe ({position, children}) {
    // const ref = useRef();
     const boxRef = useRef();
-    const sphereRef = useRef();
     const moonTexture = useLoader(THREE.TextureLoader, moon)
     const normals = useLoader(THREE.TextureLoader, normal);
     const { viewport } = useThree()
@@ -34,50 +31,29 @@ export default function AbtMe ({domContent, position, children, bgColor, starRef
       return vid;
     });
 
-
-
-
-    useFrame(() => (
-      sphereRef.current.rotation.y += 0.002
-    ));
-    const texture = useLoader(THREE.TextureLoader, jonah)
     return (
-      <Section factor={1.5} offset={1} >
-        
-        <Html fullscreen portal={domContent} position={[0, position -30, 0]}>
+      <group>
+        <Skybox/>
+        <Html fullscreen position={[0, position, 0]}>
         <div className= "text">
 
-          <div id="Home" className = "container home">
+          <div style={{zIndex: "0"}} id="Home" className = "container home">
               <div className="title">{children}</div>
             </div>
             </div>
           </Html>
         <group position={[0, position, 0]}>
-        <mesh  ref={starRef}  position={[0, 5, 0]}>        
-        <Stars radius={105} depth={50} count={5000} factor={4} saturation={0} fade />
+        <mesh  position={[0, 5, 0]}>        
+        <Stars radius={55} depth={50} count={5000} factor={4} saturation={0} fade />
         </mesh>
         <mesh>
-        <Suspense fallback={null}>
-        {/*<Alien scale={30,30,30} position={[0, 100, -70]}/>*/}
-        </Suspense>
-      <Sphere ref={sphereRef} visible position={[25, 125, 75]} args={[4, 16, 16]} scale={4,4,4}>
-          <meshStandardMaterial
-      attach="material"
-      color="#FFFFFF"
-      factor={0.05} // Strength, 0 disables the effect (default=1)
-      speed={2} // Speed (default=1)
-      roughness={0}
-      normalMap={normals}
-      map={moonTexture}
-      />
-      </Sphere>
   </mesh>
 
 
 
         <mesh  position={[0, 5, 0]}>
 
-        <Box ref={boxRef} args={[32, 32, 32]} radius={0} position={[30, 8, 0]} rotation={[0,0,0]}>
+        <Box ref={boxRef} args={[28, 28, 28]} radius={0} position={[30,27, 0]} rotation={[0,0,0]}>
           <meshStandardMaterial emissive={"white"} side={THREE.DoubleSide}>
           <videoTexture attach="map" args={[video]} />
           <videoTexture attach="emissiveMap" args={[video]} />
@@ -86,6 +62,7 @@ export default function AbtMe ({domContent, position, children, bgColor, starRef
         </mesh>
 
         </group>
-      </Section>
+        </group>
+        
     );
   }

@@ -10,7 +10,6 @@ import { ResizeObserver } from "@juggle/resize-observer"
 
 //Home Components
 import Header from "./components/header/Header.js";
-import Homepage from "./components/about/home.js"
 import Loader from "./components/loader.js"
 import AboutMe from "./components/about/about-me.js"
 import Form from "./components/about/form.js"
@@ -24,7 +23,6 @@ import newHome from "./components/projects/App.js"
 
 
 // Page State
-import hState from "./components/about/homeState.js";
 import eState from "./components/experience/eState.js";
 
 
@@ -64,10 +62,7 @@ const Lights = () => {
 
 function HomeAnimationCanvas() {
   const [events, setEvents] = useState();
-  const domContent = useRef();
-  const scrollArea = useRef();
-  const onScroll = (e) => (hState.top.current = e.target.scrollTop);
-  useEffect(() => void onScroll({ target: scrollArea.current }), []);
+
   return (
     <>
     <Canvas
@@ -80,16 +75,10 @@ function HomeAnimationCanvas() {
 
       <Suspense fallback={null}>
 
-      <Homepage 
-      domContent={domContent}
-      position = {265}
-      >
-        </Homepage>
         <AboutMe 
-      domContent={domContent}
-      position = {0}
-      bgColor='#000000'>
-      <p style={{color: "black"}}>About Me</p>
+      position = {-25}
+      >
+      <p style={{color: "white"}}>About Me</p>
       <br/>
       <br/>
       <AbtButtons />
@@ -98,15 +87,6 @@ function HomeAnimationCanvas() {
     </Canvas>
     <Loader />
     <ButtonText />
-
-          <div
-          className='scrollArea'
-          ref={scrollArea}
-          onScroll={onScroll}
-          {...events}>
-          <div style={{ position: "sticky", top: 0 }} ref={domContent} />
-          <div style={{ height: `${hState.sections * 100}vh` }} />
-        </div>
       </>
   );
 }
