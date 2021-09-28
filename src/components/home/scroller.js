@@ -103,7 +103,7 @@ function Shape({ index, active, ...props }) {
 
   const snap =  useSnapshot(state)
 
-  useFrame((state, delta) => {
+  useFrame((state) => {
     const s = active ? 2 : 1
     ref.current.scale.lerp(vec.set(s, s, s), snap.motionDisabled ? 1 : 0.1)
     if (snap.motionDisabled && index !== 0) {
@@ -114,7 +114,6 @@ function Shape({ index, active, ...props }) {
       ref.current.position.y = active ? Math.sin(state.clock.elapsedTime) / 2 - 1.5 : -1.5
     }
   })
-  const { a11yPrefersState } = useUserPreferences()
   //note to self: page crashes on refresh and IDK why???
   const viewport = useThree((state) => state.viewport)
   //The larger the k, the larger the useful domain.

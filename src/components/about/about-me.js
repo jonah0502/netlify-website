@@ -47,7 +47,7 @@ export default function AbtMe ({domContent, position, children, starRef}) {
 
 
 
-        <mesh  position={[0, 5, 0]} scale={sigmoidNum, sigmoidNum, sigmoidNum}>
+        <mesh  position={[0, 5, 0]} scale={[sigmoidNum, sigmoidNum, sigmoidNum]}>
 
         <Box ref={boxRef} args={[28, 28, 28]} radius={0} position={[30, -9-sigmoidNum, 0]} rotation={[0,0,0]}>
           <meshStandardMaterial emissive={"white"} side={THREE.DoubleSide}>

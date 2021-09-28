@@ -1,9 +1,7 @@
 import React from "react";
 import { useEffect} from 'react';
-import * as THREE from 'three'
 
 // R3F
-import { useLoader } from "@react-three/fiber";
 import { Html} from "@react-three/drei";
 //Components
 import { Section } from "./eSection";
@@ -13,7 +11,7 @@ import { useInView } from "react-intersection-observer";
 
 
 
-export default function URSA ({domContent, position, children, bgColor, object}) {
+export default function URSA ({domContent, position, children, bgColor}) {
     const [refItem, inView] = useInView({ threshold: 0.5});
     useEffect(() => {
       inView && (document.getElementsByClassName('anim')[0].style.background = bgColor )});

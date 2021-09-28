@@ -4,7 +4,6 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import { createBrowserHistory } from "history";
-import { A11yUserPreferences } from "@react-three/a11y"
 
 const rootElement = document.getElementById("root");
 const customHistory = createBrowserHistory({

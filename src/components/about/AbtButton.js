@@ -3,17 +3,12 @@ import WinBox from "winbox/src/js/winbox.js";
 import "winbox/dist/css/winbox.min.css";
 import "winbox/dist/css/themes/modern.min.css";
 import Button from 'react-bootstrap/Button';
-import { useHistory} from "react-router-dom";
 
 //      <li><Button variant="outline-light" onClick={() => handleClick({pdf})}>Resume</Button>{' '}</li>
 
 
 const NavBoxes = () => {
 
-  const history = useHistory();
-  function handleClick(path) {
-    history.push(path);
-  }
 // const SubFuntion = ()=>{
 //   const history = useHistory();
 //   console.log(history)
