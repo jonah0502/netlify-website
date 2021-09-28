@@ -11,7 +11,7 @@ import Bulb from '../models/Bulb.js'
 import Briefcase from '../models/Briefcase.js'
 import Computer from '../models/Computer.js'
 import Resume from '../models/Resume.js'
-import { AdaptiveDpr, AdaptiveEvents } from "@react-three/drei";
+import { AdaptiveDpr, AdaptiveEvents, Preload } from "@react-three/drei";
 
 import Loader from "../loader.js"
 import Text from '../models/Text.js'
@@ -42,7 +42,7 @@ function ToggleButton(props) {
   const k = 20
   const sigmoidNum = 1 / (1 + Math.exp(-viewport.width/k))
 
-  useFrame((state, delta) => {
+  useFrame((state) => {
     bulbRef.current.rotation.y += 0.01
     bulbRef.current.position.y = Math.sin(state.clock.elapsedTime) / 15   - 4
   })
@@ -135,13 +135,11 @@ function Shape({ index, active, ...props }) {
     <>
     <mesh rotation-y={index * 2000} ref={ref} {...props}>
       {index === 0 &&
-      <>
-     <A11y role="link" href="/"  actionCall={() =>  window.appHistory.push("/") } >
+      
        <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]}>
         <Jumbo />
         </mesh>
-        </A11y>
-        </>}
+        }
         {index === 1 &&
         <>
      <A11y role="link" href="/projects"  actionCall={() =>  window.appHistory.push("/projects") } >
@@ -226,10 +224,7 @@ export default function App() {
     state.dark = a11yPrefersState.prefersDarkScheme
     return () => {}
   }, [a11yPrefersState.prefersDarkScheme])
-  useEffect(() => {
-    state.motionDisabled = a11yPrefersState.prefersReducedMotion
-    return () => {}
-  }, [a11yPrefersState.prefersReducedMotion])
+
 
   const ContextBridge = useContextBridge(A11yUserPreferencesContext)
   if(!state.dark && document.getElementsByClassName('inner-header')[0]){
@@ -251,15 +246,18 @@ export default function App() {
     <div id = "scroller">
     <main className={snap.dark ? "dark" : "bright"} >
 
-      <Canvas resize={{ polyfill: ResizeObserver }} camera={{ position: [0, 0, 15], near: 4, far: 30 }} pixelRatio={[1, 1.5]}>
-      <AdaptiveDpr pixelated />
-        <AdaptiveEvents />
+      <Canvas mode="concurrent" camera={{ position: [0, 0, 15], near: 4, far: 30 }} pixelRatio={[1, 1.5]}>
+            <Preload all/>
+            <AdaptiveDpr pixelated />
+            <AdaptiveEvents />
         <ContextBridge>
           <pointLight position={[100, 100, 100]} intensity={0.5}  />
-          <pointLight position={[-100, -100, -100]} intensity={1.5} color={ "#FFB6C1" } />
+          <pointLight position={[-100, -100, -100]} intensity={1.5} />
           <ambientLight intensity={0.8} />
           
           <group position-y={0.7}>
+              
+
             <A11ySection
               label="Shape carousel"
               description="This carousel contains 5 shapes. Use the Previous and Next buttons to cycle through all the shapes.">
