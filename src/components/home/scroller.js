@@ -1,7 +1,7 @@
 import * as THREE from "three"
 import { Canvas, useFrame, useThree} from "@react-three/fiber"
 import React, { useEffect, useRef, Suspense} from "react"
-import { ContactShadows, useContextBridge,  Html } from "@react-three/drei"
+import { useContextBridge,  Html } from "@react-three/drei"
 import { A11y, useA11y, A11yAnnouncer, useUserPreferences, A11ySection, A11yUserPreferencesContext } from "@react-three/a11y"
 import { ResizeObserver } from "@juggle/resize-observer"
 import { proxy, useSnapshot } from "valtio"
@@ -11,7 +11,6 @@ import Bulb from '../models/Bulb.js'
 import Briefcase from '../models/Briefcase.js'
 import Computer from '../models/Computer.js'
 import Resume from '../models/Resume.js'
-import pdf from '../../assets/myRes.pdf'
 import { AdaptiveDpr, AdaptiveEvents } from "@react-three/drei";
 
 import Loader from "../loader.js"
@@ -185,7 +184,7 @@ function Shape({ index, active, ...props }) {
         </>}
         {index === 4 &&
         <>
-     <A11y role="link" href={pdf} actionCall={() =>  {const win = window.open(pdf, "_blank"); win.focus();}}>
+     <A11y role="link" href={'/myRes.pdf'} actionCall={() =>  {const win = window.open('/myRes.pdf', "_blank"); win.focus();}}>
      <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]}>
         <Resume scale={[8,8,8]} position={[0,0.5,0]}/>
         </mesh>
@@ -286,7 +285,6 @@ export default function App() {
               description="This carousel contains 5 shapes. Use the Previous and Next buttons to cycle through all the shapes.">
               <Nav left />
               <Carroussel />
-              <ContactShadows rotation-x={Math.PI / 2} position={[0, -5, 0]} opacity={0.4} width={30} height={30} blur={1} far={15} />
               <Nav />
               <A11y
                 role="togglebutton"

@@ -2,7 +2,6 @@ import React from 'react'
 import WinBox from "winbox/src/js/winbox.js";
 import "winbox/dist/css/winbox.min.css";
 import "winbox/dist/css/themes/modern.min.css";
-import pdf from '../../assets/myRes.pdf'
 import Button from 'react-bootstrap/Button';
 import { useHistory} from "react-router-dom";
 
@@ -77,7 +76,7 @@ return(
   <ul>
   <li><Button variant="outline-light" onClick={createAbt}>About</Button>{' '}</li>
   <li><Button variant="outline-light" onClick={createContact}>Contact</Button>{' '}</li>
-  <li> <a className="btn btn-outline-light"  target="_blank" href={pdf}>Resume</a></li>
+  <li> <a className="btn btn-outline-light"  target="_blank" href={'/myRes.pdf'}>Resume</a></li>
 
 
 </ul>

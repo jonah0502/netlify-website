@@ -18,7 +18,6 @@ export default function App() {
     <Text/>
     <Header/>
       <Canvas
-        shadows
         onCreated={(state) => state.events.connect(overlay.current)}
         raycaster={{ computeOffsets: ({ clientX, clientY }) => ({ offsetX: clientX, offsetY: clientY }) }}>
         <ambientLight intensity={1} />

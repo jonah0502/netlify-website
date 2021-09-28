@@ -3,7 +3,6 @@ import { useRef, useState} from 'react';
 import * as THREE from 'three'
 import { useThree} from "@react-three/fiber"
 
-import url from '../../assets/Strobe.mp4'
 // R3F
 import { Html, Box, Stars } from "@react-three/drei";
 //Components
@@ -17,7 +16,7 @@ export default function AbtMe ({domContent, position, children, starRef}) {
     const viewport = useThree((state) => state.viewport)
     const [video] = useState(() => {
       const vid = document.createElement("video");
-      vid.src = url;
+      vid.src = '/Strobe.mp4';
       vid.crossOrigin = "Anonymous";
       vid.loop = true;
       vid.muted = true;
