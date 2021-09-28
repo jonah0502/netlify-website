@@ -33,13 +33,7 @@ import "../../App.scss";
 
 
 const state = proxy({ dark: false, motionDisabled: false, active: 0, rotation: 0 })
-const geometries = [
-  new THREE.SphereBufferGeometry(1, 32, 32),
-  new THREE.TetrahedronBufferGeometry(1.5),
-  new THREE.TorusBufferGeometry(1, 0.35, 16, 32),
-  new THREE.OctahedronGeometry(1.5),
-  new THREE.IcosahedronBufferGeometry(1.5),
-]
+
 
 function ToggleButton(props) {
   const a11y = useA11y()
@@ -96,7 +90,6 @@ function Diamond({ position, rotation }) {
         metalness={1}
         roughness={0.8}
         color={a11y.focus || a11y.hover ? "#cc66dd" : "#ffffff"}
-        emissive={a11y.focus ? "#cc4444" : a11y.hover ? "#339922" : "#003399"}
       />
     </mesh>
   )
@@ -176,7 +169,6 @@ function Shape({ index, active, ...props }) {
      <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]}>
         <MysBox
          scale = {[0.06, 0.06, 0.06]}
-         emissive={a11yPrefersState.prefersDarkScheme ? "#001166" : "#009999"}
          />
            </mesh>
 
@@ -209,16 +201,7 @@ function Carroussel() {
         snap.motionDisabled ? 1 : 0.1,
       )),
   )
-  const renderHTML = (i) => {
-    if (i) {
-      return (
-      <Html position={[ -1,6.75,0]}>
-      <div className = "container" >
-           <h1>TagFlix</h1>
-        </div>
-      </Html>);
-    }
-  }
+
   return (
     <group ref={group} position = {[0, 0, 0]}>
       {["Home", "Projects", "Experience", "About", "Resume"].map((name, i) => (
@@ -239,9 +222,7 @@ function Carroussel() {
 export default function App() {
   const snap =  useSnapshot(state)
   const { a11yPrefersState } = useUserPreferences()
-  const lightRef = useRef()
-  const lightRef2 = useRef()
-  const lightRef3 = useRef()
+
   useEffect(() => {
     state.dark = a11yPrefersState.prefersDarkScheme
     return () => {}
@@ -275,9 +256,9 @@ export default function App() {
       <AdaptiveDpr pixelated />
         <AdaptiveEvents />
         <ContextBridge>
-          <pointLight position={[100, 100, 100]} intensity={0.5} ref={lightRef} />
-          <pointLight position={[-100, -100, -100]} intensity={1.5} ref={lightRef2} color={ "#FFB6C1" } />
-          <ambientLight intensity={0.8} ref={lightRef3} />
+          <pointLight position={[100, 100, 100]} intensity={0.5}  />
+          <pointLight position={[-100, -100, -100]} intensity={1.5} color={ "#FFB6C1" } />
+          <ambientLight intensity={0.8} />
           
           <group position-y={0.7}>
             <A11ySection
@@ -293,7 +274,7 @@ export default function App() {
                 activationMsg="Lower light disabled"
                 deactivationMsg="Lower light enabled"
                 a11yElStyle={{ marginLeft: "-40px" }}>
-                <ToggleButton position={[0, -3.5, 9]} lightRef = {lightRef} lightRef2 ={lightRef2} lightRef3 ={lightRef3}/>
+                <ToggleButton position={[0, -3.5, 9]} />
               </A11y>
             </A11ySection>
           </group>

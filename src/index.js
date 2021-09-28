@@ -12,7 +12,6 @@ const customHistory = createBrowserHistory({
 });
 
 ReactDOM.render(
-  <A11yUserPreferences>
   <Router history={customHistory}>
     <Route
       component={({ history }) => {
@@ -20,8 +19,7 @@ ReactDOM.render(
         return <App />;
       }}
     />
-  </Router>
-  </A11yUserPreferences>,
+  </Router>,
   rootElement
 );
 
