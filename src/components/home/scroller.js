@@ -3,15 +3,13 @@ import { Canvas, useFrame, useThree} from "@react-three/fiber"
 import React, { useEffect, useRef, Suspense} from "react"
 import { useContextBridge,  Html } from "@react-three/drei"
 import { A11y, useA11y, A11yAnnouncer, useUserPreferences, A11ySection, A11yUserPreferencesContext } from "@react-three/a11y"
-import { ResizeObserver } from "@juggle/resize-observer"
 import { proxy, useSnapshot } from "valtio"
 import Header from "../header/Header.js";
 import MysBox from '../models/Mystery.js'
 import Bulb from '../models/Bulb.js'
 import Briefcase from '../models/Briefcase.js'
 import Computer from '../models/Computer.js'
-import Resume from '../models/Resume.js'
-import { AdaptiveDpr, AdaptiveEvents, Preload } from "@react-three/drei";
+import { AdaptiveDpr, AdaptiveEvents, Preload, Plane, Box, useTexture } from "@react-three/drei";
 
 import Loader from "../loader.js"
 import Text from '../models/Text.js'
@@ -131,6 +129,8 @@ function Shape({ index, active, ...props }) {
         </div>
       </Html>);
   }
+  const [resumeTexture] = useTexture(['/res.png']);
+
   return (
     <>
     <mesh rotation-y={index * 2000} ref={ref} {...props}>
@@ -175,7 +175,9 @@ function Shape({ index, active, ...props }) {
         <>
      <A11y role="link" href={'/myRes.pdf'} actionCall={() =>  {const win = window.open('/myRes.pdf', "_blank"); win.focus();}}>
      <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]}>
-        <Resume scale={[8,8,8]} position={[0,0.5,0]}/>
+          <Box args={[8, 11, 0]} scale = {[0.25, 0.25, 0.25]}>
+          <meshBasicMaterial attach="material" map={resumeTexture} />
+          </Box>
         </mesh>
         </A11y>
         </>}
