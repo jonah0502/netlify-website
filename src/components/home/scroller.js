@@ -154,7 +154,7 @@ function Shape({ index, active, ...props }) {
         <>
      <A11y role="link" href="/experience"   actionCall={() =>  window.appHistory.push("/experience") } >
      <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]}>
-        <Briefcase scale ={[0.045, 0.045, 0.045]} position = {[0,1,0]}/>
+        <Briefcase scale ={[0.15, 0.15, 0.15]} position = {[0,1,0]} rotation = {[-Math.PI/2,0,0]}/>
         </mesh>
         </A11y>
         </>

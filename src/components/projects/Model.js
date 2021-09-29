@@ -47,7 +47,7 @@ export default function Model({ scroll, ...props }) {
           </mesh>
 
           <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {3} position={[32,-4,13]}>
-            <Guitar name="Fretboard"  scale={[18,18,18]} rotation={[0,Math.PI/2,0]} />
+            <Guitar name="Fretboard"  scale={[1,1,1]} rotation={[Math.PI/2,Math.PI/2,0]} />
           </mesh>
 
           <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {7} position={[28,7,-10]}>
@@ -63,7 +63,7 @@ export default function Model({ scroll, ...props }) {
           </mesh>
 
           <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {4}  position={[-30,30,-17]}>
-           <Brain name="RSA" scale={[200,200,200]}/>
+           {/*<Brain name="RSA" scale={[200,200,200]}/>*/}
           </mesh>
 
           <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {6} position={[-25,48, 20]}>
