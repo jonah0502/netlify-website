@@ -6,7 +6,6 @@ import { useThree} from "@react-three/fiber"
 // R3F
 import { Html, Box, Stars } from "@react-three/drei";
 //Components
-import { Section } from "./hSection";
 //Intersection Observer
 import Skybox from "./Skybox.js"
 
@@ -28,18 +27,18 @@ export default function AbtMe ({domContent, position, children, starRef}) {
     const k = 80
     const sigmoidNum = 1 / (1 + Math.exp(-viewport.width/k))
     return (
-      <Section factor={1.5} offset={1} >
-        <Skybox/>
-        <Html fullscreen portal={domContent} position={[0, position -40, 0]}>
+      <>
+        {/*<Skybox/>*/}
+        <Html center prepend zIndexRange={[10, 0]}>
         <div className= "text">
 
           <div id="Home" className = "container home">
               <div className="title">{children}</div>
             </div>
             </div>
-          </Html>
-        <group position={[0, position, 0]}>
-        <mesh  ref={starRef}  position={[0, 5, 0]}>        
+    </Html>
+        <group position={[0, 0, 0]}>
+        <mesh  ref={starRef}  position={[0, 0, 0]}>        
         <Stars radius={55} depth={50} count={5000} factor={4} saturation={0} fade />
         </mesh>
         <mesh>
@@ -47,9 +46,9 @@ export default function AbtMe ({domContent, position, children, starRef}) {
 
 
 
-        <mesh  position={[0, 5, 0]} scale={[sigmoidNum, sigmoidNum, sigmoidNum]}>
+        <mesh  position={[0, 0, 0]} scale={[sigmoidNum, sigmoidNum, sigmoidNum]}>
 
-        <Box ref={boxRef} args={[28, 28, 28]} radius={0} position={[30, -9-sigmoidNum, 0]} rotation={[0,0,0]}>
+        <Box ref={boxRef} args={[33, 33, 33]} radius={0} position={[0, 0, 0]} rotation={[0,0,0]}>
           <meshStandardMaterial emissive={"white"} side={THREE.DoubleSide}>
           <videoTexture attach="map" args={[video]} />
           <videoTexture attach="emissiveMap" args={[video]} />
@@ -58,6 +57,6 @@ export default function AbtMe ({domContent, position, children, starRef}) {
         </mesh>
 
         </group>
-      </Section>
+      </>
     );
   }

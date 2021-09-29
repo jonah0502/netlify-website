@@ -22,7 +22,6 @@ import newHome from "./components/projects/App.js"
 
 
 // Page State
-import hState from "./components/about/homeState.js";
 import eState from "./components/experience/eState.js";
 
 
@@ -32,24 +31,23 @@ import ExPage from "./components/experience/page.js";
 
 import Scroller from "./components/home/scroller.js"
 
-import { AdaptiveDpr, AdaptiveEvents, Preload } from "@react-three/drei";
+import { AdaptiveDpr, AdaptiveEvents, Preload, PerspectiveCamera, OrbitControls } from "@react-three/drei";
 
 
 
 
 
-function HomeAnimationCanvas() {
-  const [events, setEvents] = useState();
-  const domContent = useRef();
-  const scrollArea = useRef();
-  const onScroll = (e) => (hState.top.current = e.target.scrollTop);
-  useEffect(() => void onScroll({ target: scrollArea.current }), []);
+function Home() {
+  const virtualCamera = useRef()
+
   return (
-    <>
+    <div className="anim">
+    <Header />
     <Canvas
       mode="concurrent"
       camera={{ position: [100, 10, 0], fov: 75 }}
     >
+      <PerspectiveCamera name="FBO Camera" ref={virtualCamera} position={[0, 0, 5]} />
 
 
       
@@ -59,7 +57,6 @@ function HomeAnimationCanvas() {
         <AdaptiveEvents />
         <Preload all/>
         <AboutMe 
-      domContent={domContent}
       position = {245}
       bgColor='#000000'>
       <p style={{color: "white"}}>About Me</p>
@@ -67,32 +64,20 @@ function HomeAnimationCanvas() {
       <br/>
       <AbtButtons />
       </AboutMe>
+      <OrbitControls
+            camera={virtualCamera.current}
+            enablePan
+            enableZoom = {false}
+            enableRotate
+          />
       </Suspense>
     </Canvas>
     <Loader />
     <ButtonText />
-
-          <div
-          className='scrollArea'
-          ref={scrollArea}
-          onScroll={onScroll}
-          {...events}>
-          <div style={{ position: "sticky", top: 0 }} ref={domContent} />
-          <div style={{ height: `${hState.sections * 100}vh` }} />
-        </div>
-      </>
-  );
-}
-
-function Home() {
-  return (
-
-    <div className="anim">
-      <Header />
-        <HomeAnimationCanvas  />
     </div>
   );
 }
+
 
 
 
