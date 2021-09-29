@@ -66,7 +66,7 @@ function Home() {
       </AboutMe>
       <OrbitControls
             camera={virtualCamera.current}
-            enablePan
+            enablePan = {false}
             enableZoom = {false}
             enableRotate
           />

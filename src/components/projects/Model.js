@@ -46,8 +46,8 @@ export default function Model({ scroll, ...props }) {
             <Computer name="Design-den"  scale={[30,30,30]} />
           </mesh>
 
-          <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {3} position={[32,-4,13]}>
-            <Guitar name="Fretboard"  scale={[1,1,1]} rotation={[Math.PI/2,Math.PI/2,0]} />
+          <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {3} position={[32,0,13]}>
+            <Guitar name="Fretboard"  scale={[1.45,1.45,1.45]} rotation={[Math.PI,-Math.PI/12,-Math.PI/2]} />
           </mesh>
 
           <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {7} position={[28,7,-10]}>

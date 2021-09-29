@@ -1,5 +1,5 @@
 import * as THREE from "three"
-import { Canvas, useFrame, useThree} from "@react-three/fiber"
+import { Canvas, useFrame, useThree, useLoader} from "@react-three/fiber"
 import React, { useEffect, useRef, Suspense} from "react"
 import { useContextBridge,  Html } from "@react-three/drei"
 import { A11y, useA11y, A11yAnnouncer, useUserPreferences, A11ySection, A11yUserPreferencesContext } from "@react-three/a11y"
@@ -130,6 +130,7 @@ function Shape({ index, active, ...props }) {
       </Html>);
   }
   const [resumeTexture] = useTexture(['/res.png']);
+  const texture = useLoader(THREE.TextureLoader, '/res.png')
 
   return (
     <>
@@ -176,7 +177,7 @@ function Shape({ index, active, ...props }) {
      <A11y role="link" href={'/myRes.pdf'} actionCall={() =>  {const win = window.open('/myRes.pdf', "_blank"); win.focus();}}>
      <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]}>
           <Box args={[8, 11, 0]} scale = {[0.25, 0.25, 0.25]}>
-          <meshBasicMaterial attach="material" map={resumeTexture} />
+          <meshBasicMaterial attach="material" map={texture} />
           </Box>
         </mesh>
         </A11y>
