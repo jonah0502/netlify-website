@@ -30,7 +30,7 @@ import "../../App.scss";
   }
 
 
-const state = proxy({ dark: false, motionDisabled: false, active: 0, rotation: 0 })
+const state = proxy({ dark: true, motionDisabled: false, active: 0, rotation: 0 })
 
 
 function ToggleButton(props) {
@@ -230,6 +230,8 @@ export default function App() {
 
 
   const ContextBridge = useContextBridge(A11yUserPreferencesContext)
+  console.log(state.dark)
+
   if(!state.dark && document.getElementsByClassName('inner-header')[0]){
     document.getElementsByClassName('inner-header')[0].style.color = "black";
   }
