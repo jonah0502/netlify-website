@@ -30,8 +30,8 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         <NewButtons
         tag = "#Fretboard-About"
         title = "Fretboard Alarm"
-        github = "https://lh3.googleusercontent.com/proxy/3t6e67NH-20iYARYuxcBSFYgxVNrCa7Ct_y3dBWLLhVFJa-FyiwkJFZRZk6L3RhGDsr03trN7OdrCKHqp1mUJ6ZMSmnchptm_Ycrp0WNc1Rc289hH7IrGQ4"
-        visit = "https://lh3.googleusercontent.com/proxy/3t6e67NH-20iYARYuxcBSFYgxVNrCa7Ct_y3dBWLLhVFJa-FyiwkJFZRZk6L3RhGDsr03trN7OdrCKHqp1mUJ6ZMSmnchptm_Ycrp0WNc1Rc289hH7IrGQ4"
+        github = "https://github.com/jonah0502/Fretboard_Alarm_app"
+        visitBool = {false}
         hexcolor_1 = "#6713d2"
         hexcolor_2 = "#cc208e"
         />

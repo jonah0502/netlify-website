@@ -55,7 +55,7 @@ export default function Model({ scroll, ...props }) {
           </mesh>
 
           <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {2}  position={[15,16,-25]}>
-           {/*<MysBox name="Loom" scale={scaleArr}/>*/}
+           <MysBox name="Loom" scale={scaleArr}/>
           </mesh>
 
           <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {5}  position={[-10,20,-45]}>
@@ -67,7 +67,7 @@ export default function Model({ scroll, ...props }) {
           </mesh>
 
           <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {6} position={[-25,48, 20]}>
-          {/*} <MysBox name="RPi" scale={scaleArr}/>*/}
+           <MysBox name="RPi" scale={scaleArr}/>
           </mesh>
 
       </group>
