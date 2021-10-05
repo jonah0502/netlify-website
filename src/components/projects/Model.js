@@ -10,6 +10,7 @@ import Clapper from '../models/Clapper.js'
 import Guitar from '../models/Guitar.js'
 import Computer from '../models/Computer.js'
 
+import MysBox from '../models/Mystery.js'
 import Brain from '../models/Brain.js'
 
 

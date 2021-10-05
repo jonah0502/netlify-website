@@ -20,6 +20,8 @@ const Hamburger = ({ state }) => {
   let line1 = useRef(null);
   let line2 = useRef(null);
   let line3 = useRef(null);
+  let line4 = useRef(null);
+
   let info = useRef(null);
 
   useEffect(() => {
@@ -44,7 +46,7 @@ const Hamburger = ({ state }) => {
       });
       staggerReveal(reveal1, reveal2);
       fadeInUp(info);
-      staggerText(line1, line2, line3);
+      staggerText(line1, line2, line3, line4);
     }
   }, [state]);
 
@@ -88,15 +90,19 @@ const Hamburger = ({ state }) => {
                       About
                     </Link>
                   </li>
-                  <li>
-                    <Link
-                      onMouseEnter={e => handleHover(e)}
-                      onMouseOut={e => handleHoverExit(e)}
-                      ref={el => (line3 = el)}
-                      to='/about'>
-                      Resume
-                    </Link>
-                  </li>
+                    <li> 
+                      <a 
+                        onMouseEnter={e => handleHover(e)} 
+                        onMouseOut={e => handleHoverExit(e)}                        
+                        ref={el => (line4 = el)}
+                        target="_blank" 
+                        href={'/myRes.pdf'}>
+                          
+                        Resume
+                          
+                        </a>
+                      </li>
+
                 </ul>
               </nav>
               <div ref={el => (info = el)} className='info'>
