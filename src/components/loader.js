@@ -22,7 +22,7 @@ export default function Loader({Homepage = false}) {
             <div className='loading-bar-container'>
               <a.div className='loading-bar' style={{ width: progress }}></a.div>
             </div>
-            {Homepage && <h5 style={{ color: "white"}}>(This may take a while)</h5>}
+            {/*Homepage && <h5 style={{ color: "white"}}>(This may take a while)</h5>*/}
           </a.div>
           </div>
         )
