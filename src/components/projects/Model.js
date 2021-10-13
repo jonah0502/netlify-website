@@ -44,7 +44,7 @@ export default function Model({ scroll, ...props }) {
         position={[0.06, 4.04, 0.35]}
         scale={[0.25, 0.25, 0.25]}>
           <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {1} position={[5,-10,30]}>
-            <Computer name="Design-den"  scale={[30,30,30]} />
+            <Computer name="Design-den"  scale={[1.5,1.5,1.5]} />
           </mesh>
 
           <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {3} position={[32,0,13]}>
@@ -60,7 +60,7 @@ export default function Model({ scroll, ...props }) {
           </mesh>
 
           <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {5}  position={[-10,20,-45]}>
-          <Computer name="Portfolio"  scale={[30,30,30]} />
+          <Computer name="Portfolio"  scale={[1.5,1.5,1.5]} />
           </mesh>
 
           <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {4}  position={[-30,30,-17]}>

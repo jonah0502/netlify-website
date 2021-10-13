@@ -45,7 +45,7 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         tag = "#TagFlix-About"
         title = "TagFlix"
         github = "https://github.com/jonah0502/tagFlix"
-        visit = "https://tagflix1.herokuapp.com/"
+        visit = "https://tag-flix.herokuapp.com/page/1"
         hexcolor_1 = "#C85250"
         hexcolor_2 = "#F7BEC0"
         />
