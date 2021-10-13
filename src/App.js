@@ -138,7 +138,7 @@ function ExperienceAnimationCanvas() {
   <ul>
     <li>Held weekly office hours assisting students in debugging programs and answering course-related questions</li>
     <li>Mastered the CS261 (Data Structures) material set in order to help students to the fullest</li>
-    <li>Graded 200+ students on programming assignments and gave feedback to esure their success with future programming</li>
+    <li>Graded 200+ students on programming assignments and gave feedback to ensure their success with future programming</li>
     <li>Directed after school weekly study sessions to help student understand and learn difficult data structures and algorithms. </li>
   </ul>
 
@@ -158,19 +158,19 @@ function ExperienceAnimationCanvas() {
     During my time with Alpha Epsilon Pi, I was able to...
   </p>
   <ul>
-    <li>Seize opportunity to Successfully grew membership by 30%</li>
-    <li> Regualrly volunteer at our local Hillel</li>
-    <li>regularly serve in food kitchens</li>
-    <li>raise $3,000 for charity a year in our annual AE Puppies philantrophy which also resulted in many shelter dogs getting adopted.</li>
+    <li>Successfully grow membership by 50%</li>
+    <li>Regualrly volunteer at our local Hillel</li>
+    <li>Regularly serve in food kitchens</li>
+    <li>Organize annual AE Puppies philanthropy which resulted in over $3000 going to the Corvallis Humane Society and many shelter dogs getting adopted.</li>
   </ul>
   <p>
     Positions Held (in order of most recent): 
   </p>
   <ul>
-    <li>Vice President (current) </li>
+    <li>Vice President (Current) </li>
+    <li>Philantrophy Chair (Current)</li>
     <li>Sentiniel</li>
     <li>Scribe</li>
-    <li>Philantrophy Chair</li>
     <li>Social Media Chair</li>
   </ul>
 
@@ -202,9 +202,12 @@ function ExperienceAnimationCanvas() {
 <section>
   <h2>🏊‍♂️ Lifeguard</h2>
   <h4>June 2016 - August 2019</h4>
-  <p>
-    During my time as a lifeguard, I enforced pool rules, taught lessons, rescued drowning swimmers, and cleaned the pool decks and bathrooms. 
-</p>
+  <ul>
+    <li>Explained and enforced facility regulations, policies, and procedures to patrons </li>
+    <li>Rescued swimmers in need of assistance</li>
+    <li>Demonstrate proper rescue techniques, including but not limited to, swimming rescues, First Aid, and CPR</li>
+    <li>Kept accurate records of incident reports, maintenance, and chemical testing</li>
+  </ul>
 
 </section>
 </main>
