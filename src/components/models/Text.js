@@ -22,7 +22,6 @@ export default function Text({ children, vAlign = 'center', hAlign = 'center', s
     mesh.current.position.y = (vAlign === 'center') ? -size.y / 2 : vAlign === 'top' ? 0 : -size.y
   }, [children])
 
-  const tGeo = new TextGeometry("JONAH", config)
 
   return (
     <mesh scale = {0.09} rotation = {[0, Math.PI /2, 0]} position={[0,1,0.5]}>
