@@ -45,6 +45,7 @@ export default function ButtonText () {
           <h2>About This Website {/*<img src={tagFav} style={{width:"2em", height:"2em", padding: "10px"}} />*/}</h2>
           <p>This is my portfolio website. It is responsive, dynamic and most importantly 3D! It goes into detail about my past work experience and projects.</p>
           <p>This was written primarily using React and the React-Three-Fiber Library</p>
+          <p>All 3D models are either open source or my own. Any models that are not my own are cited in the source code on github!</p>
         </div>
 
         <div className = "about" id="RSA-About">
