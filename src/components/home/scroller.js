@@ -9,24 +9,22 @@ import MysBox from '../models/Mystery.js'
 import Bulb from '../models/Bulb.js'
 import Briefcase from '../models/Briefcase.js'
 import Computer from '../models/Computer.js'
-import { AdaptiveDpr, AdaptiveEvents, Preload, Plane, Box, useTexture, Text } from "@react-three/drei";
-import {FontLoader} from 'three/examples/jsm/loaders/FontLoader.js'
+import { AdaptiveDpr, AdaptiveEvents, Preload, Plane, Box, useTexture } from "@react-three/drei";
 
 import Loader from "../loader.js"
-import TextGroup from '../models/Text.js'
+import Text from '../models/Text.js'
 import "../../App.scss";
 
   //React.Children.toArray(arrayOfComponents)
   
   function Jumbo() {
-    const font = useLoader(FontLoader, '/bold.blob')
     const ref = useRef()
     useFrame(({ clock }) => (ref.current.rotation.x = ref.current.rotation.y = ref.current.rotation.z = Math.sin(clock.getElapsedTime()) * 0.3))
     return (
       <group ref={ref}>
-          <Text color={'#EC2D2D'} anchorX="center" anchorY="middle" scale = {5} font = {font}  textAlign={'right'} position={[0, .5, 0]} rotation={[0, Math.PI/2, 0]}> JONAHS </Text>
-          <Text color={'#EC2D2D'} anchorX="center" anchorY="middle" scale = {5} font = {font}  textAlign={'right'}  position={[0, 0, 0]} rotation={[0, Math.PI/2, 0]}> PORTFOLIO </Text>
-          <Text color={'#EC2D2D'} anchorX="center" anchorY="middle" scale = {5} font = {font}  textAlign={'right'} position={[0, -.5, 0]} rotation={[0, Math.PI/2, 0]}> PAGE </Text>
+        <Text hAlign="right" position={[-12, 6.5, 0]} children="JONAHS" />
+        <Text hAlign="right" position={[-12, 0, 0]} children="PORFOLIO" />
+        <Text hAlign="right" position={[-12, -6.5, 0]} children="PAGE" />
       </group>
     )
   }

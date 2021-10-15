@@ -1,8 +1,11 @@
 import * as THREE from 'three'
 import React, { useMemo, useRef, useLayoutEffect } from 'react'
-import { useLoader } from '@react-three/fiber'
+import {extend, useLoader } from '@react-three/fiber'
 import {FontLoader} from 'three/examples/jsm/loaders/FontLoader.js'
 import {TextGeometry} from 'three/examples/jsm/geometries/TextGeometry.js'
+
+extend({ TextGeometry })
+
 
 export default function Text({ children, vAlign = 'center', hAlign = 'center', size = 1.5, color = '#000000', ...props }) {
   const font = useLoader(FontLoader, '/bold.blob')
@@ -25,7 +28,7 @@ export default function Text({ children, vAlign = 'center', hAlign = 'center', s
     <mesh scale = {0.09} rotation = {[0, Math.PI /2, 0]} position={[0,1,0.5]}>
     <group {...props} scale={[0.1 * size, 0.1 * size, 0.1]}>
       <mesh ref={mesh}>
-       <primitive object={tGeo} position={[10, 0, 0]} scale={[10,10,10]} />
+        <textGeometry args={[children, config]} />
         <meshNormalMaterial />
       </mesh>
     </group>
