@@ -11,7 +11,7 @@ import Guitar from '../models/Guitar.js'
 import Computer from '../models/Computer.js'
 
 import MysBox from '../models/Mystery.js'
-import Brain from '../models/Brain.js'
+//import Brain from '../models/Brain.js'
 
 
 
@@ -59,11 +59,12 @@ export default function Model({ scroll, ...props }) {
            <MysBox name="Loom" scale={scaleArr}/>
           </mesh>
 
-          <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {5}  position={[-10,20,-45]}>
-          <Computer name="Portfolio"  scale={[1.5,1.5,1.5]} />
+          <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {5}  position={[-10,21,-45]}>
+          <Computer name="Portfolio"  scale={[1.5,1.5,1.5]}  rotation={[0,Math.PI,0]}/>
           </mesh>
 
           <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {4}  position={[-30,30,-17]}>
+           <MysBox name="RSA" scale={scaleArr}/>
            {/*<Brain name="RSA" scale={[200,200,200]}/>*/}
           </mesh>
 

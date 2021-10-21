@@ -22,16 +22,14 @@ export default function ButtonText () {
 
         <div className = "about" id="Design-Den-About">
           <h2>About Design-Den {/*<img src={tagFav} style={{width:"2em", height:"2em", padding: "10px"}} />*/}</h2>
-          <p>WIP</p>
           <p>Design-Den is an ecommerce platform to buy and sell website designs.</p>
           <p>This project was made in collaboration with Jonathan Nichols for my CS340 (Databases) Final Project. It uses Next.js as its frontend. It also uses Flask and MYSQL for it's backend.</p>
         </div>
 
         <div className = "about" id="Fretboard-About">
           <h2>About Fretboard Alarm {/*<img src={tagFav} style={{width:"2em", height:"2em", padding: "10px"}} />*/}</h2>
-          <p>WIP</p>
           <p>Fretboard Alarm is an app that helps people learn the notes on the Fretboard by quizing them on it every morning. It is a fully funtional alarm but to turn it off you must correctly guess the note name of the prompted Fretboard position 3 times in a row.</p>
-          <p>This project was made with kivy and python and is available on all platforms. (IOS, Android, Windows, Linuix)</p>
+          <p>This project was made with Flutter and will be available on all platforms. (IOS, Android, Windows, Linuix)</p>
         </div>
 
         <div className = "about" id="Loom-About">
@@ -44,18 +42,18 @@ export default function ButtonText () {
         <div className = "about" id="Portfolio-About">
           <h2>About This Website {/*<img src={tagFav} style={{width:"2em", height:"2em", padding: "10px"}} />*/}</h2>
           <p>This is my portfolio website. It is responsive, dynamic and most importantly 3D! It goes into detail about my past work experience and projects.</p>
-          <p>This was written primarily using React and the React-Three-Fiber Library</p>
+          <p>This was written primarily using React and the <a className="btn btn-outline-light"  target="_blank" href="https://docs.pmnd.rs/react-three-fiber/getting-started/introduction">React-Three-Fiber</a> Library</p>
           <p>All 3D models are either open source or my own. Any models that are not my own are cited in the source code on github!</p>
         </div>
 
         <div className = "about" id="RSA-About">
           <h2>About Review Sentiment Analysis {/*<img src={tagFav} style={{width:"2em", height:"2em", padding: "10px"}} />*/}</h2>
-          <p>WIP</p>
-          <p>This project uses a Reccurrent Neural Network (RNN) trained on IMDb reviews in order to predict the sentiment (positive or negative) of a review. </p>
+          <p><em>Work in Progress</em></p>
+          <p>This project uses <a className="btn btn-outline-light"  target="_blank" href="https://docs.fast.ai/">fast.ai</a> to create a Reccurrent Neural Network (RNN) trained on IMDb reviews in order to predict the sentiment (positive or negative) of a review. </p>
         </div>
         <div className = "about" id="RPi-About">
           <h2>About Raspberry-Pi Guitar Pedal {/*<img src={tagFav} style={{width:"2em", height:"2em", padding: "10px"}} />*/}</h2>
-          <p>WIP</p>
+          <p><em>Work in Progress</em></p>
           <p>This project uses a Long Short Term Memory Neural Network (LSTM) and a Rasberry Pi to emulate any guitar pedal. </p>
           <p>Learn More:&ensp;<a className="btn btn-outline-light"  target="_blank" href="https://towardsdatascience.com/neural-networks-for-real-time-audio-raspberry-pi-guitar-pedal-bded4b6b7f31"> Here</a></p>
         </div>
