@@ -158,9 +158,7 @@ function Shape({ index, active, color, ...props }) {
         {index === 4 &&
         
      <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]} onClick={active ?() =>  {const win = window.open('/myRes.pdf', "_blank"); win.focus();}: ()=>{}}>
-          <Box args={[8, 11, 0]} scale = {[0.25, 0.25, 0.25]}>
-          <meshBasicMaterial attach="material" map={texture} />
-          </Box>
+          {color}
         </mesh>
         }
     </mesh>
