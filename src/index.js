@@ -2,8 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import { Router, Route} from "react-router-dom";
 import { createBrowserHistory } from "history";
+import { A11yUserPreferences } from "@react-three/a11y"
 
 const rootElement = document.getElementById("root");
 const customHistory = createBrowserHistory({
@@ -11,6 +12,7 @@ const customHistory = createBrowserHistory({
 });
 
 ReactDOM.render(
+  <A11yUserPreferences>
   <Router history={customHistory}>
     <Route
       component={({ history }) => {
@@ -18,9 +20,11 @@ ReactDOM.render(
         return <App />;
       }}
     />
-  </Router>,
+  </Router>
+  </A11yUserPreferences>,
   rootElement
 );
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

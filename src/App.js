@@ -51,7 +51,7 @@ function Home() {
 
 
       
-      <Suspense fallback={Loader}>
+      <Suspense fallback={null}>
 
         <AdaptiveDpr pixelated />
         <AdaptiveEvents />
@@ -94,7 +94,7 @@ function ExperienceAnimationCanvas() {
       camera={{ position: [100, 10, 0], fov: 75 }}
     >
 
-      <Suspense fallback={Loader}>
+      <Suspense fallback={null}>
       <AdaptiveDpr pixelated />
         <AdaptiveEvents />
         <Preload all/>
