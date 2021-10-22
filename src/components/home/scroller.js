@@ -143,8 +143,6 @@ function Shape({ index, active, color, ...props }) {
         </div>
       </Html>);
   }
-  //const [resumeTexture] = useTexture(['/res.png']);
-  const texture = useLoader(THREE.TextureLoader, '/res.png')
   const URLs = ["/", "/projects", "/experience", "/about", ""]
 
   return (
