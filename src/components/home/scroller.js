@@ -9,7 +9,8 @@ import MysBox from '../models/Mystery.js'
 import Bulb from '../models/Bulb.js'
 import Briefcase from '../models/Briefcase.js'
 import Computer from '../models/Computer.js'
-import { AdaptiveDpr, AdaptiveEvents, Preload, Plane, Box, useTexture } from "@react-three/drei";
+import { AdaptiveDpr, AdaptiveEvents, Preload, Plane, Box, useTexture, ContactShadows } from "@react-three/drei";
+import { ResizeObserver } from "@juggle/resize-observer"
 
 import Loader from "../loader.js"
 import Text from '../models/Text.js'
@@ -88,6 +89,7 @@ function Diamond({ position, rotation }) {
         metalness={1}
         roughness={0.8}
         color={a11y.focus || a11y.hover ? "#cc66dd" : "#ffffff"}
+        emissive={a11y.focus ? "#cc4444" : a11y.hover ? "#339922" : "#003399"}
       />
     </mesh>
   )
@@ -129,8 +131,9 @@ function Shape({ index, active, ...props }) {
         </div>
       </Html>);
   }
-  const [resumeTexture] = useTexture(['/res.png']);
+  //const [resumeTexture] = useTexture(['/res.png']);
   const texture = useLoader(THREE.TextureLoader, '/res.png')
+  const URLs = ["/", "/projects", "/experience", "/about", "Resume"]
 
   return (
     <>
@@ -143,7 +146,7 @@ function Shape({ index, active, ...props }) {
         }
         {index === 1 &&
         <>
-     <A11y role="link" href="/projects"  actionCall={() =>  window.appHistory.push("/projects") } >
+     <A11y role="link" href="/projects"  actionCall={active ? () =>  window.appHistory.push(URLs[index]): () => window.appHistory.push(URLs[0]) } >
      <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]}>
         <Computer scale = {[0.3,0.3,0.3]} position = {[0,-0.5,0]}/>
         </mesh>
@@ -153,7 +156,7 @@ function Shape({ index, active, ...props }) {
         
         {index === 2 &&
         <>
-     <A11y role="link" href="/experience"   actionCall={() =>  window.appHistory.push("/experience") } >
+     <A11y role="link" href="/experience"   actionCall={active ? () =>  window.appHistory.push(URLs[index]): () => window.appHistory.push(URLs[0]) } >
      <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]}>
         <Briefcase scale ={[0.15, 0.15, 0.15]} position = {[0,1,0]} rotation = {[-Math.PI/2,0,0]}/>
         </mesh>
@@ -163,7 +166,7 @@ function Shape({ index, active, ...props }) {
         
         {index === 3 &&
         <>
-     <A11y role="link" href="/about"  actionCall={() =>  window.appHistory.push("/about") } >
+     <A11y role="link" href="/about"  actionCall={active ? () =>  window.appHistory.push(URLs[index]): () => window.appHistory.push(URLs[0]) } >
      <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]}>
         <MysBox
          scale = {[0.06, 0.06, 0.06]}
@@ -227,7 +230,10 @@ export default function App() {
     state.dark = a11yPrefersState.prefersDarkScheme
     return () => {}
   }, [a11yPrefersState.prefersDarkScheme])
-
+  useEffect(() => {
+    state.motionDisabled = a11yPrefersState.prefersReducedMotion
+    return () => {}
+  }, [a11yPrefersState.prefersReducedMotion])
 
   const ContextBridge = useContextBridge(A11yUserPreferencesContext)
   console.log(state.dark)
@@ -251,10 +257,7 @@ export default function App() {
     <div id = "scroller">
     <main className={snap.dark ? "dark" : "bright"} >
 
-      <Canvas mode="concurrent" camera={{ position: [0, 0, 15], near: 4, far: 30 }} pixelRatio={[1, 1.5]}>
-            <Preload all/>
-            <AdaptiveDpr pixelated />
-            <AdaptiveEvents />
+      <Canvas resize={{ polyfill: ResizeObserver }} camera={{ position: [0, 0, 15], near: 4, far: 30 }} pixelRatio={[1, 1.5]}>
         <ContextBridge>
           <pointLight position={[100, 100, 100]} intensity={0.5}  />
           <pointLight position={[-100, -100, -100]} intensity={1.5} />
@@ -268,6 +271,7 @@ export default function App() {
               description="This carousel contains 5 shapes. Use the Previous and Next buttons to cycle through all the shapes.">
               <Nav left />
               <Carroussel />
+              <ContactShadows rotation-x={Math.PI / 2} position={[0, -5, 0]} opacity={0.4} width={30} height={30} blur={1} far={15} />
               <Nav />
               <A11y
                 role="togglebutton"
