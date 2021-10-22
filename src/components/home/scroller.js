@@ -171,7 +171,7 @@ function Shape({ index, active, ...props }) {
         </>}
         {index === 4 &&
         <>
-     <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]} onClick={() =>  {const win = window.open('/myRes.pdf', "_blank"); win.focus();}}>
+     <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]} onClick={active ?() =>  {const win = window.open('/myRes.pdf', "_blank"); win.focus();}: ()=>{}}>
           <Box args={[8, 11, 0]} scale = {[0.25, 0.25, 0.25]}>
           <meshBasicMaterial attach="material" map={texture} />
           </Box>
@@ -227,13 +227,13 @@ export default function App() {
   }, [a11yPrefersState.prefersReducedMotion])
 
   const ContextBridge = useContextBridge(A11yUserPreferencesContext)
-/*
+
   if(!state.dark && document.getElementsByClassName('inner-header')[0]){
     document.getElementsByClassName('inner-header')[0].style.color = "black";
   }
   else if(state.dark && document.getElementsByClassName('inner-header')[0]){
     document.getElementsByClassName('inner-header')[0].style.color = "white";
-  }*/
+  }
   return (
     <>
     <Loader
@@ -242,7 +242,7 @@ export default function App() {
 
     <Suspense fallback={null}>
       
-  { /* <Header />*/}
+   <Header />
 
     <div id = "scroller">
     <main className={snap.dark ? "dark" : "bright"} >
