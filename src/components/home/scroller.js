@@ -31,7 +31,7 @@ import "../../App.scss";
   }
 
 
-const state = proxy({ dark: false, motionDisabled: false, active: 0, rotation: 0 })
+const state = proxy({ dark: true, motionDisabled: false, active: 0, rotation: 0 })
 
 
 function ToggleButton(props) {
