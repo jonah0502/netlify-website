@@ -75,6 +75,18 @@ function Nav({ left }) {
   )
 }
 
+function Resume(){
+  const texture = useLoader(THREE.TextureLoader, '/res.png')
+return(
+  <Box args={[8, 11, 0]} scale = {[0.25, 0.25, 0.25]}>
+  <meshBasicMaterial attach="material" map={texture} />
+  </Box>
+  
+  );
+
+}
+
+
 function Diamond({ position, rotation }) {
   const a11y = useA11y()
   const viewport = useThree((state) => state.viewport)
@@ -95,7 +107,7 @@ function Diamond({ position, rotation }) {
   )
 }
 
-function Shape({ index, active, ...props }) {
+function Shape({ index, active, color, ...props }) {
   const vec = new THREE.Vector3()
   const ref = useRef()
 
@@ -133,50 +145,24 @@ function Shape({ index, active, ...props }) {
   }
   //const [resumeTexture] = useTexture(['/res.png']);
   const texture = useLoader(THREE.TextureLoader, '/res.png')
-  const URLs = ["/", "/projects", "/experience", "/about", "Resume"]
+  const URLs = ["/", "/projects", "/experience", "/about", ""]
 
   return (
     <>
     <mesh rotation-y={index * 2000} ref={ref} {...props}>
-      {index === 0 &&
       
-       <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]}>
-        <Jumbo />
-        </mesh>
-        }
-        {index === 1 &&
-        <>
      <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]} onClick={active ? ()=>window.appHistory.push(URLs[index]): ()=>{} } >
-        <Computer scale = {[0.3,0.3,0.3]} position = {[0,-0.5,0]}/>
-        </mesh>
-        </>
-        }
-        
-        {index === 2 &&
-        <>
-     <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]} onClick={active ? ()=>window.appHistory.push(URLs[index]): ()=>{} } >
-        <Briefcase scale ={[0.15, 0.15, 0.15]} position = {[0,1,0]} rotation = {[-Math.PI/2,0,0]}/>
-        </mesh>
-        </>
-        }
-        
-        {index === 3 &&
-        <>
-     <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]} onClick={active ? ()=>window.appHistory.push(URLs[index]): ()=>{} } >
-        <MysBox
-         scale = {[0.06, 0.06, 0.06]}
-         />
-           </mesh>
+          {color}
+      </mesh>
 
-        </>}
         {index === 4 &&
-        <>
+        
      <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]} onClick={active ?() =>  {const win = window.open('/myRes.pdf', "_blank"); win.focus();}: ()=>{}}>
           <Box args={[8, 11, 0]} scale = {[0.25, 0.25, 0.25]}>
           <meshBasicMaterial attach="material" map={texture} />
           </Box>
         </mesh>
-        </>}
+        }
     </mesh>
     <RenderHTML/>
     </>
@@ -199,9 +185,8 @@ function Carroussel() {
 
   return (
     <group ref={group} position = {[0, 0, 0]}>
-      {["Home", "Projects", "Experience", "About", "Resume"].map((name, i) => (
-          <Shape
-            key = {name}
+{[<Jumbo/>,<Computer scale = {[0.3,0.3,0.3]} position = {[0,-0.5,0]}/>, <Briefcase scale ={[0.15, 0.15, 0.15]} position = {[0,1,0]} rotation = {[-Math.PI/2,0,0]}/>, <MysBox scale = {[0.06, 0.06, 0.06]}/>, <Resume/>].map((name, i) => (          <Shape
+            key = {i}
             index={i}
             position={[radius * Math.cos(i * ((Math.PI * 2) / 5)), -2, radius * Math.sin(i * ((Math.PI * 2) / 5))]}
             active={snap.active === i}
