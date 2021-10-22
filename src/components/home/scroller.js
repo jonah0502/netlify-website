@@ -146,44 +146,36 @@ function Shape({ index, active, ...props }) {
         }
         {index === 1 &&
         <>
-     <A11y role="link" href="/projects"  actionCall={active ? () =>  window.appHistory.push(URLs[index]): () => window.appHistory.push(URLs[0]) } >
-     <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]}>
+     <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]} onClick={active ? ()=>window.appHistory.push(URLs[index]): ()=>{} } >
         <Computer scale = {[0.3,0.3,0.3]} position = {[0,-0.5,0]}/>
         </mesh>
-        </A11y>
         </>
         }
         
         {index === 2 &&
         <>
-     <A11y role="link" href="/experience"   actionCall={active ? () =>  window.appHistory.push(URLs[index]): () => window.appHistory.push(URLs[0]) } >
-     <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]}>
+     <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]} onClick={active ? ()=>window.appHistory.push(URLs[index]): ()=>{} } >
         <Briefcase scale ={[0.15, 0.15, 0.15]} position = {[0,1,0]} rotation = {[-Math.PI/2,0,0]}/>
         </mesh>
-        </A11y>
         </>
         }
         
         {index === 3 &&
         <>
-     <A11y role="link" href="/about"  actionCall={active ? () =>  window.appHistory.push(URLs[index]): () => window.appHistory.push(URLs[0]) } >
-     <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]}>
+     <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]} onClick={active ? ()=>window.appHistory.push(URLs[index]): ()=>{} } >
         <MysBox
          scale = {[0.06, 0.06, 0.06]}
          />
            </mesh>
 
-        </A11y>
         </>}
         {index === 4 &&
         <>
-     <A11y role="link" href={'/myRes.pdf'} actionCall={() =>  {const win = window.open('/myRes.pdf', "_blank"); win.focus();}}>
-     <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]}>
+     <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]} onClick={() =>  {const win = window.open('/myRes.pdf', "_blank"); win.focus();}}>
           <Box args={[8, 11, 0]} scale = {[0.25, 0.25, 0.25]}>
           <meshBasicMaterial attach="material" map={texture} />
           </Box>
         </mesh>
-        </A11y>
         </>}
     </mesh>
     <RenderHTML/>
@@ -208,14 +200,13 @@ function Carroussel() {
   return (
     <group ref={group} position = {[0, 0, 0]}>
       {["Home", "Projects", "Experience", "About", "Resume"].map((name, i) => (
-        <A11y key={name} role="content" description={`a ${name}`} tabIndex={-1} hidden={snap.active !== i}>
           <Shape
+            key = {name}
             index={i}
             position={[radius * Math.cos(i * ((Math.PI * 2) / 5)), -2, radius * Math.sin(i * ((Math.PI * 2) / 5))]}
             active={snap.active === i}
             color={name}
           />
-        </A11y>
         
       ))}
     </group>
@@ -236,13 +227,13 @@ export default function App() {
   }, [a11yPrefersState.prefersReducedMotion])
 
   const ContextBridge = useContextBridge(A11yUserPreferencesContext)
-
+/*
   if(!state.dark && document.getElementsByClassName('inner-header')[0]){
     document.getElementsByClassName('inner-header')[0].style.color = "black";
   }
   else if(state.dark && document.getElementsByClassName('inner-header')[0]){
     document.getElementsByClassName('inner-header')[0].style.color = "white";
-  }
+  }*/
   return (
     <>
     <Loader
@@ -251,7 +242,7 @@ export default function App() {
 
     <Suspense fallback={null}>
       
-    <Header />
+  { /* <Header />*/}
 
     <div id = "scroller">
     <main className={snap.dark ? "dark" : "bright"} >
@@ -270,7 +261,6 @@ export default function App() {
               description="This carousel contains 5 shapes. Use the Previous and Next buttons to cycle through all the shapes.">
               <Nav left />
               <Carroussel />
-              <ContactShadows rotation-x={Math.PI / 2} position={[0, -5, 0]} opacity={0.4} width={30} height={30} blur={1} far={15} />
               <Nav />
               <A11y
                 role="togglebutton"
