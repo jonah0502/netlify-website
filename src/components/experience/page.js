@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect} from 'react';
 
 // R3F
-import { Html} from "@react-three/drei";
+import { Html, Image} from "@react-three/drei";
 //Components
 import { Section } from "./eSection";
 
@@ -11,7 +11,7 @@ import { useInView } from "react-intersection-observer";
 
 
 
-export default function URSA ({domContent, position, children, bgColor}) {
+export default function URSA ({domContent, position, children, bgColor, imgBool, imgURL}) {
     const [refItem, inView] = useInView({ threshold: 0.5});
     useEffect(() => {
       inView && (document.getElementsByClassName('anim')[0].style.background = bgColor )});
@@ -25,7 +25,14 @@ export default function URSA ({domContent, position, children, bgColor}) {
             </div>
             </div>
           </Html>
+          <group className = "left">
+     
+        {imgBool && 
+              <Image url={imgURL} />
+            }
+            </group>
         </group>
+
       </Section>
     );
   }

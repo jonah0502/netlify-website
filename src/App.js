@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Switch, Route } from "react-router-dom"; 
 
 // R3F
-import { Canvas} from "@react-three/fiber";
+import { Canvas, useFrame} from "@react-three/fiber";
 //import { EffectComposer, Outline, SelectiveBloom } from '@react-three/postprocessing'
 
 //Home Components
@@ -31,7 +31,7 @@ import ExPage from "./components/experience/page.js";
 
 import Scroller from "./components/home/scroller.js"
 
-import { AdaptiveDpr, AdaptiveEvents, Preload, PerspectiveCamera, OrbitControls } from "@react-three/drei";
+import { AdaptiveDpr, AdaptiveEvents, Preload, PerspectiveCamera, OrbitControls, Image } from "@react-three/drei";
 
 
 
@@ -85,6 +85,8 @@ function ExperienceAnimationCanvas() {
   const [events, setEvents] = useState();
   const domContent = useRef();
   const scrollArea = useRef();
+  const fratIMG = useRef();
+
   const onScroll = (e) => (eState.top.current = e.target.scrollTop);
   useEffect(() => void onScroll({ target: scrollArea.current }), []);
   return (
@@ -149,7 +151,9 @@ function ExperienceAnimationCanvas() {
         <ExPage      
       domContent={domContent}
       position = {-550}
-      bgColor=" #C06C84">
+      bgColor=" #C06C84"
+      imgBool ={true}
+      imgURL = "/Fraternity_1.jpg">
 <main >
 <section>
   <h2>✡️ Alpha Epsilon Pi Fraternity</h2>
@@ -175,6 +179,7 @@ function ExperienceAnimationCanvas() {
   </ul>
 
 </section>
+ {/*} <img src="/Fraternity_1.jpg" style={{ width: "47vw", height: "40vh" }} className = "left" />*/}
 </main>
 
         </ExPage>
