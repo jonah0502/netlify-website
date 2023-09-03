@@ -111,15 +111,13 @@ function ExperienceAnimationCanvas() {
         <p>🚀 My Work Experience!</p>
       </header>
 <section>
-  <h2>🔬 URSA Engage Research Internship</h2>
-  <h4>February 2021 - June 2021</h4>
-  <p>
-     Under the mentorship of Dr. Chet Udell I...
-  </p>
+  <h2>Software Engineering Intern at Daimler Trucks 🚚</h2>
+  <h3>Portland, OR</h3>
+  <h4>(June 2023 – Present)</h4>
   <ul>
-    <li>set up a web server using React, NodeJS, and Docker in order to add MQTT and MongoDB functionality to Loom.</li>
-    <li>Maintained a MongoDB Database to collect and store data from Arduino sensors using C/C+.</li>
-    <li>I managed a team of volunteer engineers and used MaxMSP and NodeJS to make an Audio-visualization of MongoDB data.</li>
+    <li>👨‍💻 Developed comprehensive C# and .NET applications integrated with an SQL database for efficiently managing vehicle Service Repair Tickets (SRTs).</li>
+    <li>📊 Enabled seamless CRUD operations and facilitated diverse format exports.</li>
+    <li>🔧 Leveraged tools like Visual Studio and SQL Server Management Studio to ensure efficient development and database management.</li>
   </ul>
 
 </section>
@@ -132,16 +130,12 @@ function ExperienceAnimationCanvas() {
       bgColor=" #F67280">
 <main >
 <section className = "left">
-  <h2>👨‍🏫 Data Structures Teaching Assistant</h2>
-  <h4>June 2021 - August 2021</h4>
-  <p>
-    During my time as a teaching assistant I...
-  </p>
+  <h2>Software Engineering Intern at Mosaic.Tech 🌐</h2>
+  <h3>San Diego, CA</h3>
+  <h4>March 2022 – September 2022</h4>
   <ul>
-    <li>Held weekly office hours assisting students in debugging programs and answering course-related questions</li>
-    <li>Mastered the CS261 (Data Structures) material set in order to help students to the fullest</li>
-    <li>Graded 200+ students on programming assignments and gave feedback to ensure their success with future programming</li>
-    <li>Directed after school weekly study sessions to help student understand and learn difficult data structures and algorithms. </li>
+    <li>🔌 Managed asynchronous functions using C#, integrated Snowflake Data Warehouse with OAuth, and developed Angular-based front-end.</li>
+    <li>🧪 Created UI automation frameworks and test scripts for in-house systems using Cypress, Cucumber, and Jenkins.</li>
   </ul>
 
 </section>
@@ -156,26 +150,14 @@ function ExperienceAnimationCanvas() {
       imgURL = "/Fraternity_1.jpg">
 <main >
 <section>
-  <h2>✡️ Alpha Epsilon Pi Fraternity</h2>
-  <h4>September 2019 - Current</h4>
-  <p>
-    During my time with Alpha Epsilon Pi, I was able to...
-  </p>
+  <h2>Data Structures / Algorithms Teaching Assistant at Oregon State University 📚</h2>
+  <h3>Corvallis, OR</h3>
+  <h4>June 2021 - December 2021</h4>
   <ul>
-    <li>Successfully grow membership by 50%</li>
-    <li>Regualrly volunteer at our local Hillel</li>
-    <li>Regularly serve in food kitchens</li>
-    <li>Organize annual AE Puppies philanthropy which resulted in over $3000 going to the Corvallis Humane Society and many shelter dogs getting adopted.</li>
-  </ul>
-  <p>
-    Positions Held (in order of most recent): 
-  </p>
-  <ul>
-    <li>Vice President (Current) </li>
-    <li>Philantrophy Chair (Current)</li>
-    <li>Sentiniel</li>
-    <li>Scribe</li>
-    <li>Social Media Chair</li>
+    <li>📚 Assisted in designing and leading weekly discussion sessions to reinforce key concepts in data structures and algorithms, demonstrating teaching and communication skills.</li>
+    <li>🧑‍🏫 Conducted one-on-one tutoring sessions, providing personalized guidance to help students grasp complex algorithms and data structures, showcasing a dedication to student success.</li>
+    <li>📊 Collaborated with professors to create challenging programming assignments that fostered critical thinking and problem-solving skills among students, showcasing involvement in curriculum development.</li>
+    <li>📝 Evaluated and provided constructive feedback on student assignments and projects, promoting continuous improvement in coding proficiency.</li>
   </ul>
 
 </section>
@@ -189,12 +171,12 @@ function ExperienceAnimationCanvas() {
       bgColor="#F8B195">
 <main >
 <section className = "left">
-  <h2>🤓 STEMbassadors</h2>
-  <h4>December 2021 - June 2021</h4>
-  <p>
-    Built, distributed, and taught once restricted technologies to non-engineering students at OSU such as CNC Routers, Laser Cutters, and 3D Printers. Specifically with the focus of facilitating their use within the arts. 
-  </p>
-
+  <h2>Open-Sensing Lab Computer Science Lead at Oregon State University 🌱</h2>
+  <h4>January 2021 - June 2021</h4>
+  <ul>
+    <li>🔊 Led a team in developing audio-visualization of MongoDB data using React, NodeJS, and Docker.</li>
+    <li>🛠️ Integrated Arduino-based sensor data via C programming, achieving seamless hardware-software interaction.</li>
+  </ul>
 </section>
 </main>
 
