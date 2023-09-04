@@ -47,15 +47,15 @@ export default function ButtonText () {
         </div>
 
         <div className = "about" id="RSA-About">
-          <h2>About Review Sentiment Analysis {/*<img src={tagFav} style={{width:"2em", height:"2em", padding: "10px"}} />*/}</h2>
-          <p><em>Work in Progress</em></p>
-          <p>This project uses <a className="btn btn-outline-light"  target="_blank" href="https://docs.fast.ai/">fast.ai</a> to create a Reccurrent Neural Network (RNN) trained on IMDb reviews in order to predict the sentiment (positive or negative) of a review. </p>
+          <h2>About College Capstone Project {/*<img src={tagFav} style={{width:"2em", height:"2em", padding: "10px"}} />*/}</h2>
+          <p>The main purpose of this project was to build and train an AI-Annotation Tool using deep learning techniques like  <a className="btn btn-outline-light"  target="_blank" href="https://github.com/ultralytics/yolov5">YOLOv5</a> and <a className="btn btn-outline-light"  target="_blank" href="https://github.com/opencv/cvat">CVAT</a> such that it would be able to annotate and recognize welding anomalies. </p>
+          <p>This model was then integrated into an easy to use android application with a sql backend to communicate with the intel servers. You can find the code for the android application by clicking the github link.</p>
+          <p>This was done in collaboration with Intel under the supervision of <a className="btn btn-outline-light"  target="_blank" href="https://www.linkedin.com/in/rahul-khanna-ph-d-6a02712/">Rahul Khanna</a> and <a className="btn btn-outline-light"  target="_blank" href="https://www.linkedin.com/in/jaiberjohn/">Jaiber John</a>.  </p>
         </div>
         <div className = "about" id="RPi-About">
-          <h2>About Raspberry-Pi Guitar Pedal {/*<img src={tagFav} style={{width:"2em", height:"2em", padding: "10px"}} />*/}</h2>
-          <p><em>Work in Progress</em></p>
-          <p>This project uses a Long Short Term Memory Neural Network (LSTM) and a Rasberry Pi to emulate any guitar pedal. </p>
-          <p>Learn More:&ensp;<a className="btn btn-outline-light"  target="_blank" href="https://towardsdatascience.com/neural-networks-for-real-time-audio-raspberry-pi-guitar-pedal-bded4b6b7f31"> Here</a></p>
+          <h2>About Self-Hosted Raspberry Pi Server {/*<img src={tagFav} style={{width:"2em", height:"2em", padding: "10px"}} />*/}</h2>
+          <p>I own a Raspberry Pi which I am running Raspbian Linux on and using to self-host my own instances of Nextcloud, Qbittorrent, Jellyfin, Pihole, Wireguard, Photoprism, Sonarr, Jackett, and FindMyDevice.</p>
+          <p>These programs are containerized using Docker and Kubernetes and are hidden under a Wireguard VPN for protection.</p>
         </div>
       </div>
     );

@@ -79,11 +79,11 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
     </div>
     <div style={{ height: "200vh" }}>
       <div className="dot">
-        <h1>Review Sentiment Analysis</h1>
+        <h1>College Capstone Project</h1>
         <NewButtons
         tag = "#RSA-About"
-        title = "Review Sentiment Analysis"
-        github = "https://lh3.googleusercontent.com/proxy/3t6e67NH-20iYARYuxcBSFYgxVNrCa7Ct_y3dBWLLhVFJa-FyiwkJFZRZk6L3RhGDsr03trN7OdrCKHqp1mUJ6ZMSmnchptm_Ycrp0WNc1Rc289hH7IrGQ4"
+        title = "College Capstone Project"
+        github = "https://github.com/axelwp/applications.iot.augmented-reality.intelligent-augmentation.dynamic-camera-capture"
         visitBool = {false}
         hexcolor_1 = "#ff2079"
         hexcolor_2 = "#e92efb"
@@ -92,10 +92,10 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
     </div>
     <div style={{ height: "200vh" }}>
       <div className="dot">
-        <h1>Rasberry Pi Guitar Pedal</h1>
+        <h1>Self Hosted Server on Raspberry Pi</h1>
         <NewButtons
         tag = "#RPi-About"
-        title = "Rasberry Pi Guitar Pedal"
+        title = "Self Hosted Server on Raspberry Pi"
         github = "https://lh3.googleusercontent.com/proxy/3t6e67NH-20iYARYuxcBSFYgxVNrCa7Ct_y3dBWLLhVFJa-FyiwkJFZRZk6L3RhGDsr03trN7OdrCKHqp1mUJ6ZMSmnchptm_Ycrp0WNc1Rc289hH7IrGQ4"
         visitBool = {false}
         hexcolor_1 = "#b537f2"
