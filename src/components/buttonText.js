@@ -10,7 +10,7 @@ export default function ButtonText () {
         <div className="hidden">
         <div className="about" id="about-content">
           <h2 className = "typeC">{'>'}about-me:<span className="cursor">|</span></h2>
-          <p>Jonah Biedermann is passionate about developing his career opportunities and hobbies. He is a computer science student with an applied option in mobile and web development. He has 2 years of computer science classes under his belt. Jonah is excited to keep learning all there is to know about the Software Engineering community. Jonah also loves to play piano, guitar, aswell as produce music using Digital Audio Work Stations (DAWs). He has a love for computers and a passion for making processes more efficient.</p>
+          <p>Hi! I am an Enthusiastic Computer Science graduate with a results-oriented mindset, specializing in software engineering and machine learning. Demonstrated ability to deliver innovative solutions and contribute to intricate projects. Proficient in a variety of programming languages and technologies. Effective communicator and collaborative team player, skilled in leadership and creative problem-solving. Seeking opportunities to apply technical expertise and ingenuity in a dynamic team environment.</p>
         </div>
     
                
