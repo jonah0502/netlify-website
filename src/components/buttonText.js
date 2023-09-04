@@ -27,9 +27,9 @@ export default function ButtonText () {
         </div>
 
         <div className = "about" id="Fretboard-About">
-          <h2>About Fretboard Alarm {/*<img src={tagFav} style={{width:"2em", height:"2em", padding: "10px"}} />*/}</h2>
-          <p>Fretboard Alarm is an app that helps people learn the notes on the Fretboard by quizing them on it every morning. It is a fully funtional alarm but to turn it off you must correctly guess the note name of the prompted Fretboard position 3 times in a row.</p>
-          <p>This project was made with Flutter and will be available on all platforms. (IOS, Android, Windows, Linuix)</p>
+          <h2>ASOSU Campaign Website {/*<img src={tagFav} style={{width:"2em", height:"2em", padding: "10px"}} />*/}</h2>
+          <p>In 2021 I was hired by Alexander Kerner and Isabella Griffiths to design and create their website as they ran for president of ASOSU (Associated Students of Oregon State University)</p>
+          <p>The Website is written in Next.js and has a modern UI/UX.</p>
         </div>
 
         <div className = "about" id="Loom-About">

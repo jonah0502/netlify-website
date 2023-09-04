@@ -48,7 +48,7 @@ export default function Model({ scroll, ...props }) {
           </mesh>
 
           <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {3} position={[32,0,13]}>
-            <Guitar name="Fretboard"  scale={[1.45,1.45,1.45]} rotation={[Math.PI,-Math.PI/12,-Math.PI/2]} />
+            <MysBox name="Campaign" scale={scaleArr}/>
           </mesh>
 
           <mesh scale = {[sigmoidNum, sigmoidNum, sigmoidNum]} index = {7} position={[28,7,-10]}>

@@ -18,7 +18,7 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         tag = "#Design-Den-About"
         title = "Design-Den"
         github = "https://github.com/jonah0502/DesignDen"
-        visit = "https://www.design-den.org/"
+        visitBool = {false}
         hexcolor_1 = "#3C50B1"
         hexcolor_2 = "#0095EF"
         />
@@ -26,12 +26,12 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
     </div>
     <div style={{ height: "200vh", zIndex:99 }}>
       <div className="dot">
-        <h1>Fretboard Alarm</h1>
+        <h1>ASOSU Campaign Website</h1>
         <NewButtons
         tag = "#Fretboard-About"
-        title = "Fretboard Alarm"
-        github = "https://github.com/jonah0502/Fretboard_Alarm_app"
-        visitBool = {false}
+        title = "ASOSU Campaign Website"
+        github = "https://github.com/jonah0502/ker-camp"
+        visit = "https://main--naughty-poitras-4bb779.netlify.app/"
         hexcolor_1 = "#6713d2"
         hexcolor_2 = "#cc208e"
         />
@@ -45,7 +45,7 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         tag = "#TagFlix-About"
         title = "TagFlix"
         github = "https://github.com/jonah0502/tagFlix"
-        visit = "https://tag-flix.herokuapp.com/page/1"
+        visitBool = {false}
         hexcolor_1 = "#C85250"
         hexcolor_2 = "#F7BEC0"
         />
@@ -57,7 +57,7 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         <NewButtons
         tag = "#Loom-About"
         title = "Loom"
-        github = "https://github.com/OPEnSLab-OSU/Loom/"
+        github = "https://github.com/OPEnSLab-OSU/Loom-V4"
         visitBool = {false}
         hexcolor_1 = "#5b9aa0"
         hexcolor_2 = "#C7C7C7"
@@ -66,7 +66,7 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
     </div>
     <div style={{ height: "200vh" }}>
       <div className="dot">
-        <h1>Porfolio Website</h1>
+        <h1>Portfolio Website</h1>
         <NewButtons
         tag = "#Portfolio-About"
         title = "This Website"
