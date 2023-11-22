@@ -8,7 +8,7 @@ import React, { useRef } from 'react'
 import { useGLTF, useTexture } from '@react-three/drei'
 export default function Model(props) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/clapper.glb')
+  const { nodes, materials } = useGLTF('/Clapper.glb')
   const texture = useTexture("/zebra.jpg")
   return (
     <group ref={group} {...props} dispose={null}>

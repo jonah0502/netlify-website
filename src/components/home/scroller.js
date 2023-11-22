@@ -1,6 +1,6 @@
 import * as THREE from "three"
 import { Canvas, useFrame, useThree, useLoader} from "@react-three/fiber"
-import React, { useEffect, useRef, Suspense} from "react"
+import React, { useEffect, useRef, Suspense, useState} from "react"
 import { useContextBridge,  Html } from "@react-three/drei"
 import { A11y, useA11y, A11yAnnouncer, useUserPreferences, A11ySection, A11yUserPreferencesContext } from "@react-three/a11y"
 import { proxy, useSnapshot } from "valtio"
@@ -31,27 +31,46 @@ import "../../App.scss";
   }
 
 
+// Define a new component for the text
+function HoverText({ position, text }) {
+  return (
+    <Html position={position}>
+      <div  style={{ whiteSpace: "nowrap", ...state.dark ? { color: "white" } : { color: "black" } }} className="hover-text">{text}</div>
+    </Html>
+  );
+}
+  
 const state = proxy({ dark: true, motionDisabled: false, active: 0, rotation: 0 })
 
 
 function ToggleButton(props) {
   const a11y = useA11y()
   const viewport = useThree((state) => state.viewport)
+  const isMobile = window.matchMedia("(max-width: 600px)").matches; // Check if the viewport is smaller than 600px (adjust as needed)
   const bulbRef = useRef()
   const k = 20
   const sigmoidNum = 1 / (1 + Math.exp(-viewport.width/k))
+
+  const [hovered, setHovered] = useState(false);
 
   useFrame((state) => {
     bulbRef.current.rotation.y += 0.01
     bulbRef.current.position.y = Math.sin(state.clock.elapsedTime) / 15   - 4
   })
+
+  // Render the lightbulb only if not on a mobile device
+  if (isMobile) return null;
+
   return (
-    <mesh {...props} ref = {bulbRef} scale = {[sigmoidNum, sigmoidNum, sigmoidNum]}>
-      <Bulb
-        scale = {[0.6, 0.6, 0.6]}
-        position = {[0 ,0,0]}
-        a11y={a11y}
-      />
+        <mesh
+      {...props}
+      ref={bulbRef}
+      scale={[sigmoidNum, sigmoidNum, sigmoidNum]}
+      onPointerOver={() => setHovered(true)}
+      onPointerOut={() => setHovered(false)}
+    >
+      <Bulb scale={[0.6, 0.6, 0.6]} position={[0, 0, 0]} a11y={a11y} />
+      {hovered && <HoverText position={[0, 2, 0]} text="Click on an object to interact with it!"/>}
     </mesh>
   )
 }
@@ -243,17 +262,18 @@ export default function App() {
               <Nav left />
               <Carroussel />
               <Nav />
-              <A11y
+            </A11ySection>
+          </group>
+          <A11y
+                position-y = {-2}
                 role="togglebutton"
                 description="Light intensity"
                 actionCall={() => (state.dark = !snap.dark)}
                 activationMsg="Lower light disabled"
                 deactivationMsg="Lower light enabled"
                 a11yElStyle={{ marginLeft: "-40px" }}>
-                <ToggleButton position={[0, -3.5, 9]} />
+                <ToggleButton position={[-15, 0, 4]} />
               </A11y>
-            </A11ySection>
-          </group>
         </ContextBridge>
         
       </Canvas>
