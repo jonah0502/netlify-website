@@ -53,10 +53,7 @@ function ToggleButton(props) {
 
   const [hovered, setHovered] = useState(false);
 
-  useFrame((state) => {
-    bulbRef.current.rotation.y += 0.01
-    bulbRef.current.position.y = Math.sin(state.clock.elapsedTime) / 15   - 4
-  })
+
 
   // Render the lightbulb only if not on a mobile device
   if (isMobile) return null;
@@ -264,14 +261,14 @@ export default function App() {
             </A11ySection>
           </group>
           <A11y
-                position-y = {-2}
+                position-y = {-6}
                 role="togglebutton"
                 description="Light intensity"
                 actionCall={() => (state.dark = !snap.dark)}
                 activationMsg="Lower light disabled"
                 deactivationMsg="Lower light enabled"
                 a11yElStyle={{ marginLeft: "-40px" }}>
-                <ToggleButton position={[-15, 0, 4]} />
+                <ToggleButton position={[-14, 0, 4]} />
               </A11y>
         </ContextBridge>
         

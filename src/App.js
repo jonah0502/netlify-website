@@ -81,7 +81,6 @@ function ExperienceAnimationCanvas() {
   const [events, setEvents] = useState();
   const domContent = useRef();
   const scrollArea = useRef();
-  const fratIMG = useRef();
 
   const onScroll = (e) => (eState.top.current = e.target.scrollTop);
   useEffect(() => void onScroll({ target: scrollArea.current }), []);
@@ -105,7 +104,7 @@ function ExperienceAnimationCanvas() {
         <h1>Jonah Biedermann</h1>
         <p>🚀 My Work Experience!</p>
       </header>
-<section>
+<header>
   <h2>Software Engineering Intern at Daimler Trucks 🚚</h2>
   <h3>Portland, OR</h3>
   <h4>(June 2023 – Present)</h4>
@@ -115,7 +114,7 @@ function ExperienceAnimationCanvas() {
     <li>🔧 Leveraged tools like Visual Studio and SQL Server Management Studio to ensure efficient development and database management.</li>
   </ul>
 
-</section>
+</header>
 </main>
         </ExPage>
 
@@ -124,7 +123,7 @@ function ExperienceAnimationCanvas() {
       position = {-275}
       bgColor=" #F67280">
 <main >
-<section className = "left">
+<header /*className = "left"*/>
   <h2>Software Engineering Intern at Mosaic.Tech 🌐</h2>
   <h3>San Diego, CA</h3>
   <h4>March 2022 – September 2022</h4>
@@ -133,7 +132,7 @@ function ExperienceAnimationCanvas() {
     <li>🧪 Created UI automation frameworks and test scripts for in-house systems using Cypress, Cucumber, and Jenkins.</li>
   </ul>
 
-</section>
+</header>
 </main>
 
         </ExPage>
@@ -144,7 +143,7 @@ function ExperienceAnimationCanvas() {
       imgBool ={false}
 >
 <main >
-<section>
+<header>
   <h2>Data Structures / Algorithms Teaching Assistant at Oregon State University 📚</h2>
   <h3>Corvallis, OR</h3>
   <h4>June 2021 - December 2021</h4>
@@ -155,7 +154,7 @@ function ExperienceAnimationCanvas() {
     <li>📝 Evaluated and provided constructive feedback on student assignments and projects, promoting continuous improvement in coding proficiency.</li>
   </ul>
 
-</section>
+</header>
  {/*} <img src="/Fraternity_1.jpg" style={{ width: "47vw", height: "40vh" }} className = "left" />*/}
 </main>
 
@@ -165,23 +164,23 @@ function ExperienceAnimationCanvas() {
       position = {-800}
       bgColor="#F8B195">
 <main >
-<section className = "left">
+<header /*className = "left"*/>
   <h2>Open-Sensing Lab Computer Science Lead at Oregon State University 🌱</h2>
   <h4>January 2021 - June 2021</h4>
   <ul>
     <li>🔊 Led a team in developing audio-visualization of MongoDB data using React, NodeJS, and Docker.</li>
     <li>🛠️ Integrated Arduino-based sensor data via C programming, achieving seamless hardware-software interaction.</li>
   </ul>
-</section>
+</header>
 </main>
 
         </ExPage>
         <ExPage      
       domContent={domContent}
-      position = {-1080}
+      position = {-1000}
       bgColor=" #355C7D">
 <main >
-<section>
+<header>
   <h2>🏊‍♂️ Lifeguard</h2>
   <h4>June 2016 - August 2019</h4>
   <ul>
@@ -191,7 +190,7 @@ function ExperienceAnimationCanvas() {
     <li>Kept accurate records of incident reports, maintenance, and chemical testing</li>
   </ul>
 
-</section>
+</header>
 </main>
 
         </ExPage>
