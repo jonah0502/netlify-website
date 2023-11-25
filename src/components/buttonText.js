@@ -33,9 +33,9 @@ export default function ButtonText () {
         </div>
 
         <div className = "about" id="Loom-About">
-          <h2>About Loom<img src={"https://raw.githubusercontent.com/OPEnSLab-OSU/Loom/gh-pages/Aux/OPEnSLogo.png"} style={{width:"4rem", height:"4rem", marginLeft:"2rem", filter: "invert(100%)"}} /></h2>
-          <p>Loom is an Open Source Arduino library for Internet of Things Rapid Prototyping in environmental sensing.</p>
-          <p>I contributed by adding Database functionality using MongoDB and adafruitIO. I also added MaxMSP support for MongoDB.</p>
+          <h2>About WeatherChimes<img src={"https://raw.githubusercontent.com/OPEnSLab-OSU/Loom/gh-pages/Aux/OPEnSLogo.png"} style={{width:"4rem", height:"4rem", marginLeft:"2rem", filter: "invert(100%)"}} /></h2>
+          <p>WeatherChimes is an open-source weather monitoring and sonification system, low-cost hardware and software suite that enables near real-time access to in-situ environmental sensor data (including light, temperature, relative humidity, and soil moisture) anywhere with a WiFi internet connection.</p>
+          <p>I led the first team of engineers to work on the project adding Database functionality using MongoDB and adafruitIO. We also added MaxMSP support for MongoDB for use in music composition.</p>
           <p>This project was done under the mentorship of Dr. Chet Udell in collaboration with Openly Published Environmental Sensing (OPEnS) Lab for the URSA Undergraduate Research Internship</p>
         </div>
 

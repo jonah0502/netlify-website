@@ -53,11 +53,11 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
     </div>
     <div style={{ height: "200vh" }}>
       <div className="dot">
-        <h1>Loom</h1>
+        <h1>Weather Chimes</h1>
         <NewButtons
         tag = "#Loom-About"
-        title = "Loom"
-        github = "https://github.com/OPEnSLab-OSU/Loom-V4"
+        title = "Weather Chimes"
+        github = "https://github.com/OPEnSLab-OSU/OPEnS-Lab-Home/wiki/WeatherChimes"
         visitBool = {false}
         hexcolor_1 = "#5b9aa0"
         hexcolor_2 = "#C7C7C7"
@@ -79,10 +79,10 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
     </div>
     <div style={{ height: "200vh" }}>
       <div className="dot">
-        <h1>College Capstone Project</h1>
+        <h1>Anomaly Detection Android Application</h1>
         <NewButtons
         tag = "#RSA-About"
-        title = "College Capstone Project"
+        title = "Anomaly Detection Android Application"
         github = "https://github.com/axelwp/applications.iot.augmented-reality.intelligent-augmentation.dynamic-camera-capture"
         visitBool = {false}
         hexcolor_1 = "#ff2079"
