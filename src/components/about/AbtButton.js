@@ -25,12 +25,12 @@ const createAbt = () => {
   const aboutBox = new WinBox({
     title: 'About Me',
     class: "modern",
-    width: '600vw',
-    height: '300vh',
-    top: "150vh",
+    width: '1000vw',
+    height: '250vh',
+    top: "80vh",
     right: "50vw",
     bottom: "50vh",
-    left: "250vw",
+    left: "450vw",
     mount: document.querySelector('#about-content'),
     onfocus: function () {
       this.setBackground(
@@ -47,13 +47,13 @@ const createContact = () => {
 
   const contactBox = new WinBox({
     title: 'Contact Me',
-    width: '900px',
     class: "modern",
-    height: '475px',
-    top: 90,
-    right: 50,
-    bottom: 50,
-    left: 265,
+    width: '1000vw',
+    height: '250vh',
+    top: "80vh",
+    right: "50vw",
+    bottom: "50vh",
+    left: "450vw",
     url: "/page1",
     onfocus: function () {
         this.setBackground(

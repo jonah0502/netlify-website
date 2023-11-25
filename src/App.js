@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState, Suspense } from "react";
 import "./App.scss";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Switch, Route } from "react-router-dom"; 
+import { Html, Box, Points, PointMaterial } from "@react-three/drei";
 
 // R3F
 import { Canvas, useFrame} from "@react-three/fiber";
@@ -32,9 +33,20 @@ import ExPage from "./components/experience/page.js";
 import Scroller from "./components/home/scroller.js"
 
 import { AdaptiveDpr, AdaptiveEvents, Preload, PerspectiveCamera, OrbitControls, Image } from "@react-three/drei";
+import { Group } from "three";
 
 
-
+function Overlay() {
+  return (
+    <Html>
+    <div className="abtMe" style={{ position: 'absolute', top: 0, left: 0, pointerEvents: 'none', width: '100%', height: '100%'}}>
+      <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate3d(-50%,-50%,0)' }}>
+        <h1 style={{ whiteSpace: "nowrap", margin: 0, padding: 0, fontSize: '15em', fontWeight: 500, letterSpacing: '-0.05em', zIndex:'99' }}>About Me</h1>
+      </div>
+    </div>
+    </Html>
+  )
+}
 
 
 function Home() {
@@ -44,33 +56,17 @@ function Home() {
     <div className="anim">
     <Header />
     <Canvas
-      mode="concurrent"
-      camera={{ position: [100, 10, 0], fov: 75 }}
+      camera={{ position: [0, 0, 1]}}
     >
-      <PerspectiveCamera name="FBO Camera" ref={virtualCamera} position={[0, 0, 5]} />
-
-
       
-      <Suspense fallback={null}>
-
-        <AdaptiveDpr pixelated />
-        <AdaptiveEvents />
-        <Preload all/>
-        <AboutMe 
+    <AboutMe 
       position = {245}
       bgColor='#000000'>
-      <p style={{color: "white"}}>About Me</p>
-      <br/>
-      <br/>
-      <AbtButtons />
       </AboutMe>
-      <OrbitControls
-            camera={virtualCamera.current}
-            enablePan = {false}
-            enableZoom = {false}
-            enableRotate
-          />
-      </Suspense>
+      <Overlay/>
+      <Html position={[0, -0.25, 0]}>
+        <AbtButtons/>
+      </Html>
     </Canvas>
     <Loader />
     <ButtonText />

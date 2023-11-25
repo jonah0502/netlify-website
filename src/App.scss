@@ -82,17 +82,22 @@ nav ul li {
 }
 
 .abtMe{
-  font-size: 10rem;
-  text-align: center;
-  width: 75%;
-  margin-left:10% ;
-  color: #fff;
-  span {
-    display: block;
+
+  a {
+    pointer-events: all;
+    color: #ddd;
+    text-decoration: none;
   }
-  @media (max-width: 1440px) {
-    font-size: 6rem;
+  
+  svg {
+    fill: #ddd;
   }
+  
+  h1 {
+    background: linear-gradient(30deg, #c850c0, #ffcc70);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }  
 }
 .anim {
   width: 99vw;
