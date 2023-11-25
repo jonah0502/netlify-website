@@ -88,7 +88,6 @@ function ExperienceAnimationCanvas() {
   return (
     <>
     <Canvas
-      mode="concurrent"
       camera={{ position: [100, 10, 0], fov: 75 }}
     >
 
@@ -142,8 +141,8 @@ function ExperienceAnimationCanvas() {
       domContent={domContent}
       position = {-550}
       bgColor=" #C06C84"
-      imgBool ={true}
-      imgURL = "/Fraternity_1.jpg">
+      imgBool ={false}
+>
 <main >
 <section>
   <h2>Data Structures / Algorithms Teaching Assistant at Oregon State University 📚</h2>

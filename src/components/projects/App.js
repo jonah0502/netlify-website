@@ -19,7 +19,8 @@ export default function App() {
     <Header/>
       <Canvas
         onCreated={(state) => state.events.connect(overlay.current)}
-        raycaster={{ computeOffsets: ({ clientX, clientY }) => ({ offsetX: clientX, offsetY: clientY }) }}>
+        raycaster={{ computeOffsets: ({ clientX, clientY }) => ({ offsetX: clientX, offsetY: clientY }) }}
+        >
         <ambientLight intensity={1} />
         <AdaptiveDpr pixelated />
         <AdaptiveEvents />
