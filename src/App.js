@@ -2,11 +2,10 @@ import React, { useRef, useEffect, useState, Suspense } from "react";
 import "./App.scss";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Switch, Route } from "react-router-dom"; 
-import { Html, Box, Points, PointMaterial } from "@react-three/drei";
+import { Html} from "@react-three/drei";
 
 // R3F
-import { Canvas, useFrame} from "@react-three/fiber";
-//import { EffectComposer, Outline, SelectiveBloom } from '@react-three/postprocessing'
+import { Canvas} from "@react-three/fiber";
 
 //Home Components
 import Header from "./components/header/Header.js";
@@ -32,8 +31,9 @@ import ExPage from "./components/experience/page.js";
 
 import Scroller from "./components/home/scroller.js"
 
-import { AdaptiveDpr, AdaptiveEvents, Preload, PerspectiveCamera, OrbitControls, Image } from "@react-three/drei";
-import { Group } from "three";
+import { AdaptiveDpr, AdaptiveEvents, Preload} from "@react-three/drei";
+
+const isMobile = window.matchMedia("(max-width: 600px)").matches; // Check if the viewport is smaller than 600px (adjust as needed)
 
 
 function Overlay() {
@@ -41,7 +41,7 @@ function Overlay() {
     <Html>
     <div className="abtMe" style={{ position: 'absolute', top: 0, left: 0, pointerEvents: 'none', width: '100%', height: '100%'}}>
       <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate3d(-50%,-50%,0)' }}>
-        <h1 style={{ whiteSpace: "nowrap", margin: 0, padding: 0, fontSize: '15em', fontWeight: 500, letterSpacing: '-0.05em', zIndex:'99' }}>About Me</h1>
+        <h1 style={{ whiteSpace: "nowrap", margin: 0, padding: 0, fontWeight: 500, letterSpacing: '-0.05em' }}>About Me</h1>
       </div>
     </div>
     </Html>
@@ -50,7 +50,6 @@ function Overlay() {
 
 
 function Home() {
-  const virtualCamera = useRef()
 
   return (
     <div className="anim">
@@ -64,7 +63,7 @@ function Home() {
       bgColor='#000000'>
       </AboutMe>
       <Overlay/>
-      <Html position={[0, -0.25, 0]}>
+      <Html position={[isMobile?-0.15:0, -0.25, 0]}>
         <AbtButtons/>
       </Html>
     </Canvas>
