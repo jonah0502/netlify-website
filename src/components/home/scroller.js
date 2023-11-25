@@ -9,7 +9,7 @@ import MysBox from '../models/Mystery.js'
 import Bulb from '../models/Bulb.js'
 import Briefcase from '../models/Briefcase.js'
 import Computer from '../models/Computer.js'
-import { AdaptiveDpr, AdaptiveEvents, Preload, Plane, Box, useTexture, ContactShadows } from "@react-three/drei";
+import { Box} from "@react-three/drei";
 import { ResizeObserver } from "@juggle/resize-observer"
 
 import Loader from "../loader.js"
@@ -115,7 +115,7 @@ function Diamond({ position, rotation }) {
 
   return (
     <mesh position={position} rotation={rotation} scale={[sigmoidNum, sigmoidNum, sigmoidNum]}>
-      <tetrahedronBufferGeometry />
+      <tetrahedronGeometry />
       <meshStandardMaterial
         metalness={1}
         roughness={0.8}
@@ -249,10 +249,9 @@ export default function App() {
 
       <Canvas resize={{ polyfill: ResizeObserver }} camera={{ position: [0, 0, 15], near: 4, far: 30 }} pixelRatio={[1, 1.5]}>
         <ContextBridge>
-          <pointLight position={[100, 100, 100]} intensity={0.5}  />
-          <pointLight position={[-100, -100, -100]} intensity={1.5} />
-          <ambientLight intensity={0.8} />
-          
+          <ambientLight intensity={3}/>
+          <directionalLight position={[100,100,100]} intensity={2}/>
+          <directionalLight position={[-100,-100,-100]} intensity={2}/>
           <group position-y={0.7}>
               
 

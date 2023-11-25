@@ -13,7 +13,7 @@ export default function Model({ ...props }) {
   const texture = useLoader(THREE.TextureLoader, img)
 
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null} rotation={[0, Math.PI*1.5, Math.PI / 2]}>
       <mesh geometry={nodes.Cube.geometry}  >
       <meshBasicMaterial attach="material" map={texture} />
       </mesh>
