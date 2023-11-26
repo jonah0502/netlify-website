@@ -95,7 +95,7 @@ function ExperienceAnimationCanvas() {
         <Preload all/>
         <ExPage 
       domContent={domContent}
-      position = {65}
+      position = {isMobile?0:65}
       bgColor="#6C5B7B">
 <main >
 
@@ -122,7 +122,7 @@ function ExperienceAnimationCanvas() {
       position = {-275}
       bgColor=" #F67280">
 <main >
-<header /*className = "left"*/>
+<header>
   <h2>Software Engineering Intern at Mosaic.Tech 🌐</h2>
   <h3>San Diego, CA</h3>
   <h4>March 2022 – September 2022</h4>
@@ -163,7 +163,7 @@ function ExperienceAnimationCanvas() {
       position = {-800}
       bgColor="#F8B195">
 <main >
-<header /*className = "left"*/>
+<header>
   <h2>Open-Sensing Lab Computer Science Lead at Oregon State University 🌱</h2>
   <h4>January 2021 - June 2021</h4>
   <ul>

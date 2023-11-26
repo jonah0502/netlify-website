@@ -205,8 +205,10 @@ nav ul li {
   }
 
   @media only screen and (max-width: 600px) {
-    section{
-    grid-column: 3 / span 8 !important; 
+    header{
+    grid-column: 2   / span 10 !important; 
+    font-size: 1em;
+
     }
   }
 }
@@ -223,68 +225,6 @@ nav ul li {
   }
 
 }
-
-
-
-
-
-.experience{
-
-
-  main {
-    width: 100vw;
-    color: white;
-    z-index: 99;
-    position: absolute;
-    width: 100%;
-    margin: 0px auto;
-    padding: 120px 0px;
-    
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-  }
-
-
-  header {
-    background: var(--dark-bg);
-    grid-column: 4 / span 6;
-    font-size: 1.5rem;
-    padding: 1.5rem;
-    margin-top: 40vh;
-    margin-bottom: 30vh;
-  }
-  
-  section {
-    grid-column: 1 /span 6;
-    padding: 1rem;
-    background: var(--dark-bg);
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: var(--spacing);
-  }
-  
-  blockquote {
-    margin: 0;
-    grid-column: 2 / span 9;
-    margin-bottom: var(--spacing);
-  
-    p {
-      color: black;
-      background-color: white;
-      font-size: 4rem;
-      display: inline;
-      line-height: 1.33;
-    }
-  
-  }
-  
-  
-  .left {
-    grid-column: 7 / span 12;
-  }
-  
-}
-
 
 
 
