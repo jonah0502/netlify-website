@@ -67,7 +67,7 @@ const createContact = () => {
 }
 return(
 
-<nav className = "header abtMe">
+<nav className = "header abtMe" style={{zIndex: '0'}}>
   <ul>
   <li><Button variant="outline-light" onClick={createAbt}>About</Button>{' '}</li>
   <li><Button variant="outline-light" onClick={createContact}>Contact</Button>{' '}</li>
