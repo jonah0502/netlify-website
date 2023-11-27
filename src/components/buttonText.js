@@ -28,7 +28,7 @@ export default function ButtonText () {
 
         <div className = "about" id="Fretboard-About">
           <h2>ASOSU Campaign Website {/*<img src={tagFav} style={{width:"2em", height:"2em", padding: "10px"}} />*/}</h2>
-          <p>In 2021 I was hired by Alexander Kerner and Isabella Griffiths to design and create their website as they ran for president of ASOSU (Associated Students of Oregon State University)</p>
+          <p>In 2021 I was hired by Alexander Kerner and Isabella Griffiths to design and create their website as they ran for president and vice president of ASOSU (Associated Students of Oregon State University)</p>
           <p>The Website is written in Next.js and has a modern UI/UX.</p>
         </div>
 
@@ -41,7 +41,7 @@ export default function ButtonText () {
 
         <div className = "about" id="Portfolio-About">
           <h2>About This Website {/*<img src={tagFav} style={{width:"2em", height:"2em", padding: "10px"}} />*/}</h2>
-          <p>This is my portfolio website. It is responsive, dynamic and most importantly 3D! It goes into detail about my past work experience and projects.</p>
+          <p>This is my portfolio website. It is responsive, dynamic and most importantly 3D! It goes into detail about my past work experience and projects. It has a modern UI/UX and it runs on both web and mobile!</p>
           <p>This was written primarily using React and the <a className="btn btn-outline-light"  target="_blank" href="https://docs.pmnd.rs/react-three-fiber/getting-started/introduction">React-Three-Fiber</a> Library</p>
           <p>All 3D models are either open source or my own. Any models that are not my own are cited in the source code on github!</p>
         </div>

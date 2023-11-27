@@ -84,7 +84,7 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         tag = "#RSA-About"
         title = "Anomaly Detection Android Application"
         github = "https://github.com/axelwp/applications.iot.augmented-reality.intelligent-augmentation.dynamic-camera-capture"
-        visitBool = {false}
+        visit = "https://events.engineering.oregonstate.edu/expo2023/project/anomaly-detection-construction-use-case"
         hexcolor_1 = "#ff2079"
         hexcolor_2 = "#e92efb"
         />
