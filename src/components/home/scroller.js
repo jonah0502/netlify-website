@@ -35,7 +35,7 @@ import "../../App.scss";
 function HoverText({ position, text }) {
   return (
     <Html position={position}>
-      <div  style={{ whiteSpace: "nowrap", ...state.dark ? { color: "white" } : { color: "black" } }} className="hover-text">{text}</div>
+      <div  style={{ whiteSpace: "nowrap", fontSize:'1.5rem', ...state.dark ? { color: "white" } : { color: "black" } }} className="hover-text">{text}</div>
     </Html>
   );
 }
@@ -53,7 +53,7 @@ function ToggleButton(props) {
 
   const [hovered, setHovered] = useState(false);
 
-
+  const scaleInt = 0.8
 
   // Render the lightbulb only if not on a mobile device
   if (isMobile) return null;
@@ -66,8 +66,8 @@ function ToggleButton(props) {
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
     >
-      <Bulb scale={[0.6, 0.6, 0.6]} position={[0, 0, 0]} a11y={a11y} />
-      {hovered && <HoverText position={[0, 2, 0]} text="Click on an object to interact with it!"/>}
+      <Bulb scale={[scaleInt, scaleInt, scaleInt]} position={[0, 0, 0]} a11y={a11y} />
+      {hovered && <HoverText position={[0, 3, 0]} text="Click on an object to interact with it!"/>}
     </mesh>
   )
 }

@@ -68,10 +68,10 @@ const createContact = () => {
 return(
 
 <nav className = "header abtMe" style={{zIndex: '0'}}>
-  <ul>
-  <li><Button variant="outline-light" onClick={createAbt}>About</Button>{' '}</li>
-  <li><Button variant="outline-light" onClick={createContact}>Contact</Button>{' '}</li>
-  <li> <a className="btn btn-outline-light"  target="_blank" href={'/myRes.pdf'}>Resume</a></li>
+  <ul style={{zIndex: '0'}}>
+  <li><Button variant="outline-light" onClick={createAbt} style={{zIndex: '0'}}>About</Button>{' '}</li>
+  <li><Button variant="outline-light" onClick={createContact} style={{zIndex: '0'}}>Contact</Button>{' '}</li>
+  <li> <a className="btn btn-outline-light"  target="_blank" href={'/myRes.pdf'} style={{zIndex: '0'}}>Resume</a></li>
 
 
 </ul>

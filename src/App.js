@@ -64,7 +64,9 @@ function Home() {
       </AboutMe>
       <Overlay/>
       <Html position={[isMobile?-0.15:0, -0.25, 0]}>
+        <div>
         <AbtButtons/>
+        </div>
       </Html>
     </Canvas>
     <Loader />
