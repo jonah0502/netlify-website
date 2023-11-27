@@ -97,7 +97,7 @@ function ExperienceAnimationCanvas() {
         <Preload all/>
         <ExPage 
       domContent={domContent}
-      position = {isMobile?0:65}
+      position = {0}
       bgColor="#6C5B7B">
 <main >
 
@@ -106,13 +106,13 @@ function ExperienceAnimationCanvas() {
         <p>🚀 My Work Experience!</p>
       </header>
 <header>
-  <h2>Software Engineering Intern at Daimler Trucks 🚚</h2>
+  <h2>Software Engineering Intern at Daimler Trucks</h2>
   <h3>Portland, OR</h3>
   <h4>(June 2023 – Present)</h4>
   <ul>
-    <li>👨‍💻 Developed comprehensive C# and .NET applications integrated with an SQL database for efficiently managing vehicle Service Repair Tickets (SRTs).</li>
-    <li>📊 Enabled seamless CRUD operations and facilitated diverse format exports.</li>
-    <li>🔧 Leveraged tools like Visual Studio and SQL Server Management Studio to ensure efficient development and database management.</li>
+    <li>Developed comprehensive C# and .NET applications integrated with an SQL database for efficiently managing vehicle Service Repair Tickets (SRTs).</li>
+    <li>Enabled seamless CRUD operations and facilitated diverse format exports.</li>
+    <li>Leveraged tools like Visual Studio and SQL Server Management Studio to ensure efficient development and database management.</li>
   </ul>
 
 </header>
@@ -125,12 +125,12 @@ function ExperienceAnimationCanvas() {
       bgColor=" #F67280">
 <main >
 <header>
-  <h2>Software Engineering Intern at Mosaic.Tech 🌐</h2>
+  <h2>Software Engineering Intern at Mosaic.Tech </h2>
   <h3>San Diego, CA</h3>
   <h4>March 2022 – September 2022</h4>
   <ul>
-    <li>🔌 Managed asynchronous functions using C#, integrated Snowflake Data Warehouse with OAuth, and developed Angular-based front-end.</li>
-    <li>🧪 Created UI automation frameworks and test scripts for in-house systems using Cypress, Cucumber, and Jenkins.</li>
+    <li>Managed asynchronous functions using C#, integrated Snowflake Data Warehouse with OAuth, and developed Angular-based front-end.</li>
+    <li>Created UI automation frameworks and test scripts for in-house systems using Cypress, Cucumber, and Jenkins.</li>
   </ul>
 
 </header>
@@ -145,14 +145,14 @@ function ExperienceAnimationCanvas() {
 >
 <main >
 <header>
-  <h2>Data Structures / Algorithms Teaching Assistant at Oregon State University 📚</h2>
+  <h2>Data Structures / Algorithms Teaching Assistant at Oregon State University</h2>
   <h3>Corvallis, OR</h3>
   <h4>June 2021 - December 2021</h4>
   <ul>
-    <li>📚 Assisted in designing and leading weekly discussion sessions to reinforce key concepts in data structures and algorithms, demonstrating teaching and communication skills.</li>
-    <li>🧑‍🏫 Conducted one-on-one tutoring sessions, providing personalized guidance to help students grasp complex algorithms and data structures, showcasing a dedication to student success.</li>
-    <li>📊 Collaborated with professors to create challenging programming assignments that fostered critical thinking and problem-solving skills among students, showcasing involvement in curriculum development.</li>
-    <li>📝 Evaluated and provided constructive feedback on student assignments and projects, promoting continuous improvement in coding proficiency.</li>
+    <li>Assisted in designing and leading weekly discussion sessions to reinforce key concepts in data structures and algorithms, demonstrating teaching and communication skills.</li>
+    <li>Conducted one-on-one tutoring sessions, providing personalized guidance to help students grasp complex algorithms and data structures, showcasing a dedication to student success.</li>
+    <li>Collaborated with professors to create challenging programming assignments that fostered critical thinking and problem-solving skills among students, showcasing involvement in curriculum development.</li>
+    <li>Evaluated and provided constructive feedback on student assignments and projects, promoting continuous improvement in coding proficiency.</li>
   </ul>
 
 </header>
@@ -166,11 +166,11 @@ function ExperienceAnimationCanvas() {
       bgColor="#F8B195">
 <main >
 <header>
-  <h2>Open-Sensing Lab Computer Science Lead at Oregon State University 🌱</h2>
+  <h2>Open-Sensing Lab Computer Science Lead at Oregon State University</h2>
   <h4>January 2021 - June 2021</h4>
   <ul>
-    <li>🔊 Led a team in developing audio-visualization of MongoDB data using React, NodeJS, and Docker.</li>
-    <li>🛠️ Integrated Arduino-based sensor data via C programming, achieving seamless hardware-software interaction.</li>
+    <li>Led a team in developing audio-visualization of MongoDB data using React, NodeJS, and Docker.</li>
+    <li>Integrated Arduino-based sensor data via C programming, achieving seamless hardware-software interaction.</li>
   </ul>
 </header>
 </main>
@@ -182,7 +182,7 @@ function ExperienceAnimationCanvas() {
       bgColor=" #355C7D">
 <main >
 <header>
-  <h2>🏊‍♂️ Lifeguard</h2>
+  <h2>Lifeguard</h2>
   <h4>June 2016 - August 2019</h4>
   <ul>
     <li>Explained and enforced facility regulations, policies, and procedures to patrons </li>

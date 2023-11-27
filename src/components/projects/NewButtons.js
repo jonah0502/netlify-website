@@ -26,8 +26,8 @@ const createBtn = () => {
   const newBox = new WinBox({
     title: `About ${title}`,
     class: "modern",
-    width: '600px',
-    height: '300px',
+    width: '1200px',
+    height: '600px',
     top: 150,
     right: 50,
     bottom: 50,

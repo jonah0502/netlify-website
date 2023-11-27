@@ -16,6 +16,8 @@ import Loader from "../loader.js"
 import Text from '../models/Text.js'
 import "../../App.scss";
 
+const isMobile = window.matchMedia("(max-width: 600px)").matches; // Check if the viewport is smaller than 600px (adjust as needed)
+
   //React.Children.toArray(arrayOfComponents)
   
   function Jumbo() {
@@ -46,7 +48,6 @@ const state = proxy({ dark: true, motionDisabled: false, active: 0, rotation: 0 
 function ToggleButton(props) {
   const a11y = useA11y()
   const viewport = useThree((state) => state.viewport)
-  const isMobile = window.matchMedia("(max-width: 600px)").matches; // Check if the viewport is smaller than 600px (adjust as needed)
   const bulbRef = useRef()
   const k = 20
   const sigmoidNum = 1 / (1 + Math.exp(-viewport.width/k))
@@ -81,8 +82,8 @@ function Nav({ left }) {
       role="button"
       description={`Spin ${left ? "left" : "right"}`}
       actionCall={() => {
-        state.rotation = snap.rotation + ((Math.PI * 2) / 5) * (left ? -1 : 1)
-        state.active = left ? (snap.active === 0 ? 4 : snap.active - 1) : snap.active === 4 ? 0 : snap.active + 1
+        state.rotation = snap.rotation + ((Math.PI * 2) / 5) * (left ?  1: -1)
+        state.active = left ?  (snap.active === 4 ? 0 : snap.active + 1):(snap.active === 0 ? 4 : snap.active - 1)
       }}>
       <Diamond position={[left ? -radius : radius, 0, 0]} rotation={[0, 0, -Math.PI / 4]} scale={[1, 1, 1]}>
         <meshBasicMaterial color="aqua" />
@@ -153,7 +154,7 @@ function Shape({ index, active, color, ...props }) {
   const RenderHTML = () => {
     const titles = ["", "Projects", "Experience", "About", "Resume"]
       return (
-      <Html center position={[0,8,0]}>
+      <Html center position={[0,isMobile?5:8,0]}>
       <div className = "container" >
            {active && <h1 style = {state.dark? {color:"white"}:{color:"black"}}>{titles[index]}</h1>}
         </div>
