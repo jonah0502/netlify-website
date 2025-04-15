@@ -35,6 +35,7 @@ import { AdaptiveDpr, AdaptiveEvents, Preload} from "@react-three/drei";
 
 const isMobile = window.matchMedia("(max-width: 600px)").matches; // Check if the viewport is smaller than 600px (adjust as needed)
 
+const pageLen = 300;
 
 function Overlay() {
   return (
@@ -108,11 +109,12 @@ function ExperienceAnimationCanvas() {
 <header>
   <h2>Software Engineering Intern at Daimler Trucks</h2>
   <h3>Portland, OR</h3>
-  <h4>(June 2023 – Present)</h4>
+  <h4>(June 2023 – Dec 2023)</h4>
   <ul>
-    <li>Developed comprehensive C# and .NET applications integrated with an SQL database for efficiently managing vehicle Service Repair Tickets (SRTs).</li>
-    <li>Enabled seamless CRUD operations and facilitated diverse format exports.</li>
-    <li>Leveraged tools like Visual Studio and SQL Server Management Studio to ensure efficient development and database management.</li>
+    <li>Developed a full-stack CRUD application (Visual Studio, SQL) to streamline management of service repair data, improving diagnostic support efficiency as well as gaining exposure to vehicle ECU architecture.</li>
+    <li>Mitigated data loss risks through the development of an application for automated database backups using Powershell and SQL Server.</li>
+    <li>Integrated third-party APIs (e.g., Twilio) into internal applications (Uptime-Pro) to enhance notification functionality.</li>
+    <li>Utilized Git for version control and collaborated within the firmware development team, gaining exposure to team coordination practices using tools like Jira and Confluence.</li>
   </ul>
 
 </header>
@@ -121,7 +123,7 @@ function ExperienceAnimationCanvas() {
 
         <ExPage      
       domContent={domContent}
-      position = {-275}
+      position = {-(pageLen)}
       bgColor=" #F67280">
 <main >
 <header>
@@ -129,17 +131,20 @@ function ExperienceAnimationCanvas() {
   <h3>San Diego, CA</h3>
   <h4>March 2022 – September 2022</h4>
   <ul>
-    <li>Managed asynchronous functions using C#, integrated Snowflake Data Warehouse with OAuth, and developed Angular-based front-end.</li>
-    <li>Created UI automation frameworks and test scripts for in-house systems using Cypress, Cucumber, and Jenkins.</li>
+    <li>Designed and deployed scalable microservices within an AWS distributed system handling high-volume data streams relevant to large asset metadata, achieving sub-second latency under load.</li>
+    <li>Integrated Snowflake Data Warehouse (handling over 50TB) with OAuth using Angular/TypeScript, enabling secure, high-performance data analysis critical for platform insights.</li>
+    <li>Implemented CI/CD pipelines (Jenkins) and automated testing, increasing deployment frequency by 3x and improving overall code quality metrics.</li>
   </ul>
 
 </header>
 </main>
 
         </ExPage>
+
+
         <ExPage      
       domContent={domContent}
-      position = {-550}
+      position = {-(pageLen * 2)}
       bgColor=" #C06C84"
       imgBool ={false}
 >
@@ -162,14 +167,14 @@ function ExperienceAnimationCanvas() {
         </ExPage>
         <ExPage      
       domContent={domContent}
-      position = {-800}
+      position = {-(pageLen * 3)}
       bgColor="#F8B195">
 <main >
 <header>
-  <h2>Open-Sensing Lab Computer Science Lead at Oregon State University</h2>
+  <h2>Embedded Software Engineer at Open Source Environmental Sensing Lab at Oregon State University</h2>
   <h4>January 2021 - June 2021</h4>
   <ul>
-    <li>Led a team in developing audio-visualization of MongoDB data using React, NodeJS, and Docker.</li>
+    <li>Led project coordination and developed C++ firmware for embedded systems (Arduino Feather M0), handling real-time sensor data acquisition/processing and designing low-level communication protocols (SPI, I2C).</li>
     <li>Integrated Arduino-based sensor data via C programming, achieving seamless hardware-software interaction.</li>
   </ul>
 </header>
@@ -178,7 +183,7 @@ function ExperienceAnimationCanvas() {
         </ExPage>
         <ExPage      
       domContent={domContent}
-      position = {-1000}
+      position = {-(pageLen * 4)}
       bgColor=" #355C7D">
 <main >
 <header>
