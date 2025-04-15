@@ -172,7 +172,7 @@ function Shape({ index, active, color, ...props }) {
 
         {index === 4 &&
         
-     <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]} onClick={active ?() =>  {const win = window.open('/myRes.pdf', "_blank"); win.focus();}: ()=>{}}>
+     <mesh scale= {[sigmoidNum, sigmoidNum, sigmoidNum]} onClick={active ?() =>  {const win = window.open('https://www.linkedin.com/in/jonah-biedermann/', "_blank"); win.focus();}: ()=>{}}>
           {color}
         </mesh>
         }
