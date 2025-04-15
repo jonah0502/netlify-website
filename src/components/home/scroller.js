@@ -152,7 +152,7 @@ function Shape({ index, active, color, ...props }) {
 
   //wrap models in mesh and use sigmoid function to acurately scale
   const RenderHTML = () => {
-    const titles = ["", "Projects", "Experience", "About", "Resume"]
+    const titles = ["", "Projects", "Experience", "About", "Linkedin"]
       return (
       <Html center position={[0,isMobile?5:8,0]}>
       <div className = "container" >

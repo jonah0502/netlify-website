@@ -71,7 +71,7 @@ return(
   <ul style={{zIndex: '0'}}>
   <li><Button variant="outline-light" onClick={createAbt} style={{zIndex: '0'}}>About</Button>{' '}</li>
   <li><Button variant="outline-light" onClick={createContact} style={{zIndex: '0'}}>Contact</Button>{' '}</li>
-  <li> <a className="btn btn-outline-light"  target="_blank" href={'https://www.linkedin.com/in/jonah-biedermann/'} style={{zIndex: '0'}}>Resume</a></li>
+  <li> <a className="btn btn-outline-light"  target="_blank" href={'https://www.linkedin.com/in/jonah-biedermann/'} style={{zIndex: '0'}}>Linkedin</a></li>
 
 
 </ul>
