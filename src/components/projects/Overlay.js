@@ -96,7 +96,7 @@ const Overlay = forwardRef(({ caption, scroll }, ref) => (
         <NewButtons
         tag = "#RPi-About"
         title = "Self Hosted Server on Raspberry Pi"
-        github = "https://lh3.googleusercontent.com/proxy/3t6e67NH-20iYARYuxcBSFYgxVNrCa7Ct_y3dBWLLhVFJa-FyiwkJFZRZk6L3RhGDsr03trN7OdrCKHqp1mUJ6ZMSmnchptm_Ycrp0WNc1Rc289hH7IrGQ4"
+        github = "https://github.com/IAmStoxe/wirehole"
         visitBool = {false}
         hexcolor_1 = "#b537f2"
         hexcolor_2 = "#3cb9fc"
