@@ -13,7 +13,7 @@ import Loader from "./components/loader.js"
 import AboutMe from "./components/about/about-me.js"
 import Form from "./components/about/form.js"
 import AbtButtons from "./components/about/AbtButton.js"
-import ButtonText from "./components/buttonText.js"
+import ButtonText from "./components/projects/buttonText.js"
 
 
 //newHome components
@@ -106,6 +106,23 @@ function ExperienceAnimationCanvas() {
         <h1>Jonah Biedermann</h1>
         <p>🚀 My Work Experience!</p>
       </header>
+
+<header>
+  <h2>Software Engineering at Oregon Country Fair</h2>
+  <h3>Portland, OR</h3>
+  <h4>(June 2023 – Dec 2023)</h4>
+  <ul>
+    <li>Developed a full-stack CRUD application (Visual Studio, SQL) to streamline management of service repair data, improving diagnostic support efficiency as well as gaining exposure to vehicle ECU architecture.</li>
+    <li>Mitigated data loss risks through the development of an application for automated database backups using Powershell and SQL Server.</li>
+    <li>Integrated third-party APIs (e.g., Twilio) into internal applications (Uptime-Pro) to enhance notification functionality.</li>
+    <li>Utilized Git for version control and collaborated within the firmware development team, gaining exposure to team coordination practices using tools like Jira and Confluence.</li>
+  </ul>
+
+</header>
+
+
+
+
 <header>
   <h2>Software Engineering Intern at Daimler Trucks</h2>
   <h3>Portland, OR</h3>

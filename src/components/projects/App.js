@@ -5,7 +5,7 @@ import Model from "./Model"
 import Overlay from "./Overlay"
 import Header from "../header/Header.js";
 import Loader from "../loader.js"
-import Text from "../buttonText.js"
+import Text from "./buttonText.js"
 import { AdaptiveDpr, AdaptiveEvents, Preload } from "@react-three/drei";
 
 export default function App() {
