@@ -133,7 +133,6 @@ function ExperienceAnimationCanvas() {
   <h4>(Jan 2024 – Jun 2024)</h4>
   <ul>
     <li><h4>Developed and maintained a membership database application using Django framework, creating a new MariaDB database using Docker and Kubernetes to manage memberships.</h4></li>
-    <li><h4>Integrated third-party APIs (e.g., Twilio) into internal applications (Uptime-Pro) to enhance notification functionality.</h4></li>
     <li><h4>Designed and tested a RESTful API using Postman, achieving 100% endpoint reliability for 500+ monthly users.</h4></li>
   </ul>
 
