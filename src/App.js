@@ -114,7 +114,7 @@ function ExperienceAnimationCanvas() {
 <h3>Portland, OR</h3>
   <h4>(June 2023 – Dec 2023)</h4>
   <ul>
-    <li>Led development of mission-critical flight software for E-3 AWACS systems using Python, C++ and Java, ensuring optimal weapon system performance.</li>
+    <li><h4>Led development of mission-critical flight software for E-3 AWACS systems using Python, C++ and Java, ensuring optimal weapon system performance.</h4></li>
   </ul>
 
 </header>
