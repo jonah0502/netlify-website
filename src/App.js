@@ -96,7 +96,7 @@ function ExperienceAnimationCanvas() {
       <AdaptiveDpr pixelated />
         <AdaptiveEvents />
         <Preload all/>
-        <ExPage 
+        <ExPage
       domContent={domContent}
       position = {0}
       bgColor="#6C5B7B">
@@ -120,13 +120,9 @@ function ExperienceAnimationCanvas() {
 </header>
 </main>
 
-
-
-
-
         </ExPage>
 
-        <ExPage      
+        <ExPage
       domContent={domContent}
       position = {-(pageLen)}
       bgColor=" #F67280">
@@ -136,9 +132,9 @@ function ExperienceAnimationCanvas() {
   <h3>Portland, OR</h3>
   <h4>(June 2023 – Dec 2023)</h4>
   <ul>
-    <li>Developed and maintained a membership database application using Django framework, creating a new MariaDB database using Docker and Kubernetes to manage memberships.</li>
-    <li>Integrated third-party APIs (e.g., Twilio) into internal applications (Uptime-Pro) to enhance notification functionality.</li>
-    <li>Designed and tested a RESTful API using Postman, achieving 100% endpoint reliability for 500+ monthly users.</li>
+    <li><h4>Developed and maintained a membership database application using Django framework, creating a new MariaDB database using Docker and Kubernetes to manage memberships.</h4></li>
+    <li><h4>Integrated third-party APIs (e.g., Twilio) into internal applications (Uptime-Pro) to enhance notification functionality.</h4></li>
+    <li><h4>Designed and tested a RESTful API using Postman, achieving 100% endpoint reliability for 500+ monthly users.</h4></li>
   </ul>
 
 </header>
@@ -147,7 +143,7 @@ function ExperienceAnimationCanvas() {
         </ExPage>
 
 
-        <ExPage      
+        <ExPage
       domContent={domContent}
       position = {-(pageLen * 2)}
       bgColor=" #F67280">
@@ -157,10 +153,10 @@ function ExperienceAnimationCanvas() {
   <h3>Portland, OR</h3>
   <h4>(June 2023 – Dec 2023)</h4>
   <ul>
-    <li>Developed a full-stack CRUD application (Visual Studio, SQL) to streamline management of service repair data, improving diagnostic support efficiency as well as gaining exposure to vehicle ECU architecture.</li>
-    <li>Mitigated data loss risks through the development of an application for automated database backups using Powershell and SQL Server.</li>
-    <li>Integrated third-party APIs (e.g., Twilio) into internal applications (Uptime-Pro) to enhance notification functionality.</li>
-    <li>Utilized Git for version control and collaborated within the firmware development team, gaining exposure to team coordination practices using tools like Jira and Confluence.</li>
+    <li><h4>Developed a full-stack CRUD application (Visual Studio, SQL) to streamline management of service repair data, improving diagnostic support efficiency as well as gaining exposure to vehicle ECU architecture.</h4></li>
+    <li><h4>Mitigated data loss risks through the development of an application for automated database backups using Powershell and SQL Server.</h4></li>
+    <li><h4>Integrated third-party APIs (e.g., Twilio) into internal applications (Uptime-Pro) to enhance notification functionality.</h4></li>
+    <li><h4>Utilized Git for version control and collaborated within the firmware development team, gaining exposure to team coordination practices using tools like Jira and Confluence.</h4></li>
   </ul>
 
 </header>
@@ -170,9 +166,9 @@ function ExperienceAnimationCanvas() {
 
 
 
-        <ExPage      
+        <ExPage
       domContent={domContent}
-      position = {-(pageLen *3)}
+      position = {-(pageLen * 3)}
       bgColor=" #F67280">
 <main >
 <header>
@@ -180,9 +176,9 @@ function ExperienceAnimationCanvas() {
   <h3>San Diego, CA</h3>
   <h4>March 2022 – September 2022</h4>
   <ul>
-    <li>Designed and deployed scalable microservices within an AWS distributed system handling high-volume data streams relevant to large asset metadata, achieving sub-second latency under load.</li>
-    <li>Integrated Snowflake Data Warehouse (handling over 50TB) with OAuth using Angular/TypeScript, enabling secure, high-performance data analysis critical for platform insights.</li>
-    <li>Implemented CI/CD pipelines (Jenkins) and automated testing, increasing deployment frequency by 3x and improving overall code quality metrics.</li>
+    <li><h4>Designed and deployed scalable microservices within an AWS distributed system handling high-volume data streams relevant to large asset metadata, achieving sub-second latency under load.</h4></li>
+    <li><h4>Integrated Snowflake Data Warehouse (handling over 50TB) with OAuth using Angular/TypeScript, enabling secure, high-performance data analysis critical for platform insights.</h4></li>
+    <li><h4>Implemented CI/CD pipelines (Jenkins) and automated testing, increasing deployment frequency by 3x and improving overall code quality metrics.</h4></li>
   </ul>
 
 </header>
@@ -191,7 +187,7 @@ function ExperienceAnimationCanvas() {
         </ExPage>
 
 
-        <ExPage      
+        <ExPage
       domContent={domContent}
       position = {-(pageLen * 4)}
       bgColor=" #C06C84"
@@ -203,10 +199,10 @@ function ExperienceAnimationCanvas() {
   <h3>Corvallis, OR</h3>
   <h4>June 2021 - December 2021</h4>
   <ul>
-    <li>Assisted in designing and leading weekly discussion sessions to reinforce key concepts in data structures and algorithms, demonstrating teaching and communication skills.</li>
-    <li>Conducted one-on-one tutoring sessions, providing personalized guidance to help students grasp complex algorithms and data structures, showcasing a dedication to student success.</li>
-    <li>Collaborated with professors to create challenging programming assignments that fostered critical thinking and problem-solving skills among students, showcasing involvement in curriculum development.</li>
-    <li>Evaluated and provided constructive feedback on student assignments and projects, promoting continuous improvement in coding proficiency.</li>
+    <li><h4>Assisted in designing and leading weekly discussion sessions to reinforce key concepts in data structures and algorithms, demonstrating teaching and communication skills.</h4></li>
+    <li><h4>Conducted one-on-one tutoring sessions, providing personalized guidance to help students grasp complex algorithms and data structures, showcasing a dedication to student success.</h4></li>
+    <li><h4>Collaborated with professors to create challenging programming assignments that fostered critical thinking and problem-solving skills among students, showcasing involvement in curriculum development.</h4></li>
+    <li><h4>Evaluated and provided constructive feedback on student assignments and projects, promoting continuous improvement in coding proficiency.</h4></li>
   </ul>
 
 </header>
@@ -214,7 +210,7 @@ function ExperienceAnimationCanvas() {
 </main>
 
         </ExPage>
-        <ExPage      
+        <ExPage
       domContent={domContent}
       position = {-(pageLen * 5)}
       bgColor="#F8B195">
@@ -223,14 +219,14 @@ function ExperienceAnimationCanvas() {
   <h2>Embedded Software Engineer at Open Source Environmental Sensing Lab at Oregon State University</h2>
   <h4>January 2021 - June 2021</h4>
   <ul>
-    <li>Led project coordination and developed C++ firmware for embedded systems (Arduino Feather M0), handling real-time sensor data acquisition/processing and designing low-level communication protocols (SPI, I2C).</li>
-    <li>Integrated Arduino-based sensor data via C programming, achieving seamless hardware-software interaction.</li>
+    <li><h4>Led project coordination and developed C++ firmware for embedded systems (Arduino Feather M0), handling real-time sensor data acquisition/processing and designing low-level communication protocols (SPI, I2C).</h4></li>
+    <li><h4>Integrated Arduino-based sensor data via C programming, achieving seamless hardware-software interaction.</h4></li>
   </ul>
 </header>
 </main>
 
         </ExPage>
-        <ExPage      
+        <ExPage
       domContent={domContent}
       position = {-(pageLen * 6)}
       bgColor=" #355C7D">
@@ -239,17 +235,16 @@ function ExperienceAnimationCanvas() {
   <h2>Lifeguard</h2>
   <h4>June 2016 - August 2019</h4>
   <ul>
-    <li>Explained and enforced facility regulations, policies, and procedures to patrons </li>
-    <li>Rescued swimmers in need of assistance</li>
-    <li>Demonstrate proper rescue techniques, including but not limited to, swimming rescues, First Aid, and CPR</li>
-    <li>Kept accurate records of incident reports, maintenance, and chemical testing</li>
+    <li><h4>Explained and enforced facility regulations, policies, and procedures to patrons </h4></li>
+    <li><h4>Rescued swimmers in need of assistance</h4></li>
+    <li><h4>Demonstrate proper rescue techniques, including but not limited to, swimming rescues, First Aid, and CPR</h4></li>
+    <li><h4>Kept accurate records of incident reports, maintenance, and chemical testing</h4></li>
   </ul>
 
 </header>
 </main>
 
         </ExPage>
-
       </Suspense>
     </Canvas>
     <Loader />
