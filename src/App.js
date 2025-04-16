@@ -107,22 +107,51 @@ function ExperienceAnimationCanvas() {
         <p>🚀 My Work Experience!</p>
       </header>
 
+
+
 <header>
-  <h2>Software Engineering at Oregon Country Fair</h2>
-  <h3>Portland, OR</h3>
+<h2>Software Engineer at The United States Air Force</h2>
+<h3>Portland, OR</h3>
   <h4>(June 2023 – Dec 2023)</h4>
   <ul>
-    <li>Developed a full-stack CRUD application (Visual Studio, SQL) to streamline management of service repair data, improving diagnostic support efficiency as well as gaining exposure to vehicle ECU architecture.</li>
-    <li>Mitigated data loss risks through the development of an application for automated database backups using Powershell and SQL Server.</li>
-    <li>Integrated third-party APIs (e.g., Twilio) into internal applications (Uptime-Pro) to enhance notification functionality.</li>
-    <li>Utilized Git for version control and collaborated within the firmware development team, gaining exposure to team coordination practices using tools like Jira and Confluence.</li>
+    <li>Led development of mission-critical flight software for E-3 AWACS systems using Python, C++ and Java, ensuring optimal weapon system performance.</li>
   </ul>
 
 </header>
+</main>
 
 
 
 
+
+        </ExPage>
+
+        <ExPage      
+      domContent={domContent}
+      position = {-(pageLen)}
+      bgColor=" #F67280">
+<main >
+<header>
+  <h2>Software Engineer at The Oregon Country Fair</h2>
+  <h3>Portland, OR</h3>
+  <h4>(June 2023 – Dec 2023)</h4>
+  <ul>
+    <li>Developed and maintained a membership database application using Django framework, creating a new MariaDB database using Docker and Kubernetes to manage memberships.</li>
+    <li>Integrated third-party APIs (e.g., Twilio) into internal applications (Uptime-Pro) to enhance notification functionality.</li>
+    <li>Designed and tested a RESTful API using Postman, achieving 100% endpoint reliability for 500+ monthly users.</li>
+  </ul>
+
+</header>
+</main>
+
+        </ExPage>
+
+
+        <ExPage      
+      domContent={domContent}
+      position = {-(pageLen * 2)}
+      bgColor=" #F67280">
+<main >
 <header>
   <h2>Software Engineering Intern at Daimler Trucks</h2>
   <h3>Portland, OR</h3>
@@ -136,11 +165,14 @@ function ExperienceAnimationCanvas() {
 
 </header>
 </main>
+
         </ExPage>
+
+
 
         <ExPage      
       domContent={domContent}
-      position = {-(pageLen)}
+      position = {-(pageLen *3)}
       bgColor=" #F67280">
 <main >
 <header>
@@ -161,7 +193,7 @@ function ExperienceAnimationCanvas() {
 
         <ExPage      
       domContent={domContent}
-      position = {-(pageLen * 2)}
+      position = {-(pageLen * 4)}
       bgColor=" #C06C84"
       imgBool ={false}
 >
@@ -184,7 +216,7 @@ function ExperienceAnimationCanvas() {
         </ExPage>
         <ExPage      
       domContent={domContent}
-      position = {-(pageLen * 3)}
+      position = {-(pageLen * 5)}
       bgColor="#F8B195">
 <main >
 <header>
@@ -200,7 +232,7 @@ function ExperienceAnimationCanvas() {
         </ExPage>
         <ExPage      
       domContent={domContent}
-      position = {-(pageLen * 4)}
+      position = {-(pageLen * 6)}
       bgColor=" #355C7D">
 <main >
 <header>

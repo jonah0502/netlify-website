@@ -1,11 +1,9 @@
 import React from "react";
 import { useRef, useState} from 'react';
-import * as THREE from 'three'
-import { useThree, useFrame} from "@react-three/fiber"
-import { Canvas } from "@react-three/fiber"
+import { useFrame} from "@react-three/fiber"
 
 // R3F
-import { Html, Box, Points, PointMaterial } from "@react-three/drei";
+import { Points, PointMaterial } from "@react-three/drei";
 import * as random from 'maath/random/dist/maath-random.esm'
 
 function Stars(props) {
