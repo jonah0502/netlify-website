@@ -9,8 +9,8 @@ export default function ButtonText () {
     return (
         <div className="hidden">
         <div className="about" id="about-content">
-          <h2 className = "typeC">{'>'}about-me:<span className="cursor">|</span></h2>
-          <p> I am a Software Developer with experience in enterprise size companies (Daimler Trucks), the Public Sector (United States Air Force) and small startups alike (Mosaic.tech). Contributing to performing, accessible and scalable applications, specifically focusing on backend development, is a passion of mine. I enjoy public speaking and helping others learn new technologies as well.</p>
+        <h2>About Me: </h2>
+        <p> I am a Software Developer with experience in enterprise size companies (Daimler Trucks), the Public Sector (United States Air Force) and small startups alike (Mosaic.tech). Contributing to performing, accessible and scalable applications, specifically focusing on backend development, is a passion of mine. I enjoy public speaking and helping others learn new technologies as well.</p>
         </div>
     
                
@@ -22,7 +22,7 @@ export default function ButtonText () {
         </div>
 
         <div className="about" id="Design-Den-About">
-          <h2>About Design-Den {/* <img src={tagFav} style={{width:"2em", height:"2em", padding: "10px"}} /> */}</h2>
+          <h2>About Design-Den </h2>
           {/* Design-Den Project Description */}
           <p>Co-developed Design-Den, an e-commerce platform enabling users to buy and sell website designs. This application served as the final project for the CS340 Databases course.</p>
           <p>Collaborated with Jonathan Nichols to architect the system using Next.js for the frontend framework, while engineering the backend infrastructure with Python (Flask) and MySQL for efficient data management and transactions.</p>
@@ -30,7 +30,7 @@ export default function ButtonText () {
 
         <div className="about" id="Fretboard-About">
            {/* Renamed Section to reflect project content */}
-          <h2>ASOSU Campaign Website Development {/* <img src={tagFav} style={{width:"2em", height:"2em", padding: "10px"}} /> */}</h2>
+          <h2>ASOSU Campaign Website Development </h2>
            {/* ASOSU Campaign Website Project Description */}
           <p>Commissioned in 2021 by Alexander Kerner and Isabella Griffiths to design and develop the official campaign website for their successful run for President and Vice President of ASOSU (Associated Students of Oregon State University).</p>
           <p>Delivered a dynamic, responsive website built with Next.js, featuring a modern UI/UX tailored for effective campaign communication and engagement.</p>
