@@ -111,8 +111,8 @@ function ExperienceAnimationCanvas() {
 
 <header>
 <h2>Software Engineer at The United States Air Force</h2>
-<h3>Portland, OR</h3>
-  <h4>(June 2023 – Dec 2023)</h4>
+<h3>Oklahoma City, Oklahoma</h3>
+  <h4>(Jul 2024 – Apr 2025)</h4>
   <ul>
     <li><h4>Led development of mission-critical flight software for E-3 AWACS systems using Python, C++ and Java, ensuring optimal weapon system performance.</h4></li>
   </ul>
@@ -130,7 +130,7 @@ function ExperienceAnimationCanvas() {
 <header>
   <h2>Software Engineer at The Oregon Country Fair</h2>
   <h3>Portland, OR</h3>
-  <h4>(June 2023 – Dec 2023)</h4>
+  <h4>(Jan 2024 – Jun 2024)</h4>
   <ul>
     <li><h4>Developed and maintained a membership database application using Django framework, creating a new MariaDB database using Docker and Kubernetes to manage memberships.</h4></li>
     <li><h4>Integrated third-party APIs (e.g., Twilio) into internal applications (Uptime-Pro) to enhance notification functionality.</h4></li>
@@ -217,6 +217,7 @@ function ExperienceAnimationCanvas() {
 <main >
 <header>
   <h2>Embedded Software Engineer at Open Source Environmental Sensing Lab at Oregon State University</h2>
+  <h3>Corvallis, OR</h3>
   <h4>January 2021 - June 2021</h4>
   <ul>
     <li><h4>Led project coordination and developed C++ firmware for embedded systems (Arduino Feather M0), handling real-time sensor data acquisition/processing and designing low-level communication protocols (SPI, I2C).</h4></li>
@@ -234,6 +235,8 @@ function ExperienceAnimationCanvas() {
 <header>
   <h2>Lifeguard</h2>
   <h4>June 2016 - August 2019</h4>
+  <h3>Hilsboro, OR</h3>
+
   <ul>
     <li><h4>Explained and enforced facility regulations, policies, and procedures to patrons </h4></li>
     <li><h4>Rescued swimmers in need of assistance</h4></li>
