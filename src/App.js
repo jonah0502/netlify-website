@@ -99,7 +99,7 @@ function ExperienceAnimationCanvas() {
         <ExPage
       domContent={domContent}
       position = {0}
-      bgColor="#6C5B7B">
+      bgColor="#2A3D45">
 <main >
 
 <header>
@@ -125,7 +125,7 @@ function ExperienceAnimationCanvas() {
         <ExPage
       domContent={domContent}
       position = {-(pageLen)}
-      bgColor=" #F67280">
+      bgColor="#355C7D">
 <main >
 <header>
   <h2>Software Engineer at The Oregon Country Fair</h2>
@@ -146,7 +146,7 @@ function ExperienceAnimationCanvas() {
         <ExPage
       domContent={domContent}
       position = {-(pageLen * 2)}
-      bgColor=" #F67280">
+      bgColor="#6C5B7B">
 <main >
 <header>
   <h2>Software Engineering Intern at Daimler Trucks</h2>
@@ -169,7 +169,7 @@ function ExperienceAnimationCanvas() {
         <ExPage
       domContent={domContent}
       position = {-(pageLen * 3)}
-      bgColor=" #F67280">
+      bgColor="#C06C84">
 <main >
 <header>
   <h2>Software Engineering Intern at Mosaic.Tech </h2>
@@ -190,7 +190,7 @@ function ExperienceAnimationCanvas() {
         <ExPage
       domContent={domContent}
       position = {-(pageLen * 4)}
-      bgColor=" #C06C84"
+      bgColor="#F67280"
       imgBool ={false}
 >
 <main >
@@ -229,7 +229,7 @@ function ExperienceAnimationCanvas() {
         <ExPage
       domContent={domContent}
       position = {-(pageLen * 6)}
-      bgColor=" #355C7D">
+      bgColor="#FDFBF5">
 <main >
 <header>
   <h2>Lifeguard</h2>
